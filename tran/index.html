@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SpeakEasy — Вивчай англійську</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- підключення css -->
+  <link rel="stylesheet" href="styl.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <!-- Логотип (створи файл assets/logo.svg або прибери тег img) -->
+      <img src="logo.svg" alt="logo" class="logo" onerror="this.style.display='none'">
+      <h1>SpeakEasy</h1>
+    </div>
+
+    <nav class="nav">
+      <button data-route="home" class="nav-btn active">Головна</button>
+      <button data-route="lessons" class="nav-btn">Уроки</button>
+      <button data-route="flashcards" class="nav-btn">Флешкарти</button>
+      <button data-route="quiz" class="nav-btn">Тест</button>
+      <button data-route="profile" class="nav-btn">Профіль</button>
+    </nav>
+  </header>
+
+  <main id="app" class="container">
+    <!-- Контент підставляється JS -->
+  </main>
+
+  <footer class="footer">
+    <small>© <span id="year"></span> SpeakEasy — сайд-проєкт. Прогрес зберігається локально.</small>
+  </footer>
+
+  <!-- підключення js -->
+  <script src="script.js" type="module"></script>
+</body>
+</html>

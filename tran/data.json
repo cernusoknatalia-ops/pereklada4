@@ -1,0 +1,30 @@
+[
+  {
+    "id": "l1",
+    "title": "Greetings — Вітання",
+    "text": "Hello — Привіт\nHi — Привіт (розмовно)\nGood morning — Доброго ранку\nGood evening — Доброго вечора",
+    "vocab": [
+      {"word":"Hello","trans":"Привіт"},
+      {"word":"Hi","trans":"Привіт"},
+      {"word":"Good morning","trans":"Доброго ранку"},
+      {"word":"Good evening","trans":"Доброго вечора"}
+    ],
+    "quiz": [
+      {"q":"How do you say 'Доброго ранку' in English?","options":["Good night","Good morning","Hello"],"answer":1}
+    ]
+  },
+  {
+    "id": "l2",
+    "title": "Useful verbs — Корисні дієслова",
+    "text": "To be — Бути\nTo have — Мати\nTo go — Йти\nTo do — Робити",
+    "vocab": [
+      {"word":"To be","trans":"Бути"},
+      {"word":"To have","trans":"Мати"},
+      {"word":"To go","trans":"Йти"},
+      {"word":"To do","trans":"Робити"}
+    ],
+    "quiz":[
+      {"q":"Переклад 'To have'?", "options":["Бути","Мати","Йти"], "answer":1}
+    ]
+  }
+]
