@@ -66,7 +66,7 @@ p{color:var(--muted);margin:0 0 12px}
 
 /* Buttons & inputs */
 .btn{
-  display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#06202a;font-weight:700;cursor:pointer;
+  display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#041e29;font-weight:700;cursor:pointer;
 }
 .secondary{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);font-weight:600;padding:8px 12px;border-radius:10px}
 .controls{display:flex;gap:8px;flex-wrap:wrap}
@@ -87,10 +87,10 @@ p{color:var(--muted);margin:0 0 12px}
 /* Quiz */
 .options{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
 .option{
-  padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;cursor:pointer;font-weight:600;
+  padding:12px;border-radius:10px;border:1px solid rgba(255, 255, 255, 0.805);background:transparent;cursor:pointer;font-weight:600;
 }
-.option.correct{background:linear-gradient(90deg,#08332a,#065f4a);color:#bfffe2}
-.option.wrong{background:linear-gradient(90deg,#3a0b0b,#5a1515);color:#ffd2d2}
+.option.correct{background:linear-gradient(90deg,#08342b,#218352);color:#bfffe2}
+.option.wrong{background:linear-gradient(90deg,#4b0909,#701313);color:#ffd2d2}
 
 /* Profile */
 .progress-bar{height:10px;background:rgba(255,255,255,0.04);border-radius:8px;overflow:hidden}
