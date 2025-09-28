@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/pereklada4/static/css/main.d370e2ac.css",
+    "main.js": "/pereklada4/static/js/main.98dd56e4.js",
+    "index.html": "/pereklada4/index.html",
+    "main.d370e2ac.css.map": "/pereklada4/static/css/main.d370e2ac.css.map",
+    "main.98dd56e4.js.map": "/pereklada4/static/js/main.98dd56e4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d370e2ac.css",
+    "static/js/main.98dd56e4.js"
+  ]
+}
