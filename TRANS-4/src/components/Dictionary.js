@@ -7,7 +7,9 @@ function Dictionary() {
       <div className="word-cards">
         {words.map((item, i) => (
           <div key={i} className="word-card">
-            {item.word} – {item.translation}
+            <strong>{item.word}</strong>
+            <br />
+            {item.translation}
           </div>
         ))}
       </div>
