@@ -1,9 +1,9 @@
 # pereklada4
 Cайт для облегшення вивчення англіської мови, група ІПЗ-13 "пільмени".
 Склад команди та ролі:
-- Єфремов Валерій — Team Lead
+- Степанюк Віктор — Team Lead
 - Манзик Іван — Developer
-- Степанюк Віктор  — frontend developer
+- Єфремов Валерій  — frontend developer
 - Зубик Дмитрій — Designer / Documenter
 
 Назва проєкту: Translator & English Learning App
