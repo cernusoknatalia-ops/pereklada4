@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 function Tests() {
-  const [question, setQuestion] = useState("Apple");   // слово для перекладу
-  const [answer, setAnswer] = useState("");           // відповідь користувача
-  const [result, setResult] = useState("");           // результат перевірки
+  const [question, setQuestion] = useState("Apple");
+  const [answer, setAnswer] = useState(""); 
+  const [result, setResult] = useState("");
 
   const checkAnswer = () => {
     if (answer.toLowerCase() === "яблуко") {

@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Translator from "./components/Translator";
 import Dictionary from "./components/Dictionary";
 import Test from "./components/Test";
-import "./App.css"; // підключаємо стилі
+import "./App.css";
 
 function App() {
   return (

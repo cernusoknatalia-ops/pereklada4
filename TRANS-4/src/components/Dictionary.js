@@ -1,4 +1,4 @@
-import words from "../data/words.json"; // підключаємо JSON
+import words from "../data/words.json";
 
 function Dictionary() {
   return (
