@@ -114,17 +114,7 @@ export default function Translator() {
       <h2>Перекладач</h2>
 
       <div className="direction">
-        <label>
-          <input
-            type="radio"
-            name="dir"
-            value="en-uk"
-            checked={direction === "en-uk"}
-            onChange={() => setDirection("en-uk")}
-          />
-          <span>Англ → Укр</span>
-        </label>
-
+        
         <label>
           <input
             type="radio"
@@ -133,8 +123,19 @@ export default function Translator() {
             checked={direction === "uk-en"}
             onChange={() => setDirection("uk-en")}
           />
-          <span>Укр → Англ</span>
+          <span>Українська → Англійська </span>
           </label>
+
+          <label>
+          <input
+            type="radio"
+            name="dir"
+            value="en-uk"
+            checked={direction === "en-uk"}
+            onChange={() => setDirection("en-uk")}
+          />
+          <span>English → Ukrainian</span>
+        </label>
       </div>
 
       <textarea
