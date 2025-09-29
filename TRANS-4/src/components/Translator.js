@@ -1,13 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 
-/*
-  Коротко:
-  - Перший варіант: https://libretranslate.de/translate (POST)
-  - Фолбек: MyMemory (GET)
-  - Debounce 600ms, щоб не бити API на кожен символ
-  - Використовуйте REACT_APP_LIBRE_URL у .env якщо хочете локальний сервер: http://localhost:5000/translate
-*/
-
 const LIBRE_URL =
   process.env.REACT_APP_LIBRE_URL || "https://libretranslate.de/translate";
 const MYMEMORY_URL = "https://api.mymemory.translated.net/get";
@@ -17,10 +9,9 @@ export default function Translator() {
   const [translated, setTranslated] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [direction, setDirection] = useState("en-uk"); // en-uk або uk-en
+  const [direction, setDirection] = useState("uk-en"); // старт з укр → англ
   const abortRef = useRef(null);
 
-  // Debounce: 600ms після останнього набору
   useEffect(() => {
     if (!text.trim()) {
       setTranslated("");
@@ -35,7 +26,6 @@ export default function Translator() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text, direction]);
 
-  // helper: fetch з таймаутом + AbortController
   async function fetchWithTimeout(url, options = {}, timeout = 8000) {
     const controller = new AbortController();
     abortRef.current = controller;
@@ -56,7 +46,6 @@ export default function Translator() {
 
     const [source, target] = direction.split("-");
 
-    // 1) Спробувати LibreTranslate (POST)
     try {
       const res = await fetchWithTimeout(
         LIBRE_URL,
@@ -70,11 +59,9 @@ export default function Translator() {
 
       if (!res.ok) throw new Error(`Libre status ${res.status}`);
       const data = await res.json();
-      // структура: { translatedText: "..." }
       if (data && data.translatedText) {
         setTranslated(data.translatedText);
         setLoading(false);
-        console.log("Перекладено Libre:", data.translatedText);
         return;
       } else {
         throw new Error("Libre повернув порожнє тіло");
@@ -83,7 +70,6 @@ export default function Translator() {
       console.warn("Libre не відповів:", e.message);
     }
 
-    // 2) Фолбек — MyMemory (GET)
     try {
       const url = `${MYMEMORY_URL}?q=${encodeURIComponent(
         q
@@ -95,7 +81,6 @@ export default function Translator() {
       if (text2) {
         setTranslated(text2);
         setLoading(false);
-        console.log("Перекладено MyMemory:", text2);
         return;
       } else {
         throw new Error("MyMemory повернув порожнє тіло");
@@ -104,7 +89,6 @@ export default function Translator() {
       console.warn("MyMemory не відповів:", e2.message);
     }
 
-    // Якщо обидва не відповіли
     setError("❌ Обидва сервіси недоступні або заблоковані (дивись консоль).");
     setLoading(false);
   }
@@ -113,29 +97,20 @@ export default function Translator() {
     <section id="translator" className="card">
       <h2>Перекладач</h2>
 
-      <div className="direction">
-        
-        <label>
-          <input
-            type="radio"
-            name="dir"
-            value="uk-en"
-            checked={direction === "uk-en"}
-            onChange={() => setDirection("uk-en")}
-          />
-          <span>Українська → Англійська </span>
-          </label>
-
-          <label>
-          <input
-            type="radio"
-            name="dir"
-            value="en-uk"
-            checked={direction === "en-uk"}
-            onChange={() => setDirection("en-uk")}
-          />
-          <span>English → Ukrainian</span>
-        </label>
+      {/* 🔹 Вкладки */}
+      <div className="tabs">
+        <button
+          className={direction === "uk-en" ? "tab active" : "tab"}
+          onClick={() => setDirection("uk-en")}
+        >
+           Українська → Англійська
+        </button>
+        <button
+          className={direction === "en-uk" ? "tab active" : "tab"}
+          onClick={() => setDirection("en-uk")}
+        >
+           English → Українська
+        </button>
       </div>
 
       <textarea

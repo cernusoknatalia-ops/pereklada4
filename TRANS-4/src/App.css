@@ -141,3 +141,175 @@ footer {
   margin-top: auto;
   backdrop-filter: blur(6px);
 }
+
+/* Вкладки перекладу */
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #4a90e2;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgb(40, 28, 37);
+}
+
+.tab:hover {
+  background: #4a90e2;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #0061ff, #00c3ff);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 6px 14px rgba(128, 206, 230, 0.4);
+}
+
+.app.dark .tab {
+  background: #bad0e7;
+  color: #f1f1f1;
+}
+
+.app.dark .tab:hover {
+  background: #4a90e2;
+  color: #fff;
+}
+
+.app.dark .tab.active {
+  background: linear-gradient(135deg, #0061ff, #00c3ff);
+  color: #fff;
+}
+
+/* Поле вводу для перекладача */
+textarea {
+  width: 100%;
+  min-height: 120px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  padding: 12px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  resize: vertical;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 10px rgba(74,144,226,0.5);
+}
+
+.app.dark textarea {
+  background: #1e2a36;
+  color: #f1f1f1;
+  border: 1px solid #444;
+}
+
+/* Результат перекладу */
+.translation-result {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.app.dark .translation-result {
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: 1px solid #333;
+}
+
+/* === Тести === */
+.test-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  animation: fadeIn 0.6s ease;
+}
+
+.app.dark .test-container {
+  background: rgba(0, 0, 0, 0.6);
+  color: #f1f1f1;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.test-description {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #4a90e2, #00c3ff);
+  transition: width 0.3s ease;
+}
+
+.test-card {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.app.dark .test-card {
+  background: #2c3e50;
+  color: #fff;
+}
+
+.word {
+  font-weight: bold;
+  color: #4a90e2;
+}
+
+.app.dark .word {
+  color: #00c3ff;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.result {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  animation: fadeIn 0.5s ease;
+}
+
+.result.success {
+  color: #28a745;
+}
+
+.result.error {
+  color: #dc3545;
+}
