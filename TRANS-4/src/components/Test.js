@@ -68,7 +68,7 @@ function Tests() {
 
           {/* Завдання */}
           <div className="test-card">
-            <h3>`
+            <h3>
               Переклади слово: <span className="word">{words[step].en}</span>
             </h3>
             <input
