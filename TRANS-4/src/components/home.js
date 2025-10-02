@@ -9,7 +9,7 @@ function Home() {
       <section className="hero">
         <div className="hero-content">
           <h1>LinguaLearn</h1>
-          <p>Вивчи англійську так само легко, як дивитись серіали 📺</p>
+          <p>Вивчити англійську так само легко, як дивитись серіали 📺</p>
           <Link to="/translator">
             <button className="start-btn">Почати навчання</button>
           </Link>
@@ -75,17 +75,6 @@ function Home() {
               <p>Відстежуй свій прогрес у навчанні</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="cta-section">
-        <div className="cta-content">
-          <h2>Готовий почати?</h2>
-          <p>Приєднуйся до тисяч користувачів, які вже вивчають англійську з LinguaLearn</p>
-          <Link to="/translator">
-            <button className="cta-btn">Почати зараз</button>
-          </Link>
         </div>
       </section>
 
