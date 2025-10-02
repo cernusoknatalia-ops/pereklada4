@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Translator from "./components/Translator";
 import Dictionary from "./components/Dictionary";
 import Test from "./components/Test";
-import Home from "./components/home";
+import Home from "./components/Home"; // Назва з великої літери!
 import "./App.css";
 
 function App() {
@@ -44,6 +44,9 @@ function App() {
             <Route path="/translator" element={<Translator />} />
             <Route path="/dictionary" element={<Dictionary />} />
             <Route path="/test" element={<Test />} />
+
+            {/* будь-який інший шлях -> на головну */}
+            <Route path="*" element={<Home />} />
           </Routes>
         </main>
 

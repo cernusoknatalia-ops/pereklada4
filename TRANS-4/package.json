@@ -2,7 +2,7 @@
   "name": "trans-4",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://cernusoknatalia-ops.github.io/pereklada4/",
+  "homepage": ".",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

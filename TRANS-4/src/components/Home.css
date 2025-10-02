@@ -1,0 +1,125 @@
+.Home {
+  background-color: #141414;
+  color: white;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* Навбар */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.7);
+  position: relative;
+  z-index: 10;
+}
+
+.navbar button {
+  padding: 10px 20px;
+  border: 2px solid #00d9ff;
+  border-radius: 5px;
+  background: transparent;
+  color: #00d9ff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  white-space: nowrap;
+}
+
+.navbar button:hover {
+  background: #00d9ff;
+  color: #141414;
+}
+
+/* Герой */
+.Home .hero {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.Home .hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.Home .hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.Home .hero h1 {
+  font-size: 4rem;
+  color: #00d9ff;
+  margin-bottom: 20px;
+}
+
+.Home .hero p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.Home .start-btn {
+  background: #e50914;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.Home .start-btn:hover {
+  background: #f40612;
+}
+
+/* Рядки */
+.Home .row {
+  margin: 30px 20px;
+}
+
+.Home .row h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.Home .cards {
+  display: flex;
+  gap: 15px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.Home .card {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 120px;
+  background: #333;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.Home .card:hover {
+  transform: scale(1.05);
+  background: #444;
+}
