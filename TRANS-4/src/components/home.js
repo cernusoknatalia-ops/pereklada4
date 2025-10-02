@@ -10,7 +10,7 @@ function Home() {
         <div className="hero-content">
           <h1>LinguaLearn</h1>
           <p>Вивчити англійську так само легко, як дивитись серіали 📺</p>
-          <Link to="/translator">
+          <Link to="/Test">
             <button className="start-btn">Почати навчання</button>
           </Link>
         </div>
