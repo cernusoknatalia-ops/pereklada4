@@ -5,42 +5,14 @@
   min-height: 100vh;
 }
 
-/* Навбар */
-.navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 15px 30px;
-  background: rgba(0,0,0,0.7);
-  position: relative;
-  z-index: 10;
-}
-
-.navbar button {
-  padding: 10px 20px;
-  border: 2px solid #00d9ff;
-  border-radius: 5px;
-  background: transparent;
-  color: #00d9ff;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.3s, color 0.3s;
-  white-space: nowrap;
-}
-
-.navbar button:hover {
-  background: #00d9ff;
-  color: #141414;
-}
-
 /* Герой */
 .Home .hero {
   height: 70vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0 40px;
   position: relative;
 }
 
@@ -52,74 +24,85 @@
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.6);
+  z-index: 0;
 }
 
 .Home .hero-content {
   position: relative;
   z-index: 1;
   text-align: center;
+  max-width: 800px;
 }
 
 .Home .hero h1 {
   font-size: 4rem;
-  color: #00d9ff;
+  color: white;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .Home .hero p {
   font-size: 1.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  line-height: 1.5;
 }
 
 .Home .start-btn {
-  background: #e50914;
-  border: none;
-  padding: 12px 25px;
+  background: transparent;
+  border: 2px solid white;
+  padding: 12px 30px;
   font-size: 1.2rem;
   color: white;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s, color 0.3s;
+  font-weight: bold;
 }
 
 .Home .start-btn:hover {
-  background: #f40612;
+  background: white;
+  color: #141414;
 }
 
-/* Рядки */
+/* Рядки - рівні англійської */
 .Home .row {
-  margin: 30px 20px;
+  margin: 40px auto;
+  max-width: 900px;
+  padding: 0 40px;
 }
 
 .Home .row h2 {
-  margin-bottom: 15px;
-  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .Home .cards {
   display: flex;
+  flex-direction: column;
   gap: 15px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding-bottom: 10px;
 }
 
 .Home .card {
-  flex: 0 0 auto;
-  width: 200px;
-  height: 120px;
-  background: #333;
+  width: 100%;
+  padding: 20px 30px;
+  background: rgba(60, 60, 60, 0.8);
   border-radius: 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
+  justify-content: flex-start;
+  font-size: 1.3rem;
   font-weight: bold;
-  transition: transform 0.3s;
+  transition: background 0.3s, transform 0.2s;
   cursor: pointer;
+  border: 2px solid transparent;
 }
 
 .Home .card:hover {
-  transform: scale(1.05);
-  background: #444;
+  background: rgba(80, 80, 80, 0.9);
+  transform: translateX(10px);
+  border-color: #00d9ff;
 }
