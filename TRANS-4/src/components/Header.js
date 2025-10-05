@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Header({ toggleTheme, darkMode }) {
   return (
@@ -7,10 +7,42 @@ function Header({ toggleTheme, darkMode }) {
       <h1>🌐 LinguaLearn</h1>
       <nav className="navbar">
         <div className="nav-links">
-          <Link className="nav-btn" to="/">Головна</Link>
-          <Link className="nav-btn" to="/translator">Перекладач</Link>
-          <Link className="nav-btn" to="/dictionary">Словник</Link>
-          <Link className="nav-btn" to="/tests">Тести</Link>
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              isActive ? "nav-btn active" : "nav-btn"
+            }
+          >
+            Головна
+          </NavLink>
+
+          <NavLink
+            to="/translator"
+            className={({ isActive }) =>
+              isActive ? "nav-btn active" : "nav-btn"
+            }
+          >
+            Перекладач
+          </NavLink>
+
+          <NavLink
+            to="/dictionary"
+            className={({ isActive }) =>
+              isActive ? "nav-btn active" : "nav-btn"
+            }
+          >
+            Словник
+          </NavLink>
+
+          <NavLink
+            to="/tests"
+            className={({ isActive }) =>
+              isActive ? "nav-btn active" : "nav-btn"
+            }
+          >
+            Тести
+          </NavLink>
         </div>
 
         <button onClick={toggleTheme} className="theme-btn">

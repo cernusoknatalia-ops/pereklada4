@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #ecedef 100%);
   overflow: hidden;
 }
 
@@ -156,7 +156,7 @@
 }
 
 .Home .feature-card {
-  background: rgba(30, 30, 30, 0.9);
+  background: rgba(30, 29, 29, 0.9);
   border-radius: 15px;
   padding: 40px 30px;
   text-align: center;
@@ -221,7 +221,7 @@
 
 .Home .cta-btn:hover {
   background: #00b8d4;
-transform: translateY(-3px);
+  transform: translateY(-3px);
   box-shadow: 0 15px 40px rgba(0, 217, 255, 0.6);
 }
 

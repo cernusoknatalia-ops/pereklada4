@@ -1,58 +1,87 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 import Translator from "./components/Translator";
 import Dictionary from "./components/Dictionary";
 import Test from "./components/Test";
-import Home from "./components/Home"; // Назва з великої літери!
+import Home from "./components/Home";
 import "./App.css";
 
 function App() {
-  // тема з localStorage або за замовчуванням світла
+  // Збереження теми
   const [darkMode, setDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem("darkMode");
     return savedTheme === "true";
   });
 
-  // збереження теми при зміні
   useEffect(() => {
     localStorage.setItem("darkMode", darkMode);
   }, [darkMode]);
 
   return (
     <Router>
-      <div className={`app ${darkMode ? "dark" : ""}`}>
-        {/* Навбар */}
+      <div className={`app ${darkMode ? "dark" : "light"}`}>
+        {/* === Навігаційна панель === */}
         <nav className="navbar">
-          <Link to="/" className="nav-btn">Головна</Link>
-          <Link to="/translator" className="nav-btn">Перекладач</Link>
-          <Link to="/dictionary" className="nav-btn">Словник</Link>
-          <Link to="/test" className="nav-btn">Тести</Link>
+          <div className="logo">🌐 LinguaLearn</div>
 
-          {/* Кнопка перемикання теми */}
-          <button 
-            onClick={() => setDarkMode(!darkMode)} 
-            className="theme-toggle"
-          >
+          <div className="nav-links">
+            <NavLink
+              to="/"
+              end
+              className={({ isActive }) =>
+                isActive ? "nav-btn active" : "nav-btn"
+              }
+            >
+              Головна
+            </NavLink>
+
+            <NavLink
+              to="/translator"
+              className={({ isActive }) =>
+                isActive ? "nav-btn active" : "nav-btn"
+              }
+            >
+              Перекладач
+            </NavLink>
+
+            <NavLink
+              to="/dictionary"
+              className={({ isActive }) =>
+                isActive ? "nav-btn active" : "nav-btn"
+              }
+            >
+              Словник
+            </NavLink>
+
+            <NavLink
+              to="/test"
+              className={({ isActive }) =>
+                isActive ? "nav-btn active" : "nav-btn"
+              }
+            >
+              Тести
+            </NavLink>
+          </div>
+
+          <button onClick={() => setDarkMode(!darkMode)} className="theme-btn">
             {darkMode ? "☀️ Світла" : "🌙 Темна"}
           </button>
         </nav>
 
-        {/* Основний контент */}
+        {/* === Основний контент === */}
         <main>
           <Routes>
-            <Route path="/" element={<Home />} /> {/* титульна */}
+            <Route path="/" element={<Home />} />
             <Route path="/translator" element={<Translator />} />
             <Route path="/dictionary" element={<Dictionary />} />
             <Route path="/test" element={<Test />} />
-
-            {/* будь-який інший шлях -> на головну */}
             <Route path="*" element={<Home />} />
           </Routes>
         </main>
 
-        {/* Футер */}
+        {/* === Футер === */}
         <footer>
-          © 2025 | LinguaLearn
+          © 2025 | <strong>LinguaLearn</strong> — створюй, вивчай, вдосконалюй 🌟
         </footer>
       </div>
     </Router>

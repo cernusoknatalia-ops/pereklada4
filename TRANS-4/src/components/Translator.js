@@ -9,7 +9,7 @@ export default function Translator() {
   const [translated, setTranslated] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [direction, setDirection] = useState("uk-en"); // старт з укр → англ
+  const [direction, setDirection] = useState("uk-en");
   const abortRef = useRef(null);
 
   useEffect(() => {
@@ -23,7 +23,6 @@ export default function Translator() {
       clearTimeout(timer);
       if (abortRef.current) abortRef.current.abort();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text, direction]);
 
   async function fetchWithTimeout(url, options = {}, timeout = 8000) {
@@ -43,7 +42,6 @@ export default function Translator() {
     setLoading(true);
     setError("");
     setTranslated("");
-
     const [source, target] = direction.split("-");
 
     try {
@@ -56,16 +54,13 @@ export default function Translator() {
         },
         8000
       );
-
       if (!res.ok) throw new Error(`Libre status ${res.status}`);
       const data = await res.json();
-      if (data && data.translatedText) {
+      if (data?.translatedText) {
         setTranslated(data.translatedText);
         setLoading(false);
         return;
-      } else {
-        throw new Error("Libre повернув порожнє тіло");
-      }
+      } else throw new Error("Libre повернув порожнє тіло");
     } catch (e) {
       console.warn("Libre не відповів:", e.message);
     }
@@ -82,9 +77,7 @@ export default function Translator() {
         setTranslated(text2);
         setLoading(false);
         return;
-      } else {
-        throw new Error("MyMemory повернув порожнє тіло");
-      }
+      } else throw new Error("MyMemory повернув порожнє тіло");
     } catch (e2) {
       console.warn("MyMemory не відповів:", e2.message);
     }
@@ -94,34 +87,40 @@ export default function Translator() {
   }
 
   return (
-    <section id="translator" className="card">
-      <h2>Перекладач</h2>
+    <section id="translator" className="translator-card">
+      <h2>🌐 Перекладач</h2>
 
-      {/* 🔹 Вкладки */}
       <div className="tabs">
         <button
           className={direction === "uk-en" ? "tab active" : "tab"}
           onClick={() => setDirection("uk-en")}
         >
-           Українська → Англійська
+           Українська →  Англійська
         </button>
         <button
           className={direction === "en-uk" ? "tab active" : "tab"}
           onClick={() => setDirection("en-uk")}
         >
-           English → Українська
+           English →  Українська
         </button>
       </div>
 
-      <textarea
-        placeholder="Введіть текст..."
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
+      <div className="translator-box">
+        <textarea
+          className="input-area"
+          placeholder="Введіть текст..."
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
 
-      {loading && <p>⏳ Переклад...</p>}
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      {translated && !loading && !error && <p>👉 {translated}</p>}
+        <div className="output-area">
+          {loading && <p className="loading">⏳ Переклад...</p>}
+          {error && <p className="error">{error}</p>}
+          {translated && !loading && !error && (
+            <p className="translated">👉 {translated}</p>
+          )}
+        </div>
+      </div>
     </section>
   );
 }
