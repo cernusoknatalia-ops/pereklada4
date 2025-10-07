@@ -269,20 +269,194 @@ main { flex: 1; }
   font-style: italic;
   color: #c2dde4;
 }
-
-/* Адаптив для мобільних */
-@media (max-width: 600px) {
-  .dictionary-item {
-    flex: 1 1 100%;              /* один блок на рядок */
-    flex-direction: row;          /* залишаємо горизонтально */
-  }
-}
 /* === Icons === */
 .icon { font-size: 1.6rem; transition: all 0.3s ease; }
 .app.light .icon { color: #0078d7; filter: drop-shadow(0 0 5px rgba(0,120,215,0.3)); }
 .app.dark .icon { color: #00d9ff; filter: drop-shadow(0 0 5px rgba(0,191,255,0.4)); }
 
-/* === Footer === */
+/* === Контейнер тесту === */
+.flashcard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+.flashcard-container.light {
+  background: 
+    linear-gradient(rgba(69, 69, 69, 0), rgba(71, 71, 71, 0)),
+    url('../images/photo.jpg') no-repeat center center fixed;
+  color: #ffffff;
+}
+
+.flashcard-container.dark {
+  background: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+    url('../images/photo.jpg') no-repeat center center fixed;
+  color: #f5f5f5;
+}
+
+/* === Заголовок тесту === */
+.test-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* === Прогрес бар === */
+.progress-bar {
+  width: 100%;
+  max-width: 450px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.571);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #4caf50, #66bb6a);
+  transition: width 0.4s ease;
+}
+
+/* === Картка === */
+.card-wrapper {
+  perspective: 1200px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 450px;
+  margin-bottom: 30px;
+}
+
+.flashcard {
+  width: 100%;
+  height: 280px;
+  background-color: #dbe7f0; /* м’який колір під сайт */
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  transform-style: preserve-3d;
+  transition: transform 0.6s, box-shadow 0.3s;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.flashcard-container.dark .flashcard {
+  background-color: #3b3c55; /* темний м’який колір */
+  color: #f5f5f5;
+}
+
+.flashcard.flipped {
+  transform: rotateY(180deg);
+}
+
+.flashcard .front, .flashcard .back {
+  position: absolute;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.flashcard .back {
+  transform: rotateY(180deg);
+}
+
+.word {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.transcription {
+  font-size: 20px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.translation {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+/* === Кнопки Знаю / Не знаю (горизонтально) === */
+.buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  max-width: 480px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  flex: 1 1 160px;
+  padding: 18px;
+  font-size: 20px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.btn.know {
+  background: linear-gradient(135deg, #4caf50, #66bb6a);
+  color: #fff;
+}
+
+.btn.dont-know {
+  background: linear-gradient(135deg, #f44336, #ef5350);
+  color: #fff;
+}
+
+/* === Прогрес текст === */
+.progress-text {
+  font-size: 18px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* === Кнопка почати заново внизу === */
+.restart-btn-bottom {
+  background-color: #2196f3; /* колір під сайт */
+  color: #fff;
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.restart-btn-bottom:hover {
+  transform: scale(1.05);
+  box-shadow: 0 7px 20px rgba(0,0,0,0.3);
+}
 footer {
   text-align: center;
   padding: 20px;

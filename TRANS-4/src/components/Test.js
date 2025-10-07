@@ -1,115 +1,101 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import wordsData from "../data/words.json";
+import "../App.css";
 
-function Tests() {
-  const words = [
-    { en: "Apple", ua: "яблуко" },
-    { en: "Dog", ua: "собака" },
-    { en: "Book", ua: "книга" },
-    { en: "House", ua: "дім" },
-  ];
+function Test({ darkMode }) {
+  const [words, setWords] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [showTranslation, setShowTranslation] = useState(false);
 
-  const [step, setStep] = useState(0);
-  const [answer, setAnswer] = useState("");
-  const [result, setResult] = useState("");
-  const [correct, setCorrect] = useState(0);
-  const [wrong, setWrong] = useState(0);
-  const [finished, setFinished] = useState(false);
+  useEffect(() => {
+    setWords([...wordsData]);
+    setCurrentIndex(0);
+  }, []);
 
-  const checkAnswer = () => {
-    if (answer.toLowerCase() === words[step].ua) {
-      setResult("✅ Правильно!");
-      setCorrect(correct + 1);
+  const handleAnswer = (know) => {
+    if (words.length === 0) return;
+
+    const updatedWords = [...words];
+    const currentWord = updatedWords[currentIndex];
+
+    if (know) {
+      updatedWords.splice(currentIndex, 1);
     } else {
-      setResult(`❌ Неправильно! Правильна відповідь: ${words[step].ua}`);
-      setWrong(wrong + 1);
+      updatedWords.splice(currentIndex, 1);
+      updatedWords.push(currentWord);
     }
-  };
 
-  const nextQuestion = () => {
-    if (step < words.length - 1) {
-      setStep(step + 1);
-      setAnswer("");
-      setResult("");
-    } else {
-      setFinished(true);
-    }
+    setWords(updatedWords);
+    setCurrentIndex(0);
+    setShowTranslation(false);
   };
 
   const restartTest = () => {
-    setStep(0);
-    setAnswer("");
-    setResult("");
-    setCorrect(0);
-    setWrong(0);
-    setFinished(false);
+    setWords([...wordsData]);
+    setCurrentIndex(0);
+    setShowTranslation(false);
   };
 
+  if (words.length === 0) {
+    return (
+      <section className={`flashcard-container ${darkMode ? "dark" : "light"}`}>
+        <h2>🎉 Усі слова вивчені!</h2>
+        <button className="restart-btn" onClick={restartTest}>
+          🔄 Почати заново
+        </button>
+      </section>
+    );
+  }
+
+  const currentWord = words[currentIndex];
+  const progress = ((wordsData.length - words.length) / wordsData.length) * 100;
+  const currentNumber = wordsData.length - words.length + 1;
+
   return (
-    <section id="tests" className="test-container">
-      <h2>📝 Тестування слів</h2>
+    <section className={`flashcard-container ${darkMode ? "dark" : "light"}`}>
+      <h2 className="test-title">🧠 Тест на знання слів</h2>
 
-      {!finished ? (
-        <>
-          <p className="test-description">
-            Перевір свої знання англійських слів. Введи переклад і перевір
-            відповідь.
-          </p>
+      {/* Прогрес бар */}
+      <div className="progress-bar">
+        <div className="progress-fill" style={{ width: progress + "%" }}></div>
+      </div>
 
-          {/* Прогрес */}
-          <div className="progress-bar">
-            <div
-              className="progress"
-              style={{ width: `${((step + 1) / words.length) * 100}%` }}
-            ></div>
+      {/* Картка */}
+      <div className="card-wrapper">
+        <div
+          className={`flashcard ${showTranslation ? "flipped" : ""}`}
+          onClick={() => setShowTranslation(!showTranslation)}
+        >
+          <div className="front">
+            <div className="word">{currentWord.word}</div>
+            <div className="transcription">{currentWord.transcription}</div>
           </div>
-          <p>
-            Питання {step + 1} з {words.length}
-          </p>
-
-          {/* Завдання */}
-          <div className="test-card">
-            <h3>
-              Переклади слово: <span className="word">{words[step].en}</span>
-            </h3>
-            <input
-              type="text"
-              value={answer}
-              placeholder="Введіть переклад..."
-              onChange={(e) => setAnswer(e.target.value)}
-            />
-            <div className="buttons">
-              <button className="check-btn" onClick={checkAnswer}>
-                Перевірити
-              </button>
-              <button className="skip-btn" onClick={nextQuestion}>
-                Далі
-              </button>
-            </div>
+          <div className="back">
+            <div className="translation">{currentWord.translation}</div>
           </div>
-
-          {/* Результат */}
-          <p className="result">{result}</p>
-          <div className="results">
-            ✅ Правильних: {correct} | ❌ Неправильних: {wrong}
-          </div>
-        </>
-      ) : (
-        <div className="final-screen">
-          <h2>🎉 Тест завершено!</h2>
-          <p>
-            Ви відповіли правильно на <b>{correct}</b> з {words.length}{" "}
-            слів.
-          </p>
-          <p>
-            Помилок: <b>{wrong}</b>
-          </p>
-          <button className="check-btn" onClick={restartTest}>
-            🔄 Пройти ще раз
-          </button>
         </div>
-      )}
+      </div>
+
+      {/* Кнопки Знаю/Не знаю */}
+      <div className="buttons-wrapper">
+        <button className="btn dont-know" onClick={() => handleAnswer(false)}>
+          ❌ Не знаю
+        </button>
+        <button className="btn know" onClick={() => handleAnswer(true)}>
+          ✅ Знаю
+        </button>
+      </div>
+
+      <p className="progress-text">
+        Слово {currentNumber} / {wordsData.length}
+      </p>
+
+      {/* Кнопка почати заново внизу */}
+      <button className="restart-btn-bottom" onClick={restartTest}>
+        🔄 Почати заново
+      </button>
     </section>
   );
 }
 
-export default Tests;
+export default Test;
