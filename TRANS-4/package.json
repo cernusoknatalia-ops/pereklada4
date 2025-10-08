@@ -29,8 +29,12 @@
       "last 1 safari version"
     ]
   },
+
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.3.0",
+    "jest": "^30.2.0"
   }
 }

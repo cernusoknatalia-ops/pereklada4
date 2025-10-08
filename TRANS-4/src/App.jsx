@@ -64,7 +64,7 @@ function App() {
           </div>
 
           <button onClick={() => setDarkMode(!darkMode)} className="theme-btn">
-            {darkMode ? "☀️ Світла" : "🌙 Темна"}
+            {darkMode ? "🌙 Темна" : "☀️ Світла" }
           </button>
         </nav>
 

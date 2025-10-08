@@ -46,7 +46,7 @@ function Header({ toggleTheme, darkMode }) {
         </div>
 
         <button onClick={toggleTheme} className="theme-btn">
-          {darkMode ? "🌙 Темна" : "☀️ Світла"}
+          {darkMode ? "☀️ Світла" : "🌙 Темна" }
         </button>
       </nav>
     </header>

@@ -99,7 +99,7 @@ main { flex: 1; }
 
 /* Основні блоки */
 .card,
-.test-container,
+.flashcard-container,
 .translator-card,
 .translator-box {
   border-radius: 15px;
@@ -112,7 +112,7 @@ main { flex: 1; }
 .translator-card, .translator-box { max-width: 700px; }
 
 .app.light .card,
-.app.light .test-container,
+.app.light .flashcard-container,
 .app.light .translator-card,
 .app.light .translator-box {
   background: rgba(241, 244, 252, 0.166);
@@ -122,14 +122,14 @@ main { flex: 1; }
   box-shadow: 0 10px 25px rgba(0, 120, 215, 0.15);
 }
 .app.light .translator-card,
-.app.light .test-container,
+.app.light .flashcard-container,
 .app.light .card {
   box-shadow: 0 8px 25px rgba(0, 120, 215, 0.25);
   color:#ffffff;
 }
 
 .app.dark .card,
-.app.dark .test-container,
+.app.dark .flashcard-container,
 .app.dark .translator-card,
 .app.dark .translator-box {
   background: rgba(25,25,35,0.85);
@@ -270,19 +270,142 @@ main { flex: 1; }
   color: #c2dde4;
 }
 
-/* Адаптив для мобільних */
-@media (max-width: 600px) {
-  .dictionary-item {
-    flex: 1 1 100%;              /* один блок на рядок */
-    flex-direction: row;          /* залишаємо горизонтально */
-  }
-}
 /* === Icons === */
 .icon { font-size: 1.6rem; transition: all 0.3s ease; }
 .app.light .icon { color: #0078d7; filter: drop-shadow(0 0 5px rgba(0,120,215,0.3)); }
 .app.dark .icon { color: #00d9ff; filter: drop-shadow(0 0 5px rgba(0,191,255,0.4)); }
 
-/* === Footer === */
+/* === Контейнер тесту === */
+.flashcard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+.flashcard-container.light {
+  background: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+    url('../images/photo.jpg') no-repeat center center fixed;
+  color: #ffffff;
+}
+
+.flashcard-container.dark {
+  background: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+    url('../images/photo.jpg') no-repeat center center fixed;
+  color: #f5f5f5;
+}
+
+/* === Картка === */
+.card-wrapper {
+  perspective: 1200px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 450px;
+  margin-bottom: 30px;
+}
+
+.flashcard {
+  width: 100%;
+  height: 280px;
+  background-color: #dbe7f0;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  transform-style: preserve-3d;
+  transition: transform 0.6s, box-shadow 0.3s;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.flashcard-container.dark .flashcard {
+  background-color: #3b3c55;
+  color: #f5f5f5;
+}
+
+.flashcard.flipped {
+  transform: rotateY(180deg);
+}
+
+.flashcard .front, .flashcard .back {
+  position: absolute;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.flashcard .back {
+  transform: rotateY(180deg);
+}
+
+/* === Кнопки Знаю / Не знаю === */
+.buttons-wrapper {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+.buttons-wrapper .btn {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #bbb;
+  background-color: #f5f5f5; /* світлий, нейтральний колір */
+  color: #222;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.buttons-wrapper .btn:hover {
+  background-color: #eaeaea; /* легкий hover ефект */
+  transform: scale(1.03);
+}
+/* === Прогрес текст === */
+.progress-text {
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* === Кнопка почати заново внизу === */
+.restart-btn-bottom {
+  background-color: #2196f3;
+  color: #fff;
+  padding: 10px 14px;
+  font-size: 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.restart-btn-bottom:hover {
+  transform: scale(1.05);
+  box-shadow: 0 7px 20px rgba(0,0,0,0.3);
+}
 footer {
   text-align: center;
   padding: 20px;
@@ -297,4 +420,15 @@ footer {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
+}
+/* === Кнопка "Почати заново" === */
+.restart-btn {
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 25px;
+  font-weight: 600;
 }

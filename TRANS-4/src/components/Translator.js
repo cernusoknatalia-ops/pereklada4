@@ -101,7 +101,7 @@ export default function Translator() {
           className={direction === "en-uk" ? "tab active" : "tab"}
           onClick={() => setDirection("en-uk")}
         >
-           English →  Українська
+           English →  Ukrainian
         </button>
       </div>
 
