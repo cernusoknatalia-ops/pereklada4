@@ -17,7 +17,9 @@ Cайт для облегшення вивчення англіської мов
 Інструменти для реалізації:
 JavaScript, React,js,Node.js + npm, HTML/CSS (UI), VS Code (IDE).
 
+
 Посилання на Trello https://trello.com/invite/b/68ef818abceff8a80db25725/ATTI050479ae2f9a90e115be23e367e465aeDE684207/pereklada4
+
 
 -----ІНСТРУКЦІЯ: Запуск юніт-тестів Translator e проєкті-----
 
