@@ -2,7 +2,7 @@
   "name": "trans-4",
   "version": "1.0.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://cernusoknatalia-ops.github.io/pereklada4/",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -31,13 +31,10 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "gh-pages": "^6.3.0",
-    "jest": "^30.2.0",
-    "homepage": "https://cernusoknatalia-ops.github.io/pereklada4/",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "jest": "^30.2.0"
   }
 }
