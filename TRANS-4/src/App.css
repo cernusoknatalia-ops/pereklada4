@@ -532,17 +532,3 @@ main { flex: 1; }
     font-size: 20px;
   }
 }
-
-/* Для дуже вузьких екранів <480px – 1 в ряд */
-@media (max-width: 480px) {
-  .nav-btn {
-    flex: 1 1 100%;
-    min-width: auto;
-  }
-
-  .test-menu,
-  .dictionary-list,
-  .buttons-wrapper {
-    grid-template-columns: 1fr;
-  }
-}
