@@ -503,8 +503,9 @@ main { flex: 1; }
     font-size: 1rem;
   }
 }
-/* === Адаптивність під телефони === */
+/* === Адаптивність під телефони (до 768px) === */
 @media (max-width: 768px) {
+  /* Загальні налаштування */
   body {
     margin: 0;
     font-size: 16px;
@@ -512,32 +513,116 @@ main { flex: 1; }
     overflow-x: hidden;
   }
 
-  header, nav, footer {
+  /* Навбар */
+  .navbar {
     flex-direction: column;
-    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
     text-align: center;
   }
 
-  .test-container,
-  .cards-container {
-    display: flex;
+  .nav-links {
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
   }
 
-  .card {
+  .nav-btn {
     width: 100%;
-    margin: 0 auto;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
   }
 
-  button, .btn {
+  .theme-btn {
     width: 100%;
-    padding: 12px;
-    font-size: 18px;
+    padding: 10px;
+    font-size: 16px;
   }
 
-  input, select, textarea {
+  /* Основні блоки */
+  .card,
+  .translator-card,
+  .translator-box,
+  .flashcard-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tab {
+    flex: 1 1 45%;
+    text-align: center;
+    font-size: 15px;
+    padding: 8px 10px;
+  }
+
+  /* Текстові поля */
+  textarea.input-area,
+  .output-area,
+  input,
+  select {
     width: 100%;
     font-size: 16px;
+    padding: 10px;
+  }
+
+  /* Тестові блоки */
+  .test-menu {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+  }
+
+  .test-card {
+    padding: 20px 10px;
+  }
+
+  .test-icon {
+    font-size: 2.5rem;
+  }
+
+  .test-title {
+    font-size: 1rem;
+  }
+
+  .flashcard {
+    height: 220px;
+    font-size: 20px;
+  }
+
+  /* Кнопки */
+  .buttons-wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .buttons-wrapper .btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  /* Словник */
+  .dictionary-list {
+    flex-direction: column;
+  }
+
+  .dictionary-item {
+    flex: 1 1 100%;
+    gap: 8px;
+    font-size: 15px;
+    flex-wrap: wrap;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
   }
 }

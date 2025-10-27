@@ -265,3 +265,75 @@
     font-size: 2rem;
   }
 }
+/* Додаткова адаптація для телефонів */
+@media (max-width: 480px) {
+  .Home .hero {
+    height: 75vh;
+    padding: 0 10px;
+  }
+
+  .Home .hero h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  .Home .hero p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+  }
+
+  .Home .start-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+
+  .Home .levels-section {
+    padding: 60px 10px;
+  }
+
+  .Home .features-section {
+    padding: 60px 10px;
+  }
+
+  .Home .card {
+    padding: 20px;
+  }
+
+  .Home .card-content h3 {
+    font-size: 1.4rem;
+  }
+
+  .Home .card-content p {
+    font-size: 0.9rem;
+  }
+
+  .Home .feature-card {
+    padding: 25px 20px;
+  }
+
+  .Home .feature-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .Home .cta-section {
+    padding: 60px 15px;
+  }
+
+  .Home .cta-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .Home .cta-content p {
+    font-size: 1rem;
+  }
+
+  .Home .cta-btn {
+    padding: 12px 35px;
+    font-size: 1rem;
+  }
+
+  .Home .home-footer {
+    font-size: 0.8rem;
+    padding: 20px;
+  }
+}
