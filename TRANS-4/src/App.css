@@ -424,60 +424,89 @@ main { flex: 1; }
 
 /* === Мобільна адаптація під ПК-дизайн === */
 @media (max-width: 768px) {
-  /* Навбар – як на ПК, але компактно */
+  /* Навбар – перший ряд: логотип і тема */
+  .navbar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+  }
+
   .navbar {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    padding: 10px 15px;
+    padding: 10px 0;
     text-align: center;
   }
 
   .nav-links {
-    flex-direction: row; /* залишаємо горизонтально */
-    gap: 10px;
-    flex-wrap: nowrap;   /* не переносимо кнопки */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .nav-btn {
-    width: auto;
-    padding: 10px 15px;
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 10px 12px;
     font-size: 16px;
   }
 
   .theme-btn {
-    width: auto;
     padding: 10px 15px;
     font-size: 16px;
   }
 
-  /* Тестові картки */
+   /* Тести – 2 в ряд */
   .test-menu {
-    display: flex;
-    flex-direction: column; /* по одному на ряд */
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
     width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
+    box-sizing: border-box;
   }
 
   .test-card {
     width: 100%;
     max-width: 100%;
-    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
   }
 
   /* Кнопки під тестами */
   .buttons-wrapper {
-    flex-direction: column;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
   }
 
   .buttons-wrapper .btn {
     width: 100%;
     font-size: 16px;
     padding: 12px 0;
+    box-sizing: border-box;
+  }
+
+  /* Словник – 2 в ряд */
+  .dictionary-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .dictionary-item {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   /* Flashcards */
@@ -485,14 +514,18 @@ main { flex: 1; }
     height: 240px;
     font-size: 20px;
   }
+}
 
-  /* Словник */
-  .dictionary-list {
-    flex-direction: column;
-    gap: 12px;
+/* Для дуже вузьких екранів <480px – 1 в ряд */
+@media (max-width: 480px) {
+  .nav-btn {
+    flex: 1 1 100%;
+    min-width: auto;
   }
 
-  .dictionary-item {
-    flex: 1 1 100%;
+  .test-menu,
+  .dictionary-list,
+  .buttons-wrapper {
+    grid-template-columns: 1fr;
   }
 }

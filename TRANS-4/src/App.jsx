@@ -22,8 +22,18 @@ function App() {
       <div className={`app ${darkMode ? "dark" : "light"}`}>
         {/* === Навігаційна панель === */}
         <nav className="navbar">
-          <div className="logo">🌐 LinguaLearn</div>
+          {/* Перший ряд: логотип і кнопка теми */}
+          <div className="navbar-top">
+            <div className="logo">🌐 LinguaLearn</div>
+            <button
+              onClick={() => setDarkMode(!darkMode)}
+              className="theme-btn"
+            >
+              {darkMode ? "🌙 Темна" : "☀️ Світла"}
+            </button>
+          </div>
 
+          {/* Другий ряд: кнопки вкладок */}
           <div className="nav-links">
             <NavLink
               to="/"
@@ -62,10 +72,6 @@ function App() {
               Тести
             </NavLink>
           </div>
-
-          <button onClick={() => setDarkMode(!darkMode)} className="theme-btn">
-            {darkMode ? "🌙 Темна" : "☀️ Світла" }
-          </button>
         </nav>
 
         {/* === Основний контент === */}
