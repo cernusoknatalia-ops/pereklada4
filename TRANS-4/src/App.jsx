@@ -7,7 +7,6 @@ import Home from "./components/Home";
 import "./App.css";
 
 function App() {
-  // Збереження теми
   const [darkMode, setDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem("darkMode");
     return savedTheme === "true";
@@ -20,9 +19,9 @@ function App() {
   return (
     <Router>
       <div className={`app ${darkMode ? "dark" : "light"}`}>
-        {/* === Навігаційна панель === */}
+        {/* Навігаційна панель */}
         <nav className="navbar">
-          {/* Перший ряд: логотип і кнопка теми */}
+          {/* Перший ряд: логотип + кнопка теми */}
           <div className="navbar-top">
             <div className="logo">🌐 LinguaLearn</div>
             <button
@@ -35,46 +34,14 @@ function App() {
 
           {/* Другий ряд: кнопки вкладок */}
           <div className="nav-links">
-            <NavLink
-              to="/"
-              end
-              className={({ isActive }) =>
-                isActive ? "nav-btn active" : "nav-btn"
-              }
-            >
-              Головна
-            </NavLink>
-
-            <NavLink
-              to="/translator"
-              className={({ isActive }) =>
-                isActive ? "nav-btn active" : "nav-btn"
-              }
-            >
-              Перекладач
-            </NavLink>
-
-            <NavLink
-              to="/dictionary"
-              className={({ isActive }) =>
-                isActive ? "nav-btn active" : "nav-btn"
-              }
-            >
-              Словник
-            </NavLink>
-
-            <NavLink
-              to="/test"
-              className={({ isActive }) =>
-                isActive ? "nav-btn active" : "nav-btn"
-              }
-            >
-              Тести
-            </NavLink>
+            <NavLink to="/" end className={({ isActive }) => isActive ? "nav-btn active" : "nav-btn"}>Головна</NavLink>
+            <NavLink to="/translator" className={({ isActive }) => isActive ? "nav-btn active" : "nav-btn"}>Перекладач</NavLink>
+            <NavLink to="/dictionary" className={({ isActive }) => isActive ? "nav-btn active" : "nav-btn"}>Словник</NavLink>
+            <NavLink to="/test" className={({ isActive }) => isActive ? "nav-btn active" : "nav-btn"}>Тести</NavLink>
           </div>
         </nav>
 
-        {/* === Основний контент === */}
+        {/* Основний контент */}
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -85,7 +52,7 @@ function App() {
           </Routes>
         </main>
 
-        {/* === Футер === */}
+        {/* Футер */}
         <footer>
           © 2025 | <strong>LinguaLearn</strong> — створюй, вивчай, вдосконалюй 🌟
         </footer>
