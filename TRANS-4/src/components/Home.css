@@ -265,75 +265,88 @@
     font-size: 2rem;
   }
 }
-/* Додаткова адаптація для телефонів */
 @media (max-width: 480px) {
+  .Home .cards,
+  .Home .features-grid {
+    display: flex;
+    flex-direction: column; /* по одному елементу на ряд */
+    gap: 20px;
+  }
+
+  .Home .card,
+  .Home .feature-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .Home .start-btn,
+  .Home .cta-btn {
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 18px 20px;
+  }
+
+  /* Hero */
   .Home .hero {
-    height: 75vh;
-    padding: 0 10px;
+    height: auto;
+    padding: 60px 15px;
   }
 
   .Home .hero h1 {
-    font-size: 2.2rem;
-    line-height: 1.2;
+    font-size: 2.5rem;
   }
 
   .Home .hero p {
-    font-size: 1.1rem;
-    margin-bottom: 25px;
+    font-size: 1.2rem;
   }
+}
 
-  .Home .start-btn {
-    padding: 12px 30px;
-    font-size: 1rem;
-  }
-
-  .Home .levels-section {
-    padding: 60px 10px;
-  }
-
-  .Home .features-section {
-    padding: 60px 10px;
-  }
-
-  .Home .card {
-    padding: 20px;
+  /* Levels Section - 2 в ряд */
+  .Home .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
 
   .Home .card-content h3 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .Home .card-content p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
-  .Home .feature-card {
-    padding: 25px 20px;
+  /* Features Section - 2 в ряд */
+  .Home .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
 
   .Home .feature-card h3 {
     font-size: 1.3rem;
   }
 
-  .Home .cta-section {
-    padding: 60px 15px;
+  .Home .feature-card p {
+    font-size: 0.95rem;
   }
 
+  /* CTA Section */
   .Home .cta-content h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .Home .cta-content p {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .Home .cta-btn {
-    padding: 12px 35px;
-    font-size: 1rem;
+    padding: 18px 45px;
+    font-size: 1.2rem;
+    border-radius: 60px;
   }
 
+  /* Footer */
   .Home .home-footer {
-    font-size: 0.8rem;
-    padding: 20px;
+    font-size: 0.95rem;
+    padding: 20px 10px;
   }
-}
