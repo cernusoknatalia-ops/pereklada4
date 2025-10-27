@@ -32,12 +32,41 @@ function App() {
             </button>
           </div>
 
-          {/* Другий ряд: кнопки вкладок */}
+          {/* Другий ряд: кнопки вкладок (всі в один ряд, однакового розміру) */}
           <div className="nav-links">
-            <NavLink to="/" end className={({ isActive }) => isActive ? "nav-btn active" : "nav-btn"}>Головна</NavLink>
-            <NavLink to="/translator" className={({ isActive }) => isActive ? "nav-btn active" : "nav-btn"}>Перекладач</NavLink>
-            <NavLink to="/dictionary" className={({ isActive }) => isActive ? "nav-btn active" : "nav-btn"}>Словник</NavLink>
-            <NavLink to="/test" className={({ isActive }) => isActive ? "nav-btn active" : "nav-btn"}>Тести</NavLink>
+            <NavLink
+              to="/"
+              end
+              className={({ isActive }) =>
+                isActive ? "nav-btn active" : "nav-btn"
+              }
+            >
+              Головна
+            </NavLink>
+            <NavLink
+              to="/translator"
+              className={({ isActive }) =>
+                isActive ? "nav-btn active" : "nav-btn"
+              }
+            >
+              Перекладач
+            </NavLink>
+            <NavLink
+              to="/dictionary"
+              className={({ isActive }) =>
+                isActive ? "nav-btn active" : "nav-btn"
+              }
+            >
+              Словник
+            </NavLink>
+            <NavLink
+              to="/test"
+              className={({ isActive }) =>
+                isActive ? "nav-btn active" : "nav-btn"
+              }
+            >
+              Тести
+            </NavLink>
           </div>
         </nav>
 

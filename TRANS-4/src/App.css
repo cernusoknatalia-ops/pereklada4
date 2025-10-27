@@ -532,7 +532,7 @@ main { flex: 1; }
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    gap: 5px;
+    gap: 10px; /* трохи більше простору між кнопками */
   }
 
   .nav-btn {
@@ -552,7 +552,7 @@ main { flex: 1; }
   /* Тести – 2 в ряд */
   .test-menu {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 ряди завжди */
     gap: 12px;
     width: 100%;
     box-sizing: border-box;
@@ -580,27 +580,63 @@ main { flex: 1; }
     box-sizing: border-box;
   }
 
-  /* Словник – 2 в ряд і текст не вилітає */
+  /* Словник – 2 в ряд, слово + переклад в першому рядку, транскрипція в другому */
   .dictionary-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки завжди */
     gap: 10px;
     width: 100%;
     box-sizing: border-box;
   }
 
   .dictionary-item {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    overflow-wrap: break-word; /* перенос слів */
-    word-break: break-word;    /* для довгих слів */
+    display: flex;
+    flex-direction: column;
     padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .dictionary-item .word-row {
+    display: flex;
+    justify-content: space-between; /* слово і переклад в одному рядку */
+    gap: 5px;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .dictionary-item .word-row .word,
+  .dictionary-item .word-row .translation {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .dictionary-item .transcription {
+    font-style: italic;
+    color: #b0b0b0;
+    margin-top: 2px; /* другий рядок */
+    white-space: normal; /* переносити по словах, якщо довго */
   }
 
   /* Flashcards */
   .flashcard {
     height: 240px;
     font-size: 20px;
+  }
+}
+
+/* Для дуже вузьких екранів <480px – 2 в ряд */
+@media (max-width: 480px) {
+  .nav-btn {
+    flex: 1 1 0; /* залишаємо однаковий розмір */
+  }
+
+  .test-menu,
+  .dictionary-list,
+  .buttons-wrapper {
+    grid-template-columns: repeat(2, 1fr); /* зберігаємо 2 колонки */
   }
 }
