@@ -268,12 +268,16 @@
   }
 
   .Home .cards, .Home .features-grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
 
   .Home .card, .Home .feature-card {
     padding: 20px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .Home .card-content h3, .Home .feature-card h3 {
@@ -284,10 +288,19 @@
     font-size: 0.95rem;
   }
 
-  .Home .start-btn, .Home .cta-btn {
+  /* Вирівнювання кнопки «Мій рівень» */
+  .Home .start-btn {
     width: 100%;
     padding: 16px 0;
     font-size: 1.2rem;
+    box-sizing: border-box;
+  }
+
+  .Home .cta-btn {
+    width: 100%;
+    padding: 16px 0;
+    font-size: 1.2rem;
+    box-sizing: border-box;
   }
 
   .Home .hero-content, .Home .cta-content {
@@ -304,6 +317,7 @@
 
   .Home .card, .Home .feature-card {
     width: 100%;
+    max-width: 100%;
   }
 
   .Home .hero h1 {
@@ -325,5 +339,7 @@
   .Home .start-btn, .Home .cta-btn {
     padding: 14px 0;
     font-size: 1.1rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 }

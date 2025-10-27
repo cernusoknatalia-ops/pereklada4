@@ -441,6 +441,7 @@ main { flex: 1; }
     text-align: center;
   }
 
+  /* Кнопки вкладок – другий ряд */
   .nav-links {
     display: flex;
     flex-direction: row;
@@ -456,6 +457,7 @@ main { flex: 1; }
     text-align: center;
     padding: 10px 12px;
     font-size: 16px;
+    box-sizing: border-box;
   }
 
   .theme-btn {
@@ -463,13 +465,20 @@ main { flex: 1; }
     font-size: 16px;
   }
 
-   /* Тести – 2 в ряд */
+  /* Flashcards */
+  .flashcard {
+    height: 240px;
+    font-size: 20px;
+  }
+
+  /* Тести – 2 в ряд */
   .test-menu {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     width: 100%;
     box-sizing: border-box;
+    padding: 0 10px;
   }
 
   .test-card {
@@ -479,12 +488,14 @@ main { flex: 1; }
     box-sizing: border-box;
   }
 
-  /* Кнопки під тестами */
+  /* Кнопки під тестами – 2 в ряд */
   .buttons-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
   }
 
   .buttons-wrapper .btn {
@@ -500,6 +511,7 @@ main { flex: 1; }
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     width: 100%;
+    padding: 0 10px;
     box-sizing: border-box;
   }
 
@@ -507,12 +519,23 @@ main { flex: 1; }
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    background: rgba(0,0,0,0.25);
+    border-radius: 8px;
   }
 
-  /* Flashcards */
-  .flashcard {
-    height: 240px;
-    font-size: 20px;
+  .dictionary-item .word,
+  .dictionary-item .transcription,
+  .dictionary-item .translation {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
   }
 }
 
@@ -527,5 +550,6 @@ main { flex: 1; }
   .dictionary-list,
   .buttons-wrapper {
     grid-template-columns: 1fr;
+    padding: 0 5px;
   }
 }
