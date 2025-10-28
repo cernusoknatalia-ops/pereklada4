@@ -246,100 +246,117 @@
   }
 }
 
-/* Responsive */
+/* === Мобільна адаптація для Home === */
 @media (max-width: 768px) {
   .Home .hero {
     height: auto;
-    padding: 50px 15px;
+    padding: 60px 15px;
   }
 
   .Home .hero h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    word-wrap: break-word;
   }
 
   .Home .hero p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+
+  .Home .hero-content {
+    padding: 0 10px;
+  }
+
+  .Home .start-btn {
+    width: 100%;
+    padding: 18px 0;
+    font-size: 1.25rem;
+    margin-top: 10px;
+    box-sizing: border-box;
   }
 
   .Home .levels-section h2,
   .Home .features-section h2,
   .Home .cta-content h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
-  .Home .cards, .Home .features-grid {
+  /* Рівні та фічі – дві колонки */
+  .Home .cards,
+  .Home .features-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* дві колонки */
     gap: 15px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  .Home .card, .Home .feature-card {
-    padding: 20px;
+  .Home .card,
+  .Home .feature-card {
+    padding: 22px;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
   }
 
-  .Home .card-content h3, .Home .feature-card h3 {
-    font-size: 1.4rem;
+  .Home .card-content h3,
+  .Home .feature-card h3 {
+    font-size: 1.35rem;
   }
 
-  .Home .card-content p, .Home .feature-card p {
-    font-size: 0.95rem;
+  .Home .card-content p,
+  .Home .feature-card p {
+    font-size: 1rem;
   }
 
-  /* Вирівнювання кнопки «Мій рівень» */
-  .Home .start-btn {
-    width: 100%;
-    padding: 16px 0;
-    font-size: 1.2rem;
-    box-sizing: border-box;
+  .Home .cta-content p {
+    font-size: 1.15rem;
   }
 
   .Home .cta-btn {
     width: 100%;
-    padding: 16px 0;
-    font-size: 1.2rem;
+    padding: 18px 0;
+    font-size: 1.25rem;
     box-sizing: border-box;
-  }
-
-  .Home .hero-content, .Home .cta-content {
-    padding: 0 10px;
   }
 }
 
 @media (max-width: 480px) {
-  .Home .cards, .Home .features-grid {
-    display: flex;
-    flex-direction: column;
+  .Home .cards,
+  .Home .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* все ще дві колонки навіть на дуже вузьких екранах */
     gap: 12px;
+    width: 100%;
   }
 
-  .Home .card, .Home .feature-card {
+  .Home .card,
+  .Home .feature-card {
     width: 100%;
     max-width: 100%;
   }
 
   .Home .hero h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .Home .hero p {
-    font-size: 1.1rem;
-  }
-
-  .Home .cta-content h2 {
-    font-size: 1.8rem;
-  }
-
-  .Home .cta-content p {
     font-size: 1rem;
   }
 
-  .Home .start-btn, .Home .cta-btn {
-    padding: 14px 0;
-    font-size: 1.1rem;
-    width: 100%;
-    box-sizing: border-box;
+  .Home .start-btn,
+  .Home .cta-btn {
+    padding: 16px 0;
+    font-size: 1.15rem;
+  }
+
+  .Home .cta-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .Home .cta-content p {
+    font-size: 0.95rem;
   }
 }
