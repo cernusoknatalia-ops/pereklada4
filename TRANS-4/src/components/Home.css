@@ -360,3 +360,147 @@
     font-size: 0.95rem;
   }
 }
+/* === Світла тема для Home === */
+.app.light .Home {
+  background-color: rgba(255,255,255,0.08);
+  color: #ffffff;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Hero Section */
+.app.light .Home .hero {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(0,120,215,0.25);
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.app.light .Home .hero::after {
+  background: rgba(255,255,255,0.08);
+}
+
+.app.light .Home .hero h1 {
+  color: #0078d7;
+  text-shadow: 0 0 5px rgba(0,120,215,0.3);
+}
+
+.app.light .Home .hero p {
+  color: #ffffff;
+}
+
+.app.light .Home .start-btn {
+  background: #0078d7;
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(0,120,215,0.2);
+}
+
+.app.light .Home .start-btn:hover {
+  background: #005fa3;
+  box-shadow: 0 10px 30px rgba(0,120,215,0.3);
+}
+
+/* Levels Section */
+.app.light .Home .levels-section {
+  background: rgba(255,255,255,0.08);
+  border: 2px solid rgba(0,120,215,0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  color: #ffffff;
+}
+
+.app.light .Home .levels-section h2 {
+  color: #0078d7;
+}
+
+.app.light .Home .card {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 2px solid rgba(0,120,215,0.25);
+  box-shadow: 0 10px 25px rgba(0,120,215,0.15);
+}
+
+.app.light .Home .card:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: #0078d7;
+  box-shadow: 0 15px 40px rgba(0,120,215,0.3);
+}
+
+.app.light .Home .card-content h3 {
+  color: #0078d7;
+}
+
+.app.light .Home .card-content p {
+  color: #ffffff;
+}
+
+/* Features Section */
+.app.light .Home .features-section {
+  background: rgba(255,255,255,0.08);
+  border: 2px solid rgba(0,120,215,0.25);
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+}
+
+.app.light .Home .features-section h2 {
+  color: #0078d7;
+}
+
+.app.light .Home .feature-card {
+  background: rgba(255,255,255,0.08);
+  color: #ffffff;
+  border: 2px solid rgba(0,120,215,0.25);
+  box-shadow: 0 10px 25px rgba(0,120,215,0.15);
+}
+
+.app.light .Home .feature-card:hover {
+  border-color: #0078d7;
+  box-shadow: 0 15px 40px rgba(0,120,215,0.3);
+}
+
+.app.light .Home .feature-card h3 {
+  color: #0078d7;
+}
+
+.app.light .Home .feature-card p {
+  color: #ffffff;
+}
+
+/* CTA Section */
+.app.light .Home .cta-section {
+  background: rgba(255,255,255,0.08);
+  border: 2px solid rgba(0,120,215,0.25);
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+  text-align: center;
+}
+
+.app.light .Home .cta-content h2 {
+  color: #0078d7;
+}
+
+.app.light .Home .cta-content p {
+  color: #ffffff;
+}
+
+.app.light .Home .cta-btn {
+  background: #0078d7;
+  color: #fff;
+}
+
+.app.light .Home .cta-btn:hover {
+  background: #005fa3;
+  box-shadow: 0 10px 30px rgba(0,120,215,0.3);
+}
+
+/* Footer */
+.app.light .Home .home-footer {
+  background: rgba(255,255,255,0.08);
+  color: #ffffff;
+  border: 2px solid rgba(0,120,215,0.25);
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+}
+

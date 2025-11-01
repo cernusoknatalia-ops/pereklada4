@@ -62,6 +62,61 @@ main { flex: 1; }
   gap: 20px;
   align-items: center;
 }
+/* === Navbar для світлої теми у стилі карток/словника === */
+.app.light .navbar {
+  background: rgba(255,255,255,0.08);
+  border: 2px solid rgba(0, 120, 215, 0.25); /* рамка як у словнику */
+  backdrop-filter: blur(12px); /* ефект blur */
+  color: #111; /* темний текст */
+  transition: background 0.3s, color 0.3s, border 0.3s;
+  box-shadow: 0 10px 25px rgba(0, 120, 215, 0.15); /* як тінь карток */
+  border-radius: 15px; /* заокруглення як у карток */
+}
+
+/* Логотип у світлій темі */
+.app.light .logo {
+  color: #0078d7; 
+  text-shadow: 0 0 5px rgba(0,120,215,0.3);
+}
+
+/* Кнопки вкладок у світлій темі */
+.app.light .nav-btn {
+  background: rgba(241, 244, 252, 0.5); /* напівпрозорий світлий фон */
+  color: #0078d7;
+  border: 2px solid rgba(0, 120, 215, 0.25);
+  box-shadow: 0 8px 25px rgba(0, 120, 215, 0.15);
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.app.light .nav-btn:hover {
+  background: #0078d7;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(0,120,215,0.4);
+}
+
+.app.light .nav-btn.active {
+  background-color: #005fa3;
+  color: #fff;
+  box-shadow: 0 0 15px #005fa3;
+  transform: scale(1.05);
+}
+
+/* Світла тема для кнопки перемикання теми */
+.app.light .theme-btn {
+  background-color: rgba(241, 244, 252, 0.85);
+  color: #0078d7;
+  border: 2px solid rgba(0,120,215,0.25);
+  box-shadow: 0 8px 25px rgba(0,120,215,0.15);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.app.light .theme-btn:hover {
+  background-color: #e6f0ff;
+  color: #005fa3;
+  transform: scale(1.08);
+}
 
 /* === Оновлена кнопка теми === */
 .theme-btn {
