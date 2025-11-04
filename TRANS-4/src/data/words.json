@@ -1,7 +1,7 @@
 [
   { "word": "Apple", "translation": "Яблуко", "transcription": "[ˈæpəl]" },
   { "word": "Book", "translation": "Книга", "transcription": "[bʊk]" },
-  { "word": "Car", "translation": "Автомобіль", "transcription": "[kɑː]" },
+  { "word": "Car", "translation": "Авто", "transcription": "[kɑː]" },
   { "word": "House", "translation": "Будинок", "transcription": "[haʊs]" },
   { "word": "School", "translation": "Школа", "transcription": "[skuːl]" },
   { "word": "Sun", "translation": "Сонце", "transcription": "[sʌn]" },

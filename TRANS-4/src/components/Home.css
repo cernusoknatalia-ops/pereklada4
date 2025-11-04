@@ -246,100 +246,261 @@
   }
 }
 
-/* Responsive */
+/* === Мобільна адаптація для Home === */
 @media (max-width: 768px) {
   .Home .hero {
     height: auto;
-    padding: 50px 15px;
+    padding: 60px 15px;
   }
 
   .Home .hero h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    word-wrap: break-word;
   }
 
   .Home .hero p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+
+  .Home .hero-content {
+    padding: 0 10px;
+  }
+
+  .Home .start-btn {
+    width: 100%;
+    padding: 18px 0;
+    font-size: 1.25rem;
+    margin-top: 10px;
+    box-sizing: border-box;
   }
 
   .Home .levels-section h2,
   .Home .features-section h2,
   .Home .cta-content h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
-  .Home .cards, .Home .features-grid {
+  /* Рівні та фічі – дві колонки */
+  .Home .cards,
+  .Home .features-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* дві колонки */
     gap: 15px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  .Home .card, .Home .feature-card {
-    padding: 20px;
+  .Home .card,
+  .Home .feature-card {
+    padding: 22px;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
   }
 
-  .Home .card-content h3, .Home .feature-card h3 {
-    font-size: 1.4rem;
+  .Home .card-content h3,
+  .Home .feature-card h3 {
+    font-size: 1.35rem;
   }
 
-  .Home .card-content p, .Home .feature-card p {
-    font-size: 0.95rem;
+  .Home .card-content p,
+  .Home .feature-card p {
+    font-size: 1rem;
   }
 
-  /* Вирівнювання кнопки «Мій рівень» */
-  .Home .start-btn {
-    width: 100%;
-    padding: 16px 0;
-    font-size: 1.2rem;
-    box-sizing: border-box;
+  .Home .cta-content p {
+    font-size: 1.15rem;
   }
 
   .Home .cta-btn {
     width: 100%;
-    padding: 16px 0;
-    font-size: 1.2rem;
+    padding: 18px 0;
+    font-size: 1.25rem;
     box-sizing: border-box;
-  }
-
-  .Home .hero-content, .Home .cta-content {
-    padding: 0 10px;
   }
 }
 
 @media (max-width: 480px) {
-  .Home .cards, .Home .features-grid {
-    display: flex;
-    flex-direction: column;
+  .Home .cards,
+  .Home .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* все ще дві колонки навіть на дуже вузьких екранах */
     gap: 12px;
+    width: 100%;
   }
 
-  .Home .card, .Home .feature-card {
+  .Home .card,
+  .Home .feature-card {
     width: 100%;
     max-width: 100%;
   }
 
   .Home .hero h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .Home .hero p {
-    font-size: 1.1rem;
-  }
-
-  .Home .cta-content h2 {
-    font-size: 1.8rem;
-  }
-
-  .Home .cta-content p {
     font-size: 1rem;
   }
 
-  .Home .start-btn, .Home .cta-btn {
-    padding: 14px 0;
-    font-size: 1.1rem;
-    width: 100%;
-    box-sizing: border-box;
+  .Home .start-btn,
+  .Home .cta-btn {
+    padding: 16px 0;
+    font-size: 1.15rem;
+  }
+
+  .Home .cta-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .Home .cta-content p {
+    font-size: 0.95rem;
   }
 }
+/* === Світла тема для Home === */
+.app.light .Home {
+  background-color: rgba(255,255,255,0.08);
+  color: #ffffff;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Hero Section */
+.app.light .Home .hero {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(0,120,215,0.25);
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.app.light .Home .hero::after {
+  background: rgba(255,255,255,0.08);
+}
+
+.app.light .Home .hero h1 {
+  color: #0078d7;
+  text-shadow: 0 0 5px rgba(0,120,215,0.3);
+}
+
+.app.light .Home .hero p {
+  color: #ffffff;
+}
+
+.app.light .Home .start-btn {
+  background: #0078d7;
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(0,120,215,0.2);
+}
+
+.app.light .Home .start-btn:hover {
+  background: #005fa3;
+  box-shadow: 0 10px 30px rgba(0,120,215,0.3);
+}
+
+/* Levels Section */
+.app.light .Home .levels-section {
+  background: rgba(255,255,255,0.08);
+  border: 2px solid rgba(0,120,215,0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  color: #ffffff;
+}
+
+.app.light .Home .levels-section h2 {
+  color: #0078d7;
+}
+
+.app.light .Home .card {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 2px solid rgba(0,120,215,0.25);
+  box-shadow: 0 10px 25px rgba(0,120,215,0.15);
+}
+
+.app.light .Home .card:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: #0078d7;
+  box-shadow: 0 15px 40px rgba(0,120,215,0.3);
+}
+
+.app.light .Home .card-content h3 {
+  color: #0078d7;
+}
+
+.app.light .Home .card-content p {
+  color: #ffffff;
+}
+
+/* Features Section */
+.app.light .Home .features-section {
+  background: rgba(255,255,255,0.08);
+  border: 2px solid rgba(0,120,215,0.25);
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+}
+
+.app.light .Home .features-section h2 {
+  color: #0078d7;
+}
+
+.app.light .Home .feature-card {
+  background: rgba(255,255,255,0.08);
+  color: #ffffff;
+  border: 2px solid rgba(0,120,215,0.25);
+  box-shadow: 0 10px 25px rgba(0,120,215,0.15);
+}
+
+.app.light .Home .feature-card:hover {
+  border-color: #0078d7;
+  box-shadow: 0 15px 40px rgba(0,120,215,0.3);
+}
+
+.app.light .Home .feature-card h3 {
+  color: #0078d7;
+}
+
+.app.light .Home .feature-card p {
+  color: #ffffff;
+}
+
+/* CTA Section */
+.app.light .Home .cta-section {
+  background: rgba(255,255,255,0.08);
+  border: 2px solid rgba(0,120,215,0.25);
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+  text-align: center;
+}
+
+.app.light .Home .cta-content h2 {
+  color: #0078d7;
+}
+
+.app.light .Home .cta-content p {
+  color: #ffffff;
+}
+
+.app.light .Home .cta-btn {
+  background: #0078d7;
+  color: #fff;
+}
+
+.app.light .Home .cta-btn:hover {
+  background: #005fa3;
+  box-shadow: 0 10px 30px rgba(0,120,215,0.3);
+}
+
+/* Footer */
+.app.light .Home .home-footer {
+  background: rgba(255,255,255,0.08);
+  color: #ffffff;
+  border: 2px solid rgba(0,120,215,0.25);
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+}
+
