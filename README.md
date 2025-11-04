@@ -2,8 +2,8 @@
 Cайт для полегшення вивчення англіської мови, група ІПЗ-13 "Пільмені".
 Склад команди та ролі:
 - Єфремов Валерій — Team Lead
-- Манзик Іван — frontend developer
-- Гаврилюк Назар  — backend developer
+- Манзик Іван — Frontend developer
+- Гаврилюк Назар  — Backend developer
 - Степанюк Віктор  — Designer 
 - Зубик Дмитрій — Documenter
 
