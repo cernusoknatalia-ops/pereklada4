@@ -6,7 +6,7 @@ class User {
         const hashedPassword = await bcrypt.hash(password, 12);
         return new Promise((resolve, reject) => {
             db.run(
-                'INSERT INFO users (username, password) VALUES (?, ?',
+                'INSERT INTO users (username, password) VALUES (?, ?',
                 [username, hashedPassword],
                 function (err) {
                     if (err) {
