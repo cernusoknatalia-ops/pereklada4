@@ -22,7 +22,7 @@ function App() {
         <nav className="navbar">
           {/* Перший ряд: логотип + кнопка теми */}
           <div className="navbar-top">
-            <div className="logo">🌐 LinguaLearn</div>
+            <div className="logo">🌐 QuapsE</div>
             <button
               onClick={() => setDarkMode(!darkMode)}
               className="theme-btn"
@@ -53,7 +53,7 @@ function App() {
         </main>
 
         <footer>
-          © 2025 | <strong>LinguaLearn</strong> — створюй, вивчай, вдосконалюй 🌟
+          © 2025 | <strong>QuapsE</strong> — створюй, вивчай, вдосконалюй 🌟
         </footer>
       </div>
     </Router>

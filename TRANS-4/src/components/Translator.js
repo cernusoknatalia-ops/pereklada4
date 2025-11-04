@@ -117,7 +117,7 @@ export default function Translator() {
           {loading && <p className="loading">⏳ Переклад...</p>}
           {error && <p className="error">{error}</p>}
           {translated && !loading && !error && (
-            <p className="translated">👉 {translated}</p>
+            <p className="translated">  {translated}</p>
           )}
         </div>
       </div>

@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function Header({ toggleTheme, darkMode }) {
   return (
     <header>
-      <h1>🌐 LinguaLearn</h1>
+      <h1>🌐 QuapsE</h1>
       <nav className="navbar">
         <div className="nav-links">
           <NavLink

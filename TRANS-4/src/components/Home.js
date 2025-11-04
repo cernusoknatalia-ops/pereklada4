@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import Auth from './Auth';
 import './Home.css';
 
-alert("Якщо ти Вітя, вийди звідси!")
-
 function Home() {
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
@@ -37,7 +35,7 @@ function Home() {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <h1>LinguaLearn</h1>
+          <h1>QuapsE</h1>
           <p>Вивчати англійську так само просто, як дивитись серіали!  📺</p>
           
           {/* Змінена кнопка - тепер викликає функцію замість Link */}
@@ -90,7 +88,7 @@ function Home() {
       {/* Features Section */}
       <section className="features-section">
         <div className="container">
-          <h2>✨ Чому LinguaLearn?</h2>
+          <h2>✨ Чому QuapsE?</h2>
           <div className="features-grid">
             <div className="feature-card">
               <div className="feature-icon">🎯</div>
