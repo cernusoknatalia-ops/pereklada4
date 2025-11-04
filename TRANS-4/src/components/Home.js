@@ -1,9 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Auth from './Auth';
 import './Home.css';
 
 alert("Якщо ти Вітя, вийди звідси!")
+
 function Home() {
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
+
+  const handleStartLearning = () => {
+    if (isLoggedIn) {
+      // Якщо авторизований - переходимо до тестів
+      window.location.href = "/Test";
+    } else {
+      // Якщо НЕ авторизований - показуємо модалку
+      setShowAuthModal(true);
+    }
+  };
+
+  const handleAuthSuccess = () => {
+    setShowAuthModal(false);
+    setIsLoggedIn(true);
+    // Після успішного входу можна одразу перейти до тестів
+    // window.location.href = "/Test";
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+    alert("Ви вийшли з акаунту");
+  };
+
   return (
     <div className="Home">
       {/* Hero Section */}
@@ -11,9 +39,18 @@ function Home() {
         <div className="hero-content">
           <h1>LinguaLearn</h1>
           <p>Вивчати англійську так само просто, як дивитись серіали!  📺</p>
-          <Link to="/Test">
-            <button className="start-btn">Почати навчання</button>
-          </Link>
+          
+          {/* Змінена кнопка - тепер викликає функцію замість Link */}
+          <button className="start-btn" onClick={handleStartLearning}>
+            Почати навчання
+          </button>
+
+          {/* Кнопка виходу (показується тільки для авторизованих) */}
+          {isLoggedIn && (
+            <button className="logout-btn" onClick={handleLogout}>
+              Вийти з акаунту
+            </button>
+          )}
         </div>
       </section>
 
@@ -83,6 +120,18 @@ function Home() {
       <footer className="home-footer">
         <p></p>
       </footer>
+
+      {/* Модальне вікно авторизації */}
+      {showAuthModal && (
+        <div className="modal-overlay" onClick={() => setShowAuthModal(false)}>
+          <div className="modal-container" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={() => setShowAuthModal(false)}>
+              ×
+            </button>
+            <Auth onClose={handleAuthSuccess} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

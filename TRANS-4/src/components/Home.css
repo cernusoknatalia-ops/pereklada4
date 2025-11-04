@@ -503,4 +503,210 @@
   border-radius: 15px;
   backdrop-filter: blur(12px);
 }
+/* === Модальне вікно авторизації === */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-container {
+  background: rgba(26, 26, 30, 0.95);
+  border: 2px solid #00d9ff;
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 217, 255, 0.4);
+  animation: slideUp 0.4s ease;
+  max-width: 450px;
+  width: 90%;
+  backdrop-filter: blur(20px);
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(50px) scale(0.9);
+    opacity: 0;
+  }
+  to { 
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #00d9ff;
+  line-height: 1;
+  padding: 0;
+  transition: all 0.3s;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  color: #00b8d4;
+  transform: rotate(90deg);
+}
+
+.modal-container .auth-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal-container .auth-box h2 {
+  margin: 0 0 25px 0;
+  text-align: center;
+  color: #00d9ff;
+  font-size: 2rem;
+  text-shadow: 0 5px 20px rgba(0, 217, 255, 0.3);
+}
+
+.modal-container .auth-box input {
+  padding: 15px 20px;
+  border: 2px solid rgba(0, 217, 255, 0.3);
+  border-radius: 12px;
+  font-size: 16px;
+  background: rgba(20, 20, 20, 0.8);
+  color: white;
+  transition: all 0.3s;
+  outline: none;
+}
+
+.modal-container .auth-box input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.modal-container .auth-box input:focus {
+  border-color: #00d9ff;
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+  background: rgba(20, 20, 20, 0.95);
+}
+
+.modal-container .auth-box button {
+  padding: 15px;
+  background: #00d9ff;
+  color: #141414;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.4);
+  margin-top: 10px;
+}
+
+.modal-container .auth-box button:hover {
+  background: #00b8d4;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(0, 217, 255, 0.6);
+}
+
+.modal-container .auth-box p {
+  text-align: center;
+  margin: 15px 0 0 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.modal-container .auth-box p:hover {
+  color: #00d9ff;
+  text-decoration: underline;
+}
+
+.logout-btn {
+  margin-top: 25px;
+  padding: 12px 30px;
+  background: rgba(244, 67, 54, 0.2);
+  color: #ff6b6b;
+  border: 2px solid #ff6b6b;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.logout-btn:hover {
+  background: #ff6b6b;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+}
+
+/* Світла тема для модалки */
+.app.light .modal-overlay {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.app.light .modal-container {
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid #0078d7;
+  box-shadow: 0 20px 60px rgba(0, 120, 215, 0.3);
+}
+
+.app.light .close-btn {
+  color: #0078d7;
+}
+
+.app.light .modal-container .auth-box h2 {
+  color: #0078d7;
+}
+
+.app.light .modal-container .auth-box input {
+  border: 2px solid rgba(0, 120, 215, 0.3);
+  background: rgba(255, 255, 255, 0.8);
+  color: #1a1a1a;
+}
+
+.app.light .modal-container .auth-box input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.app.light .modal-container .auth-box button {
+  background: #0078d7;
+  color: white;
+}
+
+.app.light .modal-container .auth-box p {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Мобільна адаптація */
+@media (max-width: 768px) {
+  .modal-container {
+    padding: 30px 25px;
+    max-width: 90%;
+  }
+
+  .modal-container .auth-box h2 {
+    font-size: 1.6rem;
+  }
+}
