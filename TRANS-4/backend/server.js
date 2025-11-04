@@ -29,8 +29,8 @@ app.use('/api/auth', authRoutes);
 // ==== Статичні файли (React build) ====
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 
-// ==== Всі інші маршрути ведуть на React ====
-app.get('*', (req, res) => {
+// ==== Всі інші маршрути ведуть на React (Express 5 fix) ====
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
 });
 
