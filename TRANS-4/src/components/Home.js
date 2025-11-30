@@ -20,14 +20,11 @@ function Home() {
   const handleAuthSuccess = () => {
     setShowAuthModal(false);
     setIsLoggedIn(true);
-    // Після успішного входу можна одразу перейти до тестів
-    // window.location.href = "/Test";
   };
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     setIsLoggedIn(false);
-    alert("Ви вийшли з акаунту");
   };
 
   return (

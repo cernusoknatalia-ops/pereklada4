@@ -621,9 +621,8 @@ main { flex: 1; }
   text-align: center;
 }
 
-/* === Створення власного тесту === */
 .custom-test {
-  margin-top: 40px;
+  margin-top: 20px;
   width: 100%;
   max-width: 500px;
   display: flex;
@@ -641,7 +640,34 @@ main { flex: 1; }
 
 .custom-test button {
   width: fit-content;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  font-weight: 600;
 }
+
+.choose-type {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.choose-type button {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #777;
+  cursor: pointer;
+  font-weight: 500;
+  background-color: #00d9ff;
+  color: white;
+}
+
+.choose-type button:hover {
+  background-color: #00b8d4;
+}
+
 
 /* === Анімації === */
 @keyframes fadeInUp {
@@ -768,19 +794,31 @@ main { flex: 1; }
   .desktop-links {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; /* Центруємо ряди */
     gap: 8px;
     padding: 10px 12px;
     width: 100%;
     box-sizing: border-box;
   }
 
-  .desktop-links .nav-btn {
-    flex: 1 1 auto;
-    max-width: 150px;
-    font-size: 15px;
+  /* Перший ряд: перші три кнопки */
+  .desktop-links .nav-btn:nth-child(-n+3) {
+    flex: 1 1 30%;
+    max-width: 30%;
     text-align: center;
     padding: 10px;
+    font-size: 15px;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
+
+  /* Другий ряд: кнопки 4 і 5 */
+  .desktop-links .nav-btn:nth-child(n+4) {
+    flex: 1 1 45%;
+    max-width: 45%;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
     white-space: nowrap;
     box-sizing: border-box;
   }
@@ -854,40 +892,6 @@ main { flex: 1; }
     gap: 12px;
   }
 
-  /* Словник – 2 в ряд */
-  .dictionary-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .dictionary-item {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .dictionary-item .word-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 5px;
-    align-items: center;
-    flex-wrap: nowrap;
-  }
-
-  .dictionary-item .word-row .word,
-  .dictionary-item .word-row .translation {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .dictionary-item .transcription {
-    margin-top: 2px;
-    font-style: italic;
-    color: #b0b0b0;
-    white-space: normal;
-  }
-
   /* Flashcards */
   .flashcard {
     height: 240px;
@@ -913,6 +917,7 @@ main { flex: 1; }
     box-sizing: border-box;
   }
 }
+
 /* === Дуже вузькі екрани (до 480px) === */
 @media (max-width: 480px) {
   .desktop-links {

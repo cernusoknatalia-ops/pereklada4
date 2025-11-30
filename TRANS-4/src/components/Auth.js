@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 export default function Auth({ onClose }) {
-  const [username, setUsername] = useState(""); // email → username
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState(""); // для реєстрації
   const [isRegister, setIsRegister] = useState(false);
@@ -14,10 +14,9 @@ export default function Auth({ onClose }) {
       const res = await axios.post(
         "http://localhost:5000/api/auth/login",
         { username, password },
-        { withCredentials: true } // ✅ дозволяє передавати кукі
+        { withCredentials: true }
       );
 
-      alert(res.data.message || "Успішний вхід!");
       if (onClose) onClose();
     } catch (err) {
       alert(err.response?.data?.error || "Помилка входу");

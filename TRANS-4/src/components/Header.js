@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function Header({ toggleTheme, darkMode }) {
   return (
     <header>
-      <h1>🌐 QuapsE</h1>
+      <h1 className="logo">🌐 QuapsE</h1>
       <nav className="navbar">
         <div className="nav-links">
           <NavLink
@@ -43,10 +43,19 @@ function Header({ toggleTheme, darkMode }) {
           >
             Тести
           </NavLink>
+
+          <NavLink
+            to="/grammar"
+            className={({ isActive }) =>
+              isActive ? "nav-btn active" : "nav-btn"
+            }
+          >
+            Граматика
+          </NavLink>
         </div>
 
         <button onClick={toggleTheme} className="theme-btn">
-          {darkMode ? "☀️ Світла" : "🌙 Темна" }
+          {darkMode ? "☀️ Світла" : "🌙 Темна"}
         </button>
       </nav>
     </header>

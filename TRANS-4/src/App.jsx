@@ -4,6 +4,7 @@ import Translator from "./components/Translator";
 import Dictionary from "./components/Dictionary";
 import Test from "./components/Test";
 import Home from "./components/Home";
+import Grammar from "./components/Grammar"; // Додано компонент Граматика
 import "./App.css";
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
             <NavLink to="/" end className={({ isActive }) => isActive ? "nav-btn active" : "nav-btn"}>Головна</NavLink>
             <NavLink to="/translator" className={({ isActive }) => isActive ? "nav-btn active" : "nav-btn"}>Перекладач</NavLink>
             <NavLink to="/dictionary" className={({ isActive }) => isActive ? "nav-btn active" : "nav-btn"}>Словник</NavLink>
+            <NavLink to="/grammar" className={({ isActive }) => isActive ? "nav-btn active" : "nav-btn"}>Граматика</NavLink>
             <NavLink to="/test" className={({ isActive }) => isActive ? "nav-btn active" : "nav-btn"}>Тести</NavLink>
           </div>
         </nav>
@@ -47,6 +49,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/translator" element={<Translator />} />
             <Route path="/dictionary" element={<Dictionary />} />
+            <Route path="/grammar" element={<Grammar darkMode={darkMode} />} /> {/* Маршрут для Граматики з темою */}
             <Route path="/test" element={<Test />} />
             <Route path="*" element={<Home />} />
           </Routes>

@@ -141,29 +141,67 @@ function Test({ darkMode }) {
   const [selectedOption, setSelectedOption] = useState(null);
   const [score, setScore] = useState(0);
   const [completed, setCompleted] = useState(false);
+
+  const [questionOrder, setQuestionOrder] = useState([]);
+
+  // Створення кастомного тесту
   const [customQuestions, setCustomQuestions] = useState([]);
-  const [newQuestion, setNewQuestion] = useState({ q: "", options: [], answer: "" });
+  const [newQuestion, setNewQuestion] = useState({ q: "", options: [], answer: "", word: "", translation: "" });
+  const [creatingTest, setCreatingTest] = useState(false);
+  const [testType, setTestType] = useState("");
 
   useEffect(() => {
-    setCurrentIndex(0);
-    setShowTranslation(false);
-    setSelectedOption(null);
-    setScore(0);
-    setCompleted(false);
+    if (currentTest) {
+      setCurrentIndex(0);
+      setShowTranslation(false);
+      setSelectedOption(null);
+      setScore(0);
+      setCompleted(false);
+
+      // Для флеш-карт створюємо масив індексів
+      if (currentTest.type === "flashcards") {
+        setQuestionOrder(currentTest.questions.map((_, idx) => idx));
+      }
+    }
   }, [currentTest]);
 
+  // 🟢 Флешкарти: обробка відповідей
   const handleFlashcardAnswer = (know) => {
-    const current = currentTest.questions[currentIndex];
-    if (!know) currentTest.questions.push(current);
-    if (currentIndex + 1 >= currentTest.questions.length) setCompleted(true);
-    else setCurrentIndex(prev => prev + 1);
+    if (know) setScore(prev => prev + 1);
+
+    setQuestionOrder(prevOrder => {
+      const newOrder = [...prevOrder];
+      const currentQuestionIdx = newOrder[currentIndex];
+
+      if (!know) {
+        // Перемістити питання в кінець
+        newOrder.splice(currentIndex, 1);
+        newOrder.push(currentQuestionIdx);
+      } else {
+        // Видаляємо поточне питання
+        newOrder.splice(currentIndex, 1);
+      }
+
+      if (newOrder.length === 0) {
+        setCompleted(true);
+        return [];
+      }
+
+      return newOrder;
+    });
+
+    setCurrentIndex(prev => {
+      // Якщо питання видалено з кінця, залишаємо index в межах масиву
+      return questionOrder.length > 1 ? prev : 0;
+    });
+
     setShowTranslation(false);
   };
 
+  // 🟢 Multiple-choice
   const handleChoiceAnswer = (option) => {
     setSelectedOption(option);
-    const correct = currentTest.questions[currentIndex].answer;
-    if (option === correct) setScore(prev => prev + 1);
+    if (option === currentTest.questions[currentIndex].answer) setScore(prev => prev + 1);
   };
 
   const nextChoiceQuestion = () => {
@@ -172,30 +210,37 @@ function Test({ darkMode }) {
     else setCurrentIndex(prev => prev + 1);
   };
 
-  const finishTest = () => setCompleted(true);
-
   const restartTest = () => {
     setCurrentIndex(0);
     setShowTranslation(false);
     setSelectedOption(null);
     setScore(0);
     setCompleted(false);
+
+    if (currentTest.type === "flashcards") {
+      setQuestionOrder(currentTest.questions.map((_, idx) => idx));
+    }
   };
 
+  // 🟢 Кастомні тести
   const addCustomQuestion = () => {
-    if (!newQuestion.q || newQuestion.options.length < 2 || !newQuestion.answer) return;
+    if (testType === "multiple-choice") {
+      if (!newQuestion.q || newQuestion.options.length < 2 || !newQuestion.answer) return;
+    } else {
+      if (!newQuestion.word || !newQuestion.translation) return;
+    }
     setCustomQuestions([...customQuestions, { ...newQuestion }]);
-    setNewQuestion({ q: "", options: [], answer: "" });
+    setNewQuestion({ q: "", options: [], answer: "", word: "", translation: "" });
   };
 
-  const calculateLevel = () => {
-    if (score >= 20) return 'B2';
-    if (score >= 15) return 'B1';
-    if (score >= 10) return 'A2';
-    return 'A1';
+  const startCustomTest = () => {
+    if (customQuestions.length === 0) return;
+    setCurrentTest({ id: "custom", type: testType, title: "Мій тест", icon: "📝", questions: customQuestions });
+    setCreatingTest(false);
   };
 
-  if (!currentTest) {
+  // 🟢 Меню тестів
+  if (!currentTest && !creatingTest) {
     return (
       <section className={`flashcard-container ${darkMode ? "dark" : "light"}`}>
         <h2>📚 Оберіть тест</h2>
@@ -207,29 +252,62 @@ function Test({ darkMode }) {
             </div>
           ))}
         </div>
-        <div className="custom-test">
-          <h3>➕ Створити свій тест</h3>
-          <input type="text" placeholder="Питання" value={newQuestion.q} onChange={e => setNewQuestion({...newQuestion,q:e.target.value})} />
-          <input type="text" placeholder="Опція 1" onChange={e => setNewQuestion({...newQuestion, options: [e.target.value,...(newQuestion.options.slice(1))]})} />
-          <input type="text" placeholder="Опція 2" onChange={e => setNewQuestion({...newQuestion, options: [newQuestion.options[0],e.target.value]})} />
-          <input type="text" placeholder="Правильна відповідь" value={newQuestion.answer} onChange={e => setNewQuestion({...newQuestion,answer:e.target.value})} />
-          <button className="restart-btn" onClick={addCustomQuestion}>Додати питання</button>
-          {customQuestions.length > 0 && (
-            <button className="restart-btn" onClick={() => setCurrentTest({ id:"custom", type:"multiple-choice", title:"Мій тест", icon:"📝", questions:customQuestions})}>Розпочати свій тест</button>
-          )}
+        <div className="create-test-bottom">
+          <button onClick={() => setCreatingTest(true)}>➕ Створити свій тест</button>
         </div>
       </section>
     );
   }
 
-  const question = currentTest.questions[currentIndex];
+  // 🟢 Створення кастомного тесту
+  if (creatingTest) {
+    return (
+      <section className={`flashcard-container ${darkMode ? "dark" : "light"}`}>
+        <h2>🛠 Створення тесту</h2>
+        {!testType ? (
+          <div className="choose-type">
+            <button onClick={() => setTestType("flashcards")}>Флешкарти</button>
+            <button onClick={() => setTestType("multiple-choice")}>Граматика / Multiple-choice</button>
+          </div>
+        ) : (
+          <div className="custom-test">
+            {testType === "multiple-choice" ? (
+              <>
+                <input type="text" placeholder="Питання" value={newQuestion.q} onChange={e => setNewQuestion({...newQuestion,q:e.target.value})} />
+                <input type="text" placeholder="Опція 1" onChange={e => setNewQuestion({...newQuestion, options: [e.target.value, ...(newQuestion.options.slice(1))]})} />
+                <input type="text" placeholder="Опція 2" onChange={e => setNewQuestion({...newQuestion, options: [newQuestion.options[0], e.target.value]})} />
+                <input type="text" placeholder="Правильна відповідь" value={newQuestion.answer} onChange={e => setNewQuestion({...newQuestion, answer:e.target.value})} />
+              </>
+            ) : (
+              <>
+                <input type="text" placeholder="Слово / Фронт" value={newQuestion.word} onChange={e => setNewQuestion({...newQuestion, word:e.target.value})} />
+                <input type="text" placeholder="Переклад / Бек" value={newQuestion.translation} onChange={e => setNewQuestion({...newQuestion, translation:e.target.value})} />
+              </>
+            )}
+            <button className="restart-btn" onClick={addCustomQuestion}>Додати питання</button>
+            {customQuestions.length > 0 && <button className="restart-btn" onClick={startCustomTest}>Розпочати тест</button>}
+            <button className="restart-btn" onClick={() => setCreatingTest(false)}>🔙 Повернутися до меню</button>
+          </div>
+        )}
+      </section>
+    );
+  }
+
+  // Поточне питання
+  const question = currentTest.type === "flashcards"
+    ? currentTest.questions[questionOrder[currentIndex]]
+    : currentTest.questions[currentIndex];
 
   return (
     <section className={`flashcard-container ${darkMode ? "dark" : "light"}`}>
       <h2>{currentTest.icon} {currentTest.title}</h2>
-      <p>Балів: {score}/{currentTest.questions.length}</p>
+      <p className="progress-text">
+        {currentTest.type === "flashcards"
+          ? `Вибрано знаю: ${score}/${currentTest.questions.length}`
+          : `Питання ${currentIndex+1} з ${currentTest.questions.length}`}
+      </p>
 
-      {currentTest.type === "flashcards" && !completed && (
+      {currentTest.type === "flashcards" && !completed && question && (
         <>
           <div className="card-wrapper">
             <div className={`flashcard ${showTranslation ? "flipped" : ""}`} onClick={() => setShowTranslation(!showTranslation)}>
@@ -241,7 +319,6 @@ function Test({ darkMode }) {
             <button className="btn dont-know" onClick={() => handleFlashcardAnswer(false)}>❌ Не знаю</button>
             <button className="btn know" onClick={() => handleFlashcardAnswer(true)}>✅ Знаю</button>
           </div>
-          <button className="restart-btn" onClick={finishTest}>🏁 Завершити тест</button>
         </>
       )}
 
@@ -250,15 +327,10 @@ function Test({ darkMode }) {
           <p>{question.q || question.question}</p>
           <div className="buttons-wrapper">
             {question.options.map(opt => (
-              <button key={opt} 
-                      className={`btn ${selectedOption===opt?'selected':''}`} 
-                      onClick={() => handleChoiceAnswer(opt)}>
-                {opt}
-              </button>
+              <button key={opt} className={`btn ${selectedOption===opt?'selected':''}`} onClick={() => handleChoiceAnswer(opt)}>{opt}</button>
             ))}
           </div>
           <div className="navigation">
-            <button className="restart-btn" onClick={finishTest}>🏁 Завершити тест</button>
             {selectedOption && <button className="restart-btn" onClick={nextChoiceQuestion}>➡️ Наступне</button>}
           </div>
         </>
@@ -267,11 +339,7 @@ function Test({ darkMode }) {
       {completed && (
         <>
           <h3>Тест завершено!</h3>
-          {currentTest.id === "level-test" ? (
-            <p>Ваш рівень: {calculateLevel()}</p>
-          ) : (
-            <p>Ваші бали: {score}/{currentTest.questions.length}</p>
-          )}
+          <p>Ваші бали: {score}/{currentTest.questions.length}</p>
           <button className="restart-btn" onClick={restartTest}>🔄 Пройти знову</button>
           <button className="restart-btn" onClick={() => setCurrentTest(null)}>🏠 Повернутися до меню</button>
         </>
