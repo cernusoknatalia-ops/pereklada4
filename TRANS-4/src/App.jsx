@@ -4,7 +4,7 @@ import Translator from "./components/Translator";
 import Dictionary from "./components/Dictionary";
 import Test from "./components/Test";
 import Home from "./components/Home";
-import Grammar from "./components/Grammar"; // Додано компонент Граматика
+import Grammar from "./components/Grammar"; 
 import "./App.css";
 
 function App() {
