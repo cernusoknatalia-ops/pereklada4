@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import Translator from "./Translator";
-import '@testing-library/jest-dom';
+import "@testing-library/jest-dom";
 
 global.fetch = jest.fn();
 
@@ -17,7 +17,6 @@ describe("Translator Component", () => {
   });
 
   test("виконує переклад через LibreTranslate", async () => {
-   
     fetch.mockResolvedValueOnce({
       ok: true,
       json: async () => ({ translatedText: "Hello" }),

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Auth from './Auth';
-import './Home.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Auth from "./Auth";
+import "./Home.css";
 
 function Home() {
   const [showAuthModal, setShowAuthModal] = useState(false);
@@ -33,8 +33,8 @@ function Home() {
       <section className="hero">
         <div className="hero-content">
           <h1>QuapsE</h1>
-          <p>Вивчати англійську так само просто, як дивитись серіали!  📺</p>
-          
+          <p>Вивчати англійську так само просто, як дивитись серіали! 📺</p>
+
           {/* Змінена кнопка - тепер викликає функцію замість Link */}
           <button className="start-btn" onClick={handleStartLearning}>
             Почати навчання
@@ -120,7 +120,10 @@ function Home() {
       {showAuthModal && (
         <div className="modal-overlay" onClick={() => setShowAuthModal(false)}>
           <div className="modal-container" onClick={(e) => e.stopPropagation()}>
-            <button className="close-btn" onClick={() => setShowAuthModal(false)}>
+            <button
+              className="close-btn"
+              onClick={() => setShowAuthModal(false)}
+            >
               ×
             </button>
             <Auth onClose={handleAuthSuccess} />

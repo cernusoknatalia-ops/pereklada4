@@ -1,10 +1,9 @@
 /* === Базові стилі сторінки === */
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: 
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
-    url('../images/photo.jpg') no-repeat center center fixed;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+    url("../images/photo.jpg") no-repeat center center fixed;
   background-size: cover;
   color: #f1f1f1;
   transition: background 0.3s, color 0.3s;
@@ -20,7 +19,9 @@ body {
   color: #f1f1f1;
 }
 
-main { flex: 1; }
+main {
+  flex: 1;
+}
 
 /* === Navbar === */
 .navbar {
@@ -28,8 +29,8 @@ main { flex: 1; }
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  background: rgba(0,0,0,0.75);
-  border-bottom: 1px solid rgba(0,217,255,0.3);
+  background: rgba(0, 0, 0, 0.75);
+  border-bottom: 1px solid rgba(0, 217, 255, 0.3);
   backdrop-filter: blur(8px);
 }
 
@@ -37,7 +38,7 @@ main { flex: 1; }
   font-size: 1.5rem;
   font-weight: bold;
   color: #00d9ff;
-  text-shadow: 0 0 10px rgba(0,217,255,0.6);
+  text-shadow: 0 0 10px rgba(0, 217, 255, 0.6);
 }
 /* === Оновлений Navbar для ПК === */
 .navbar {
@@ -45,8 +46,8 @@ main { flex: 1; }
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  background: rgba(0,0,0,0.75);
-  border-bottom: 1px solid rgba(0,217,255,0.3);
+  background: rgba(0, 0, 0, 0.75);
+  border-bottom: 1px solid rgba(0, 217, 255, 0.3);
   backdrop-filter: blur(8px);
   flex-wrap: nowrap;
 }
@@ -64,7 +65,7 @@ main { flex: 1; }
 }
 /* === Navbar для світлої теми у стилі карток/словника === */
 .app.light .navbar {
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   border: 2px solid rgba(0, 120, 215, 0.25); /* рамка як у словнику */
   backdrop-filter: blur(12px); /* ефект blur */
   color: #111; /* темний текст */
@@ -75,8 +76,8 @@ main { flex: 1; }
 
 /* Логотип у світлій темі */
 .app.light .logo {
-  color: #0078d7; 
-  text-shadow: 0 0 5px rgba(0,120,215,0.3);
+  color: #0078d7;
+  text-shadow: 0 0 5px rgba(0, 120, 215, 0.3);
 }
 
 /* Кнопки вкладок у світлій темі */
@@ -92,7 +93,7 @@ main { flex: 1; }
 .app.light .nav-btn:hover {
   background: #0078d7;
   color: #ffffff;
-  box-shadow: 0 0 20px rgba(0,120,215,0.4);
+  box-shadow: 0 0 20px rgba(0, 120, 215, 0.4);
 }
 
 .app.light .nav-btn.active {
@@ -106,8 +107,8 @@ main { flex: 1; }
 .app.light .theme-btn {
   background-color: rgba(241, 244, 252, 0.85);
   color: #0078d7;
-  border: 2px solid rgba(0,120,215,0.25);
-  box-shadow: 0 8px 25px rgba(0,120,215,0.15);
+  border: 2px solid rgba(0, 120, 215, 0.25);
+  box-shadow: 0 8px 25px rgba(0, 120, 215, 0.15);
   border-radius: 50%;
   transition: all 0.3s ease;
 }
@@ -134,13 +135,13 @@ main { flex: 1; }
   justify-content: center;
   transition: all 0.3s ease;
   font-size: 1.2rem;
-  box-shadow: 0 0 8px rgba(0,217,255,0.2);
+  box-shadow: 0 0 8px rgba(0, 217, 255, 0.2);
 }
 
 .theme-btn:hover {
   background: #00d9ff;
   color: #0b0b0b;
-  box-shadow: 0 0 15px rgba(0,191,255,0.5);
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
   transform: scale(1.05);
 }
 /* === Кнопка зміни теми (компактна кругла) === */
@@ -179,12 +180,11 @@ main { flex: 1; }
   transform: scale(1.08);
 }
 
-
 /* === В темній темі === */
 .app.dark .theme-btn {
   border-color: #00d9ff;
   color: #00d9ff;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
 }
 .app.dark .theme-btn:hover {
   background: #00d9ff;
@@ -211,7 +211,10 @@ main { flex: 1; }
 }
 
 /* === Навігаційні кнопки === */
-.nav-links { display: flex; gap: 20px; }
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
 
 .nav-btn {
   padding: 10px 18px;
@@ -222,14 +225,14 @@ main { flex: 1; }
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(0,217,255,0.2);
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.2);
 }
 
 .nav-btn:hover {
   background: #00d9ff;
   color: #0b0b0b;
   transform: translateY(-2px);
-  box-shadow: 0 0 20px rgba(0,217,255,0.5);
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
 }
 
 .nav-btn.active {
@@ -254,7 +257,7 @@ main { flex: 1; }
 .theme-btn:hover {
   background: #00d9ff;
   color: #0b0b0b;
-  box-shadow: 0 0 20px rgba(0,191,255,0.4);
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.4);
 }
 
 .app.dark .theme-btn {
@@ -279,7 +282,10 @@ main { flex: 1; }
   transition: all 0.3s ease;
 }
 
-.translator-card, .translator-box { max-width: 700px; }
+.translator-card,
+.translator-box {
+  max-width: 700px;
+}
 
 .app.light .card,
 .app.light .flashcard-container,
@@ -295,17 +301,17 @@ main { flex: 1; }
 .app.light .flashcard-container,
 .app.light .card {
   box-shadow: 0 8px 25px rgba(0, 120, 215, 0.25);
-  color:#ffffff;
+  color: #ffffff;
 }
 
 .app.dark .card,
 .app.dark .flashcard-container,
 .app.dark .translator-card,
 .app.dark .translator-box {
-  background: rgba(25,25,35,0.85);
+  background: rgba(25, 25, 35, 0.85);
   color: #f0f0f0;
-  border: 1px solid rgba(255,255,255,0.15);
-  box-shadow: 0 8px 20px rgba(0,217,255,0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 217, 255, 0.15);
 }
 
 /* === Translator === */
@@ -326,7 +332,7 @@ main { flex: 1; }
 }
 
 .tab {
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   border: none;
   padding: 8px 16px;
   border-radius: 10px;
@@ -337,17 +343,21 @@ main { flex: 1; }
 }
 
 .app.dark .tab {
-  background: rgba(0,0,0,0.15);
+  background: rgba(0, 0, 0, 0.15);
   color: #ddd;
 }
 
-.tab:hover { background: rgba(255,255,255,0.18); }
-.app.dark .tab:hover { background: rgba(50,50,60,0.9); }
+.tab:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+.app.dark .tab:hover {
+  background: rgba(50, 50, 60, 0.9);
+}
 
 .tab.active {
   background: #0078d7;
   color: #ffffff;
-  box-shadow: 0 2px 6px rgba(0,120,215,0.4);
+  box-shadow: 0 2px 6px rgba(0, 120, 215, 0.4);
 }
 
 .translator-box {
@@ -374,17 +384,17 @@ main { flex: 1; }
 }
 
 .app.dark .input-area {
-  background: rgba(25,25,35,0.85);
+  background: rgba(25, 25, 35, 0.85);
   color: #f0f0f0;
 }
 
 .input-area:focus {
-  background: rgba(0,0,0,0.25);
+  background: rgba(0, 0, 0, 0.25);
   box-shadow: 0 0 0 3px rgba(219, 226, 233, 0.3);
 }
 
 .app.dark .input-area:focus {
-  background: rgba(40,40,50,0.9);
+  background: rgba(40, 40, 50, 0.9);
 }
 
 .output-area {
@@ -399,31 +409,31 @@ main { flex: 1; }
 }
 
 .app.dark .output-area {
-  background: rgba(20,20,30,0.85);
+  background: rgba(20, 20, 30, 0.85);
   color: #f0f0f0;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* === Dictionary === */
 .dictionary-list {
   display: flex;
-  flex-wrap: wrap;               /* два блоки на рядок */
-  gap: 20px 20px;                /* вертикальні та горизонтальні відступи */
+  flex-wrap: wrap; /* два блоки на рядок */
+  gap: 20px 20px; /* вертикальні та горизонтальні відступи */
   justify-content: flex-start;
 }
 
 .dictionary-item {
-  flex: 1 1 calc(50% - 10px);   /* два блоки на рядок */
+  flex: 1 1 calc(50% - 10px); /* два блоки на рядок */
   box-sizing: border-box;
   padding: 12px;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
-  background: rgba(0,0,0,0.25);
-  
-  display: flex;                 /* горизонтально всередині */
-  flex-direction: row;           /* слово → транскрипція → переклад */
-  align-items: center;           /* вертикальне вирівнювання тексту */
-  gap: 12px;                     /* відстань між словом, транскрипцією та перекладом */
+  background: rgba(0, 0, 0, 0.25);
+
+  display: flex; /* горизонтально всередині */
+  flex-direction: row; /* слово → транскрипція → переклад */
+  align-items: center; /* вертикальне вирівнювання тексту */
+  gap: 12px; /* відстань між словом, транскрипцією та перекладом */
 }
 
 .dictionary-item .word {
@@ -441,9 +451,18 @@ main { flex: 1; }
 }
 
 /* === Icons === */
-.icon { font-size: 1.6rem; transition: all 0.3s ease; }
-.app.light .icon { color: #0078d7; filter: drop-shadow(0 0 5px rgba(0,120,215,0.3)); }
-.app.dark .icon { color: #00d9ff; filter: drop-shadow(0 0 5px rgba(0,191,255,0.4)); }
+.icon {
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+}
+.app.light .icon {
+  color: #0078d7;
+  filter: drop-shadow(0 0 5px rgba(0, 120, 215, 0.3));
+}
+.app.dark .icon {
+  color: #00d9ff;
+  filter: drop-shadow(0 0 5px rgba(0, 191, 255, 0.4));
+}
 
 /* === Контейнер тесту === */
 .flashcard-container {
@@ -452,7 +471,7 @@ main { flex: 1; }
   align-items: center;
   min-height: 100vh;
   padding: 20px;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   transition: background 0.3s, color 0.3s;
 }
 
@@ -527,7 +546,7 @@ main { flex: 1; }
   justify-content: center;
   font-size: 28px;
   border-radius: 20px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
   transform-style: preserve-3d;
   transition: transform 0.6s, box-shadow 0.3s;
   cursor: pointer;
@@ -546,7 +565,8 @@ main { flex: 1; }
   transform: rotateY(180deg);
 }
 
-.flashcard .front, .flashcard .back {
+.flashcard .front,
+.flashcard .back {
   position: absolute;
   backface-visibility: hidden;
   width: 100%;
@@ -587,7 +607,7 @@ main { flex: 1; }
 .buttons-wrapper .btn:hover {
   background-color: #00b8d4;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,217,255,0.4);
+  box-shadow: 0 5px 15px rgba(0, 217, 255, 0.4);
 }
 
 .buttons-wrapper .btn.selected {
@@ -605,13 +625,13 @@ main { flex: 1; }
   border: none;
   cursor: pointer;
   margin-top: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .restart-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 7px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* === Прогрес і бали === */
@@ -668,11 +688,16 @@ main { flex: 1; }
   background-color: #00b8d4;
 }
 
-
 /* === Анімації === */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* === Адаптив === */
@@ -752,10 +777,10 @@ main { flex: 1; }
   }
 }
 
-
 /* === ФІНАЛЬНА МОБІЛЬНА АДАПТАЦІЯ === */
 @media (max-width: 768px) {
-  html, body {
+  html,
+  body {
     overflow-x: hidden;
     width: 100%;
   }
@@ -802,7 +827,7 @@ main { flex: 1; }
   }
 
   /* Перший ряд: перші три кнопки */
-  .desktop-links .nav-btn:nth-child(-n+3) {
+  .desktop-links .nav-btn:nth-child(-n + 3) {
     flex: 1 1 30%;
     max-width: 30%;
     text-align: center;
@@ -813,7 +838,7 @@ main { flex: 1; }
   }
 
   /* Другий ряд: кнопки 4 і 5 */
-  .desktop-links .nav-btn:nth-child(n+4) {
+  .desktop-links .nav-btn:nth-child(n + 4) {
     flex: 1 1 45%;
     max-width: 45%;
     text-align: center;

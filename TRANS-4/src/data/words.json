@@ -30,7 +30,11 @@
   { "word": "Life", "translation": "Життя", "transcription": "[laɪf]" },
   { "word": "World", "translation": "Світ", "transcription": "[wɜːld]" },
   { "word": "Hello", "translation": "Привіт", "transcription": "[həˈləʊ]" },
-  { "word": "Thank you", "translation": "Дякую", "transcription": "[ˈθæŋk juː]" },
+  {
+    "word": "Thank you",
+    "translation": "Дякую",
+    "transcription": "[ˈθæŋk juː]"
+  },
   { "word": "Please", "translation": "Будь ласка", "transcription": "[pliːz]" },
   { "word": "Person", "translation": "Людина", "transcription": "[ˈpɜːsən]" },
   { "word": "Food", "translation": "Їжа", "transcription": "[fuːd]" },
@@ -44,19 +48,43 @@
   { "word": "Bus", "translation": "Автобус", "transcription": "[bʌs]" },
   { "word": "Road", "translation": "Дорога", "transcription": "[rəʊd]" },
   { "word": "Country", "translation": "Країна", "transcription": "[ˈkʌntri]" },
-  { "word": "Student", "translation": "Учень", "transcription": "[ˈstjuːdənt]" },
-  { "word": "Teacher", "translation": "Учитель", "transcription": "[ˈtiːtʃə(r)]" },
+  {
+    "word": "Student",
+    "translation": "Учень",
+    "transcription": "[ˈstjuːdənt]"
+  },
+  {
+    "word": "Teacher",
+    "translation": "Учитель",
+    "transcription": "[ˈtiːtʃə(r)]"
+  },
   { "word": "Pen", "translation": "Ручка", "transcription": "[pen]" },
   { "word": "Pencil", "translation": "Олівець", "transcription": "[ˈpensl]" },
   { "word": "Paper", "translation": "Папір", "transcription": "[ˈpeɪpə(r)]" },
-  { "word": "Computer", "translation": "Комп’ютер", "transcription": "[kəmˈpjuːtə(r)]" },
+  {
+    "word": "Computer",
+    "translation": "Комп’ютер",
+    "transcription": "[kəmˈpjuːtə(r)]"
+  },
   { "word": "Phone", "translation": "Телефон", "transcription": "[fəʊn]" },
   { "word": "Clock", "translation": "Годинник", "transcription": "[klɒk]" },
   { "word": "Today", "translation": "Сьогодні", "transcription": "[təˈdeɪ]" },
-  { "word": "Tomorrow", "translation": "Завтра", "transcription": "[təˈmɒrəʊ]" },
-  { "word": "Yesterday", "translation": "Вчора", "transcription": "[ˈjestədeɪ]" },
+  {
+    "word": "Tomorrow",
+    "translation": "Завтра",
+    "transcription": "[təˈmɒrəʊ]"
+  },
+  {
+    "word": "Yesterday",
+    "translation": "Вчора",
+    "transcription": "[ˈjestədeɪ]"
+  },
   { "word": "Love", "translation": "Любов", "transcription": "[lʌv]" },
-  { "word": "Happiness", "translation": "Щастя", "transcription": "[ˈhæpɪnəs]" },
+  {
+    "word": "Happiness",
+    "translation": "Щастя",
+    "transcription": "[ˈhæpɪnəs]"
+  },
   { "word": "Sadness", "translation": "Сум", "transcription": "[ˈsædnəs]" },
   { "word": "Music", "translation": "Музика", "transcription": "[ˈmjuːzɪk]" },
   { "word": "Song", "translation": "Пісня", "transcription": "[sɒŋ]" },

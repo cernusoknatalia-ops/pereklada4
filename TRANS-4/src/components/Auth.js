@@ -71,20 +71,14 @@ export default function Auth({ onClose }) {
       />
 
       <button onClick={isRegister ? register : login} disabled={loading}>
-        {loading
-          ? "Зачекайте..."
-          : isRegister
-          ? "Зареєструватися"
-          : "Увійти"}
+        {loading ? "Зачекайте..." : isRegister ? "Зареєструватися" : "Увійти"}
       </button>
 
       <p
         onClick={() => setIsRegister(!isRegister)}
         style={{ cursor: "pointer", color: "#007bff" }}
       >
-        {isRegister
-          ? "Вже є акаунт? Увійти"
-          : "Немає акаунту? Реєстрація"}
+        {isRegister ? "Вже є акаунт? Увійти" : "Немає акаунту? Реєстрація"}
       </p>
     </div>
   );

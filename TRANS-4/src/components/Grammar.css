@@ -4,27 +4,27 @@
   flex-direction: column;
   align-items: center;
   padding: 30px;
-  min-height: 80vh;           /* трохи менше за весь екран */
-  max-width: 1000px;          /* обмеження ширини */
-  margin: 40px auto;           /* центрування і зовнішні відступи */
+  min-height: 80vh; /* трохи менше за весь екран */
+  max-width: 1000px; /* обмеження ширини */
+  margin: 40px auto; /* центрування і зовнішні відступи */
   box-sizing: border-box;
-  border-radius: 20px;        /* заокруглення рамки */
+  border-radius: 20px; /* заокруглення рамки */
   transition: background 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 /* Темна тема */
 .grammar-container.dark {
-  background: rgba(25,25,35,0.85);
+  background: rgba(25, 25, 35, 0.85);
   color: #f0f0f0;
-  box-shadow: 0 10px 25px rgba(0,217,255,0.15);
+  box-shadow: 0 10px 25px rgba(0, 217, 255, 0.15);
 }
 
 /* Світла тема */
 .grammar-container.light {
-  background: rgba(241,244,252,0.16);
+  background: rgba(241, 244, 252, 0.16);
   color: #111;
-  border: 2px solid rgba(0,120,215,0.25);
-  box-shadow: 0 10px 25px rgba(0,120,215,0.15);
+  border: 2px solid rgba(0, 120, 215, 0.25);
+  box-shadow: 0 10px 25px rgba(0, 120, 215, 0.15);
 }
 
 /* === Заголовок === */
@@ -54,7 +54,7 @@
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0,217,255,0.3);
+  box-shadow: 0 5px 15px rgba(0, 217, 255, 0.3);
   white-space: normal;
 }
 
@@ -62,7 +62,7 @@
   background-color: #00d9ff;
   color: #141414;
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,217,255,0.5);
+  box-shadow: 0 8px 20px rgba(0, 217, 255, 0.5);
 }
 
 .grammar-topic-btn.active {
@@ -77,13 +77,13 @@
   background: rgba(241, 244, 252, 0.15);
   border: 2px solid #0078d7;
   color: #0078d7;
-  box-shadow: 0 8px 20px rgba(0,120,215,0.15);
+  box-shadow: 0 8px 20px rgba(0, 120, 215, 0.15);
 }
 
 .app.light .grammar-topic-btn:hover {
   background-color: #0078d7;
   color: #ffffff;
-  box-shadow: 0 10px 25px rgba(0,120,215,0.35);
+  box-shadow: 0 10px 25px rgba(0, 120, 215, 0.35);
 }
 
 .app.light .grammar-topic-btn.active {
@@ -95,19 +95,19 @@
 /* === Контент теми === */
 .grammar-content {
   width: 100%;
-  background: rgba(25,25,35,0.85);
+  background: rgba(25, 25, 35, 0.85);
   color: #f1f1f1;
   border-radius: 15px;
   padding: 25px;
-  box-shadow: 0 10px 25px rgba(0,217,255,0.15);
+  box-shadow: 0 10px 25px rgba(0, 217, 255, 0.15);
   transition: all 0.3s ease;
 }
 
 .app.light .grammar-content {
-  background: rgba(241,244,252,0.16);
+  background: rgba(241, 244, 252, 0.16);
   color: #111;
-  border: 2px solid rgba(0,120,215,0.25);
-  box-shadow: 0 10px 25px rgba(0,120,215,0.15);
+  border: 2px solid rgba(0, 120, 215, 0.25);
+  box-shadow: 0 10px 25px rgba(0, 120, 215, 0.15);
 }
 
 /* Заголовки тем */
@@ -133,7 +133,7 @@
 
 /* Приклади у рамочках */
 .grammar-example {
-  background: rgba(0,0,0,0.25);
+  background: rgba(0, 0, 0, 0.25);
   border-left: 4px solid #00d9ff;
   padding: 12px 15px;
   margin: 10px 0;
@@ -142,7 +142,7 @@
 }
 
 .app.light .grammar-example {
-  background: rgba(241,244,252,0.25);
+  background: rgba(241, 244, 252, 0.25);
   border-left: 4px solid #0078d7;
   color: #111;
 }

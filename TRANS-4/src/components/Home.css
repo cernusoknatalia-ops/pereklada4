@@ -23,7 +23,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80') center/cover;
+  background: url("https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80")
+    center/cover;
   opacity: 0.15;
   z-index: 0;
 }
@@ -35,7 +36,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -327,7 +328,10 @@
   .Home .cards,
   .Home .features-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* все ще дві колонки навіть на дуже вузьких екранах */
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* все ще дві колонки навіть на дуже вузьких екранах */
     gap: 12px;
     width: 100%;
   }
@@ -362,16 +366,16 @@
 }
 /* === Світла тема для Home === */
 .app.light .Home {
-  background-color: rgba(255,255,255,0.08);
+  background-color: rgba(255, 255, 255, 0.08);
   color: #ffffff;
   transition: background 0.3s, color 0.3s;
 }
 
 /* Hero Section */
 .app.light .Home .hero {
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
-  border: 2px solid rgba(0,120,215,0.25);
+  border: 2px solid rgba(0, 120, 215, 0.25);
   border-radius: 15px;
   position: relative;
   overflow: hidden;
@@ -379,12 +383,12 @@
 }
 
 .app.light .Home .hero::after {
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .app.light .Home .hero h1 {
   color: #0078d7;
-  text-shadow: 0 0 5px rgba(0,120,215,0.3);
+  text-shadow: 0 0 5px rgba(0, 120, 215, 0.3);
 }
 
 .app.light .Home .hero p {
@@ -394,18 +398,18 @@
 .app.light .Home .start-btn {
   background: #0078d7;
   color: #ffffff;
-  box-shadow: 0 8px 25px rgba(0,120,215,0.2);
+  box-shadow: 0 8px 25px rgba(0, 120, 215, 0.2);
 }
 
 .app.light .Home .start-btn:hover {
   background: #005fa3;
-  box-shadow: 0 10px 30px rgba(0,120,215,0.3);
+  box-shadow: 0 10px 30px rgba(0, 120, 215, 0.3);
 }
 
 /* Levels Section */
 .app.light .Home .levels-section {
-  background: rgba(255,255,255,0.08);
-  border: 2px solid rgba(0,120,215,0.25);
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(0, 120, 215, 0.25);
   backdrop-filter: blur(12px);
   border-radius: 15px;
   color: #ffffff;
@@ -418,14 +422,14 @@
 .app.light .Home .card {
   background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
-  border: 2px solid rgba(0,120,215,0.25);
-  box-shadow: 0 10px 25px rgba(0,120,215,0.15);
+  border: 2px solid rgba(0, 120, 215, 0.25);
+  box-shadow: 0 10px 25px rgba(0, 120, 215, 0.15);
 }
 
 .app.light .Home .card:hover {
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   border-color: #0078d7;
-  box-shadow: 0 15px 40px rgba(0,120,215,0.3);
+  box-shadow: 0 15px 40px rgba(0, 120, 215, 0.3);
 }
 
 .app.light .Home .card-content h3 {
@@ -438,8 +442,8 @@
 
 /* Features Section */
 .app.light .Home .features-section {
-  background: rgba(255,255,255,0.08);
-  border: 2px solid rgba(0,120,215,0.25);
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(0, 120, 215, 0.25);
   border-radius: 15px;
   backdrop-filter: blur(12px);
 }
@@ -449,15 +453,15 @@
 }
 
 .app.light .Home .feature-card {
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
-  border: 2px solid rgba(0,120,215,0.25);
-  box-shadow: 0 10px 25px rgba(0,120,215,0.15);
+  border: 2px solid rgba(0, 120, 215, 0.25);
+  box-shadow: 0 10px 25px rgba(0, 120, 215, 0.15);
 }
 
 .app.light .Home .feature-card:hover {
   border-color: #0078d7;
-  box-shadow: 0 15px 40px rgba(0,120,215,0.3);
+  box-shadow: 0 15px 40px rgba(0, 120, 215, 0.3);
 }
 
 .app.light .Home .feature-card h3 {
@@ -470,8 +474,8 @@
 
 /* CTA Section */
 .app.light .Home .cta-section {
-  background: rgba(255,255,255,0.08);
-  border: 2px solid rgba(0,120,215,0.25);
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(0, 120, 215, 0.25);
   border-radius: 15px;
   backdrop-filter: blur(12px);
   text-align: center;
@@ -492,14 +496,14 @@
 
 .app.light .Home .cta-btn:hover {
   background: #005fa3;
-  box-shadow: 0 10px 30px rgba(0,120,215,0.3);
+  box-shadow: 0 10px 30px rgba(0, 120, 215, 0.3);
 }
 
 /* Footer */
 .app.light .Home .home-footer {
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
-  border: 2px solid rgba(0,120,215,0.25);
+  border: 2px solid rgba(0, 120, 215, 0.25);
   border-radius: 15px;
   backdrop-filter: blur(12px);
 }
@@ -520,8 +524,12 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .modal-container {
@@ -538,11 +546,11 @@
 }
 
 @keyframes slideUp {
-  from { 
+  from {
     transform: translateY(50px) scale(0.9);
     opacity: 0;
   }
-  to { 
+  to {
     transform: translateY(0) scale(1);
     opacity: 1;
   }
