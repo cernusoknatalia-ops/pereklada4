@@ -1,218 +1,219 @@
-/* === Граматика - основний контейнер (центральна рамка) === */
-.grammar-container {
+/* === Основний контейнер === */
+.grammar-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px;
-  min-height: 80vh; /* трохи менше за весь екран */
-  max-width: 1000px; /* обмеження ширини */
-  margin: 40px auto; /* центрування і зовнішні відступи */
+  padding: 40px 20px;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  width: 100%;
   box-sizing: border-box;
-  border-radius: 20px; /* заокруглення рамки */
+  transition: background 0.3s, color 0.3s;
+}
+
+/* === Світла тема === */
+.grammar-page[data-theme="light"] {
+  background: inherit; /* наслідує фон body / сайту */
+  color: #ffffff; /* текст білий */
+}
+
+/* === Темна тема === */
+.grammar-page[data-theme="dark"] {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+/* === Банер === */
+.grammar-banner {
+  width: 100%;
+  max-width: 1000px;
+  padding: 30px 25px;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3); /* оновлена естетична рамка */
+  background: rgba(255, 255, 255, 0.12); /* прозорий скляний фон */
+  box-shadow: 0 8px 25px rgba(0, 120, 215, 0.15);
   transition: background 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
-/* Темна тема */
-.grammar-container.dark {
+.grammar-page[data-theme="dark"] .grammar-banner {
   background: rgba(25, 25, 35, 0.85);
-  color: #f0f0f0;
-  box-shadow: 0 10px 25px rgba(0, 217, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
+  color: #f1f1f1;
 }
 
-/* Світла тема */
-.grammar-container.light {
-  background: rgba(241, 244, 252, 0.16);
-  color: #111;
-  border: 2px solid rgba(0, 120, 215, 0.25);
-  box-shadow: 0 10px 25px rgba(0, 120, 215, 0.15);
+.grammar-banner h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-/* === Заголовок === */
-.grammar-title {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 2.2rem;
-}
-
-/* === Меню граматичних тем (картки) — повернуто оригінальні кнопки === */
-.grammar-menu {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  width: 100%;
-  margin-bottom: 30px;
-}
-
-.grammar-topic-btn {
-  background: rgba(40, 40, 40, 0.85);
-  border: 2px solid #00d9ff;
-  border-radius: 15px;
-  color: #ffffff;
-  font-weight: 600;
+.grammar-banner p {
   font-size: 1.2rem;
-  padding: 20px 15px;
+  opacity: 0.9;
+}
+
+/* === Сітка тем/карток === */
+.grammar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 40px;
+}
+
+/* === Картки тем === */
+.grammar-card {
+  background: rgba(255, 255, 255, 0.12);
+  color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 120, 215, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 217, 255, 0.3);
-  white-space: normal;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
 }
 
-.grammar-topic-btn:hover {
-  background-color: #00d9ff;
-  color: #141414;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 217, 255, 0.5);
+.grammar-page[data-theme="dark"] .grammar-card {
+  background: rgba(25, 25, 35, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 25px rgba(0, 217, 255, 0.15);
 }
 
-.grammar-topic-btn.active {
-  background-color: #00bfff;
-  color: #000;
-  box-shadow: 0 0 18px #00bfff;
+.grammar-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.grammar-card:hover img {
   transform: scale(1.05);
 }
 
-/* Світла тема для кнопок */
-.app.light .grammar-topic-btn {
-  background: rgba(241, 244, 252, 0.15);
-  border: 2px solid #0078d7;
-  color: #0078d7;
-  box-shadow: 0 8px 20px rgba(0, 120, 215, 0.15);
+.grammar-card h3 {
+  margin: 15px 10px 10px;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
-.app.light .grammar-topic-btn:hover {
-  background-color: #0078d7;
-  color: #ffffff;
-  box-shadow: 0 10px 25px rgba(0, 120, 215, 0.35);
+.grammar-card button {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: none;
+  background: rgba(0, 217, 255, 0.9);
+  color: #0b0b0b;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 150, 255, 0.3);
 }
 
-.app.light .grammar-topic-btn.active {
-  background-color: #005fa3;
-  color: #fff;
-  box-shadow: 0 0 18px #005fa3;
+.grammar-card button:hover {
+  background: rgba(0, 217, 255, 1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 130, 255, 0.4);
 }
 
-/* === Контент теми === */
+/* === Вибрана тема (контент) === */
 .grammar-content {
   width: 100%;
-  background: rgba(25, 25, 35, 0.85);
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.14);
+  color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 12px 35px rgba(0, 120, 215, 0.15);
+  transition: background 0.3s, color 0.3s, border 0.3s;
+  margin-bottom: 40px;
+}
+
+.grammar-page[data-theme="dark"] .grammar-content {
+  background: rgba(25, 25, 35, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 35px rgba(0, 217, 255, 0.2);
   color: #f1f1f1;
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 10px 25px rgba(0, 217, 255, 0.15);
-  transition: all 0.3s ease;
 }
 
-.app.light .grammar-content {
-  background: rgba(241, 244, 252, 0.16);
-  color: #111;
-  border: 2px solid rgba(0, 120, 215, 0.25);
-  box-shadow: 0 10px 25px rgba(0, 120, 215, 0.15);
-}
-
-/* Заголовки тем */
 .grammar-content h2 {
-  text-align: center;
+  font-size: 2rem;
   margin-bottom: 20px;
-  font-weight: 700;
-  font-size: 1.8rem;
 }
 
-/* Пункти та пояснення */
-.grammar-content ul {
-  list-style-type: disc;
+.rules-list {
   padding-left: 20px;
-  margin-bottom: 20px;
 }
 
-.grammar-content li {
-  margin-bottom: 10px;
-  font-size: 1.25rem;
+.rule-item {
+  margin-bottom: 12px;
+  font-size: 1rem;
   line-height: 1.6;
 }
 
-/* Приклади у рамочках */
-.grammar-example {
-  background: rgba(0, 0, 0, 0.25);
-  border-left: 4px solid #00d9ff;
-  padding: 12px 15px;
-  margin: 10px 0;
-  border-radius: 10px;
-  font-style: italic;
-}
-
-.app.light .grammar-example {
-  background: rgba(241, 244, 252, 0.25);
-  border-left: 4px solid #0078d7;
-  color: #111;
-}
-
-/* Кнопка назад */
+/* === Кнопка Назад === */
 .back-btn {
-  align-self: flex-start;
   margin-bottom: 20px;
-  padding: 8px 15px;
+  padding: 10px 18px;
+  border-radius: 15px;
   border: none;
-  border-radius: 8px;
-  background-color: #e74c3c;
-  color: white;
+  background: #ff7f50;
+  color: #fff;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 .back-btn:hover {
-  background-color: #c0392b;
+  background: #ff4500;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 100, 0, 0.4);
 }
 
-/* === Адаптивність для мобільних === */
+/* === Відео контейнер === */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin-top: 30px;
+  padding-top: 56.25%;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  border: none;
+}
+
+/* === Адаптивність === */
+@media (max-width: 1024px) {
+  .grammar-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
-  .grammar-container {
-    padding: 20px;
-    margin: 20px 10px;
-    min-height: 70vh;
-  }
-
-  .grammar-menu {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 12px;
-  }
-
-  .grammar-topic-btn {
-    padding: 16px 12px;
-    font-size: 1.05rem;
-  }
-
-  .grammar-content {
-    padding: 20px;
-  }
-
-  .grammar-content li {
-    font-size: 1.15rem;
+  .grammar-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 480px) {
-  .grammar-container {
-    padding: 15px;
-    margin: 10px 5px;
-    min-height: 65vh;
+  .grammar-grid {
+    grid-template-columns: 1fr;
   }
-
-  .grammar-menu {
-    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-    gap: 10px;
-  }
-
-  .grammar-topic-btn {
-    padding: 14px 10px;
-    font-size: 1rem;
-  }
-
   .grammar-content {
-    padding: 15px;
-  }
-
-  .grammar-content li {
-    font-size: 1.1rem;
+    padding: 20px;
   }
 }

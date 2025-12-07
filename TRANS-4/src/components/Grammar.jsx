@@ -147,58 +147,74 @@ const grammarTopics = [
     videoEmbed: "https://www.youtube.com/embed/I_FI0soOnOc",
   },
 ];
-
-export default function Grammar({ darkMode }) {
+export default function Grammar({ darkMode, designStyle = "classic" }) {
   const [selected, setSelected] = useState(null);
-  const [videoOpen, setVideoOpen] = useState(false);
-  const [videoSrc, setVideoSrc] = useState("");
-
   const current = grammarTopics.find((t) => t.id === selected);
 
-  const openVideo = () => {
-    setVideoSrc(current.videoEmbed);
-    setVideoOpen(true);
-  };
-
-  const closeVideo = () => {
-    setVideoOpen(false);
-    setVideoSrc("");
-  };
-
   return (
-    <div className={`grammar-container ${darkMode ? "dark" : "light"}`}>
-      <h1 className="grammar-title">Граматика</h1>
-
-      {!selected && (
-        <div className="grammar-menu">
-          {grammarTopics.map((topic) => (
-            <div
-              key={topic.id}
-              className={`grammar-topic-btn ${
-                selected === topic.id ? "active" : ""
-              }`}
-              onClick={() => setSelected(topic.id)}
-            >
-              {topic.title}
-            </div>
-          ))}
-        </div>
-      )}
-
-      {current && (
+    <div className="grammar-page" data-theme={darkMode ? "dark" : "light"}>
+      {!selected ? (
+        <>
+          {" "}
+          <div className="grammar-banner">
+            {" "}
+            <h1>Граматика</h1> <p>Виберіть тему, щоб почати вивчення.</p>{" "}
+          </div>
+          <h2 className="grammar-section-title">Теми граматики</h2>
+          <div className="grammar-grid">
+            {grammarTopics.map((topic) => {
+              const isPhoto = designStyle === "photo";
+              return (
+                <div
+                  key={topic.id}
+                  className={`grammar-card ${isPhoto ? "photo-card" : ""}`}
+                  style={
+                    isPhoto
+                      ? {
+                          backgroundImage: `url(${topic.img})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                        }
+                      : {}
+                  }
+                >
+                  {!isPhoto && (
+                    <img
+                      src={topic.img}
+                      alt={topic.title}
+                      style={{
+                        width: "100%",
+                        height: "150px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  )}
+                  <h3>{topic.title}</h3>
+                  <button onClick={() => setSelected(topic.id)}>
+                    Відкрити
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        </>
+      ) : (
         <div className="grammar-content">
           <button className="back-btn" onClick={() => setSelected(null)}>
             Назад
           </button>
 
-          <h2>{current.title}</h2>
-          <ul>
+          <h2 className="content-title">{current.title}</h2>
+
+          <ul className="rules-list">
             {current.rules.map((rule, idx) => (
-              <li key={idx}>{rule}</li>
+              <li key={idx} className="rule-item">
+                {rule}
+              </li>
             ))}
           </ul>
 
-          <div className="video-container" onClick={openVideo}>
+          <div className="video-container">
             <iframe
               src={current.videoEmbed}
               title={current.title}
@@ -206,28 +222,6 @@ export default function Grammar({ darkMode }) {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
-          </div>
-        </div>
-      )}
-
-      {videoOpen && current && (
-        <div className="video-modal" onClick={closeVideo}>
-          <div
-            className="video-modal-content"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button className="video-close-btn" onClick={closeVideo}>
-              ×
-            </button>
-            {videoSrc && (
-              <iframe
-                src={videoSrc + "?autoplay=1"}
-                title={current.title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            )}
           </div>
         </div>
       )}
