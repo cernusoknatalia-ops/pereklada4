@@ -5,6 +5,7 @@ const grammarTopics = [
   {
     id: 1,
     title: "Present Simple",
+    img: "https://picsum.photos/seed/presentSimple/400/300",
     rules: [
       "Використовується для регулярних дій та фактів.",
       "Структура: Subject + base verb (he/she/it + s/es).",
@@ -17,9 +18,10 @@ const grammarTopics = [
   {
     id: 2,
     title: "Present Continuous",
+    img: "https://picsum.photos/seed/presentContinuous/400/300",
     rules: [
       "Дія відбувається зараз або тимчасово.",
-      "Структура: Subject + am/is/are + verb-ing.",
+      "Структура: Subject + am/is/are + verb‑ing.",
       "Може описувати майбутні плани.",
       "Не використовується для звичок та регулярних дій.",
       "Приклад: I am reading now.",
@@ -29,6 +31,7 @@ const grammarTopics = [
   {
     id: 3,
     title: "Past Simple",
+    img: "https://picsum.photos/seed/pastSimple/400/300",
     rules: [
       "Дія сталася у минулому та завершилася.",
       "Структура: Subject + past verb (regular +ed / irregular).",
@@ -41,9 +44,10 @@ const grammarTopics = [
   {
     id: 4,
     title: "Past Continuous",
+    img: "https://picsum.photos/seed/pastContinuous/400/300",
     rules: [
       "Тривала дія в минулому.",
-      "Структура: Subject + was/were + verb-ing.",
+      "Структура: Subject + was/were + verb‑ing.",
       "Використовується з while/when.",
       "Не використовується для коротких завершених дій.",
       "Приклад: I was reading at 8pm.",
@@ -53,11 +57,12 @@ const grammarTopics = [
   {
     id: 5,
     title: "Future Simple",
+    img: "https://picsum.photos/seed/futureSimple/400/300",
     rules: [
       "Використовується для дій у майбутньому.",
       "Структура: Subject + will + base verb.",
       "Вживання: передбачення, обіцянки, спонтанні рішення.",
-      "Не використовується для запланованих дій (для цього Present Continuous).",
+      "Не використовується для запланованих дій.",
       "Приклад: I will call you tomorrow.",
     ],
     videoEmbed: "https://www.youtube.com/embed/6_QV4yWKb9w",
@@ -65,9 +70,10 @@ const grammarTopics = [
   {
     id: 6,
     title: "Future Continuous",
+    img: "https://picsum.photos/seed/futureContinuous/400/300",
     rules: [
       "Тривала дія у майбутньому.",
-      "Структура: Subject + will be + verb-ing.",
+      "Структура: Subject + will be + verb‑ing.",
       "Використовується для планування майбутніх дій у процесі.",
       "Може описувати передбачувану ситуацію.",
       "Приклад: I will be working at 6pm.",
@@ -77,6 +83,7 @@ const grammarTopics = [
   {
     id: 7,
     title: "Present Perfect",
+    img: "https://picsum.photos/seed/presentPerfect/400/300",
     rules: [
       "Дія, що відбулася у минулому, але важлива зараз.",
       "Структура: Subject + have/has + past participle.",
@@ -89,9 +96,10 @@ const grammarTopics = [
   {
     id: 8,
     title: "Present Perfect Continuous",
+    img: "https://picsum.photos/seed/presentPerfCont/400/300",
     rules: [
       "Тривала дія, що почалася в минулому і триває до тепер.",
-      "Структура: Subject + have/has been + verb-ing.",
+      "Структура: Subject + have/has been + verb‑ing.",
       "Вживається для підкреслення тривалості.",
       "Може вказувати на результат дії.",
       "Приклад: I have been working all day.",
@@ -101,6 +109,7 @@ const grammarTopics = [
   {
     id: 9,
     title: "Past Perfect",
+    img: "https://picsum.photos/seed/pastPerfect/400/300",
     rules: [
       "Дія, що відбулася перед іншою дією у минулому.",
       "Структура: Subject + had + past participle.",
@@ -113,9 +122,10 @@ const grammarTopics = [
   {
     id: 10,
     title: "Past Perfect Continuous",
+    img: "https://picsum.photos/seed/pastPerfCont/400/300",
     rules: [
       "Тривала дія до певного моменту в минулому.",
-      "Структура: Subject + had been + verb-ing.",
+      "Структура: Subject + had been + verb‑ing.",
       "Використовується для підкреслення тривалості минулої дії.",
       "Часто супроводжується before/for/since.",
       "Приклад: I had been waiting for an hour.",
@@ -125,6 +135,7 @@ const grammarTopics = [
   {
     id: 11,
     title: "Future Perfect",
+    img: "https://picsum.photos/seed/futurePerfect/400/300",
     rules: [
       "Дія завершиться до певного моменту в майбутньому.",
       "Структура: Subject + will have + past participle.",
@@ -137,9 +148,10 @@ const grammarTopics = [
   {
     id: 12,
     title: "Future Perfect Continuous",
+    img: "https://picsum.photos/seed/futurePerfectContinuous/400/300",
     rules: [
       "Тривала дія, що триватиме до певного моменту у майбутньому.",
-      "Структура: Subject + will have been + verb-ing.",
+      "Структура: Subject + will have been + verb‑ing.",
       "Використовується для підкреслення тривалості дії.",
       "Часто вказується за допомогою for/since.",
       "Приклад: I will have been working for 2 hours by noon.",
@@ -147,6 +159,7 @@ const grammarTopics = [
     videoEmbed: "https://www.youtube.com/embed/I_FI0soOnOc",
   },
 ];
+
 export default function Grammar({ darkMode, designStyle = "classic" }) {
   const [selected, setSelected] = useState(null);
   const current = grammarTopics.find((t) => t.id === selected);
@@ -155,47 +168,24 @@ export default function Grammar({ darkMode, designStyle = "classic" }) {
     <div className="grammar-page" data-theme={darkMode ? "dark" : "light"}>
       {!selected ? (
         <>
-          {" "}
           <div className="grammar-banner">
-            {" "}
-            <h1>Граматика</h1> <p>Виберіть тему, щоб почати вивчення.</p>{" "}
+            <h1>Граматика</h1>
+            <p>Виберіть тему, щоб почати вивчення.</p>
           </div>
+
           <h2 className="grammar-section-title">Теми граматики</h2>
           <div className="grammar-grid">
-            {grammarTopics.map((topic) => {
-              const isPhoto = designStyle === "photo";
-              return (
-                <div
-                  key={topic.id}
-                  className={`grammar-card ${isPhoto ? "photo-card" : ""}`}
-                  style={
-                    isPhoto
-                      ? {
-                          backgroundImage: `url(${topic.img})`,
-                          backgroundSize: "cover",
-                          backgroundPosition: "center",
-                        }
-                      : {}
-                  }
-                >
-                  {!isPhoto && (
-                    <img
-                      src={topic.img}
-                      alt={topic.title}
-                      style={{
-                        width: "100%",
-                        height: "150px",
-                        objectFit: "cover",
-                      }}
-                    />
-                  )}
-                  <h3>{topic.title}</h3>
-                  <button onClick={() => setSelected(topic.id)}>
-                    Відкрити
-                  </button>
-                </div>
-              );
-            })}
+            {grammarTopics.map((topic) => (
+              <div key={topic.id} className="grammar-card">
+                <img
+                  src={topic.img}
+                  alt={topic.title}
+                  style={{ width: "100%", height: "150px", objectFit: "cover" }}
+                />
+                <h3>{topic.title}</h3>
+                <button onClick={() => setSelected(topic.id)}>Відкрити</button>
+              </div>
+            ))}
           </div>
         </>
       ) : (

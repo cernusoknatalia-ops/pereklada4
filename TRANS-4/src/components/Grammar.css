@@ -13,8 +13,8 @@
 
 /* === Світла тема === */
 .grammar-page[data-theme="light"] {
-  background: inherit; /* наслідує фон body / сайту */
-  color: #ffffff; /* текст білий */
+  background: inherit;
+  color: #ffffff;
 }
 
 /* === Темна тема === */
@@ -27,32 +27,31 @@
 .grammar-banner {
   width: 100%;
   max-width: 1000px;
-  padding: 30px 25px;
+  padding: 60px 25px;
   border-radius: 20px;
   text-align: center;
   margin-bottom: 30px;
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3); /* оновлена естетична рамка */
-  background: rgba(255, 255, 255, 0.12); /* прозорий скляний фон */
+  background: url("https://picsum.photos/seed/englishGrammar/1200/400")
+    center/cover no-repeat;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0 8px 25px rgba(0, 120, 215, 0.15);
   transition: background 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
-.grammar-page[data-theme="dark"] .grammar-banner {
-  background: rgba(25, 25, 35, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
-  color: #f1f1f1;
-}
-
 .grammar-banner h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 10px;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
 }
 
 .grammar-banner p {
-  font-size: 1.2rem;
-  opacity: 0.9;
+  font-size: 1.3rem;
+  opacity: 0.95;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 /* === Сітка тем/карток === */
@@ -78,6 +77,7 @@
   align-items: center;
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
+  cursor: pointer;
 }
 
 .grammar-page[data-theme="dark"] .grammar-card {
@@ -104,7 +104,7 @@
 }
 
 .grammar-card button {
-  margin: 10px;
+  margin: 10px 0 15px 0;
   padding: 10px 20px;
   border-radius: 15px;
   border: none;
@@ -122,7 +122,7 @@
   box-shadow: 0 8px 25px rgba(0, 130, 255, 0.4);
 }
 
-/* === Вибрана тема (контент) === */
+/* === Контент теми === */
 .grammar-content {
   width: 100%;
   max-width: 900px;
@@ -215,5 +215,15 @@
   }
   .grammar-content {
     padding: 20px;
+  }
+  .grammar-card img {
+    height: 140px;
+  }
+  .grammar-card h3 {
+    font-size: 1.1rem;
+  }
+  .grammar-card button {
+    font-size: 14px;
+    padding: 8px 16px;
   }
 }
