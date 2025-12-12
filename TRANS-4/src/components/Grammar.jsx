@@ -170,10 +170,10 @@ export default function Grammar({ darkMode, designStyle = "classic" }) {
         <>
           <div className="grammar-banner">
             <h1>Граматика</h1>
-            <p>Виберіть тему, щоб почати вивчення.</p>
+            <p>Виберіть тему, щоб почати навчання.</p>
           </div>
 
-          <h2 className="grammar-section-title">Теми граматики</h2>
+          <h2 className="grammar-section-title">Теми граматика</h2>
           <div className="grammar-grid">
             {grammarTopics.map((topic) => (
               <div key={topic.id} className="grammar-card">

@@ -66,12 +66,12 @@ main {
 /* === Navbar для світлої теми у стилі карток/словника === */
 .app.light .navbar {
   background: rgba(255, 255, 255, 0.08);
-  border: 2px solid rgba(0, 120, 215, 0.25); /* рамка як у словнику */
-  backdrop-filter: blur(12px); /* ефект blur */
-  color: #111; /* темний текст */
+  border: 2px solid rgba(0, 120, 215, 0.25);
+  backdrop-filter: blur(12px);
+  color: #111;
   transition: background 0.3s, color 0.3s, border 0.3s;
-  box-shadow: 0 10px 25px rgba(0, 120, 215, 0.15); /* як тінь карток */
-  border-radius: 15px; /* заокруглення як у карток */
+  box-shadow: 0 10px 25px rgba(0, 120, 215, 0.15);
+  border-radius: 15px;
 }
 
 /* Логотип у світлій темі */
@@ -82,7 +82,7 @@ main {
 
 /* Кнопки вкладок у світлій темі */
 .app.light .nav-btn {
-  background: rgba(241, 244, 252, 0.5); /* напівпрозорий світлий фон */
+  background: rgba(241, 244, 252, 0.5);
   color: #0078d7;
   border: 2px solid rgba(0, 120, 215, 0.25);
   box-shadow: 0 8px 25px rgba(0, 120, 215, 0.15);
@@ -103,96 +103,61 @@ main {
   transform: scale(1.05);
 }
 
-/* Світла тема для кнопки перемикання теми */
+/* === Базовий стиль кнопки теми === */
+.theme-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 217, 255, 0.2);
+  background-color: transparent;
+  color: #00d9ff;
+}
+
+/* === Світла тема === */
 .app.light .theme-btn {
   background-color: rgba(241, 244, 252, 0.85);
   color: #0078d7;
   border: 2px solid rgba(0, 120, 215, 0.25);
   box-shadow: 0 8px 25px rgba(0, 120, 215, 0.15);
-  border-radius: 50%;
-  transition: all 0.3s ease;
 }
 
 .app.light .theme-btn:hover {
   background-color: #e6f0ff;
   color: #005fa3;
   transform: scale(1.08);
+  box-shadow: 0 0 12px rgba(0, 120, 215, 0.4);
 }
 
-/* === Оновлена кнопка теми === */
-.theme-btn {
+/* === Темна тема === */
+.app.dark .theme-btn {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #00d9ff;
   border: 2px solid #00d9ff;
-  background: transparent;
-  color: #00d9ff;
-  font-weight: bold;
-  padding: 8px;
-  border-radius: 50%;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  font-size: 1.2rem;
-  box-shadow: 0 0 8px rgba(0, 217, 255, 0.2);
 }
 
-.theme-btn:hover {
-  background: #00d9ff;
+.app.dark .theme-btn:hover {
+  background-color: #00d9ff;
   color: #0b0b0b;
+  transform: scale(1.08);
   box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
-  transform: scale(1.05);
-}
-/* === Кнопка зміни теми (компактна кругла) === */
-.theme-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-/* Темна тема — темна кнопка */
-.app.dark .theme-btn {
-  background-color: #222;
-  color: #fff;
-}
-
-.app.dark .theme-btn:hover {
-  background-color: #333;
-  transform: scale(1.08);
-}
-
-/* Світла тема — світла кнопка */
-.app.light .theme-btn {
-  background-color: #eaeaea;
-  color: #111;
-}
-
-.app.light .theme-btn:hover {
-  background-color: #d6d6d6;
-  transform: scale(1.08);
-}
-
-/* === В темній темі === */
-.app.dark .theme-btn {
-  border-color: #00d9ff;
-  color: #00d9ff;
-  background: rgba(0, 0, 0, 0.3);
-}
-.app.dark .theme-btn:hover {
-  background: #00d9ff;
-  color: #0b0b0b;
-}
-
-/* === Мобільна адаптація — тема залишається під меню === */
+/* === Мобільна адаптація === */
 @media (max-width: 768px) {
+  .theme-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
   .navbar {
     flex-direction: column;
     gap: 10px;
@@ -201,12 +166,6 @@ main {
   .nav-links {
     width: 100%;
     justify-content: space-between;
-  }
-
-  .theme-btn {
-    width: 45px;
-    height: 45px;
-    font-size: 1.3rem;
   }
 }
 
@@ -240,34 +199,6 @@ main {
   color: #000;
   box-shadow: 0 0 15px #00bfff;
   transform: scale(1.05);
-}
-
-/* === Кнопка теми === */
-.theme-btn {
-  border: 2px solid #00d9ff;
-  background: transparent;
-  color: #00d9ff;
-  font-weight: bold;
-  padding: 8px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.theme-btn:hover {
-  background: #00d9ff;
-  color: #0b0b0b;
-  box-shadow: 0 0 20px rgba(0, 191, 255, 0.4);
-}
-
-.app.dark .theme-btn {
-  border-color: #00d9ff;
-  color: #00d9ff;
-}
-
-.app.dark .theme-btn:hover {
-  background: #00d9ff;
-  color: #0b0b0b;
 }
 
 /* Основні блоки */
