@@ -3,7 +3,6 @@ import "./Home.css";
 
 function Home({ onStartLearning }) {
   const handleStartLearning = () => {
-    // Делегуємо відкриття модалки через App
     onStartLearning();
   };
 
