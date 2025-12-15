@@ -30,11 +30,10 @@
   max-width: 1000px;
   padding: 40px 20px;
   border-radius: 20px;
-  /* заокруглення банера */
   text-align: center;
   margin: 20px auto;
   background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url("https://picsum.photos/seed/englishGrammar/1200/400") center/cover no-repeat;
+    url("https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1200") center/cover no-repeat;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -62,7 +61,7 @@
 .app.light .grammar-banner {
   background: linear-gradient(rgba(255, 255, 255, 0.2),
       rgba(255, 255, 255, 0.2)),
-    url("https://picsum.photos/seed/englishGrammar/1200/400") center/cover no-repeat;
+    url("https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1200") center/cover no-repeat;
   color: #111;
   box-shadow: 0 6px 18px rgba(0, 120, 215, 0.15);
 }
