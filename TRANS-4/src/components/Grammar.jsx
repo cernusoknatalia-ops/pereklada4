@@ -52,7 +52,7 @@ const grammarTopics = [
       "Не використовується для коротких завершених дій.",
       "Приклад: I was reading at 8pm.",
     ],
-    videoEmbed: "https://www.youtube.com/embed/Clbh9-7GUkE",
+    videoEmbed: "https://www.youtube.com/embed/TEz6vQgGNXA",
   },
   {
     id: 5,
@@ -65,7 +65,7 @@ const grammarTopics = [
       "Не використовується для запланованих дій.",
       "Приклад: I will call you tomorrow.",
     ],
-    videoEmbed: "https://www.youtube.com/embed/6_QV4yWKb9w",
+    videoEmbed: "https://www.youtube.com/embed/YSYKW3cjhnk",
   },
   {
     id: 6,
@@ -78,7 +78,7 @@ const grammarTopics = [
       "Може описувати передбачувану ситуацію.",
       "Приклад: I will be working at 6pm.",
     ],
-    videoEmbed: "https://www.youtube.com/embed/jfK_aoFwoHQ",
+    videoEmbed: "https://www.youtube.com/embed/vDlxer_Wxjg",
   },
   {
     id: 7,
@@ -91,7 +91,7 @@ const grammarTopics = [
       "Не використовується з конкретним часом в минулому.",
       "Приклад: I have seen this movie.",
     ],
-    videoEmbed: "https://www.youtube.com/embed/PeGqIg2DN84",
+    videoEmbed: "https://www.youtube.com/embed/F7q6gLyPX14",
   },
   {
     id: 8,
@@ -104,7 +104,7 @@ const grammarTopics = [
       "Може вказувати на результат дії.",
       "Приклад: I have been working all day.",
     ],
-    videoEmbed: "https://www.youtube.com/embed/m8_4Dp2vMl8",
+    videoEmbed: "https://www.youtube.com/embed/lKxX92rjjYo",
   },
   {
     id: 9,
@@ -117,7 +117,7 @@ const grammarTopics = [
       "Часто використовується з before/after/when.",
       "Приклад: I had finished my work before he came.",
     ],
-    videoEmbed: "https://www.youtube.com/embed/UC9HHWCPk_A",
+    videoEmbed: "https://www.youtube.com/embed/OPcnck-YqbM",
   },
   {
     id: 10,
@@ -130,7 +130,7 @@ const grammarTopics = [
       "Часто супроводжується before/for/since.",
       "Приклад: I had been waiting for an hour.",
     ],
-    videoEmbed: "https://www.youtube.com/embed/JqrUzWQzWfA",
+    videoEmbed: "https://www.youtube.com/embed/RmqKZOVpSYY",
   },
   {
     id: 11,
@@ -156,7 +156,7 @@ const grammarTopics = [
       "Часто вказується за допомогою for/since.",
       "Приклад: I will have been working for 2 hours by noon.",
     ],
-    videoEmbed: "https://www.youtube.com/embed/I_FI0soOnOc",
+    videoEmbed: "https://www.youtube.com/embed/phZAo2LP0OM",
   },
 ];
 
