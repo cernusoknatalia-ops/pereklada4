@@ -670,25 +670,74 @@
   text-decoration: underline;
 }
 
-/* === Кнопка виходу === */
-.logout-btn {
-  margin-top: 25px;
-  padding: 12px 30px;
-  background: rgba(244, 67, 54, 0.2);
-  color: #ff6b6b;
-  border: 2px solid #ff6b6b;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s;
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(25, 25, 35, 0.95);
+  color: #fff;
+  padding: 40px 20px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  margin: 80px auto;
+  box-shadow: 0 12px 35px rgba(0, 217, 255, 0.2);
+  text-align: center;
 }
 
-.logout-btn:hover {
-  background: #ff6b6b;
-  color: white;
+.modal-container p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.modal-container .logout-btn,
+.modal-container .cancel-btn {
+  width: 100%;
+  min-width: 150px;
+  padding: 20px 0;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.modal-container .logout-btn {
+  background: #00d9ff;
+  color: #fff;
+}
+
+.modal-container .logout-btn:hover {
+  background: #0078d7;
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 130, 255, 0.4);
+}
+
+.modal-container .cancel-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.modal-container .cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .modal-container {
+    width: 95%;
+    padding: 30px 15px;
+    margin: 60px auto;
+  }
+
+  .modal-container .logout-btn,
+  .modal-container .cancel-btn {
+    padding: 16px 0;
+    font-size: 1.1rem;
+  }
 }
 
 /* === Світла тема модалки === */

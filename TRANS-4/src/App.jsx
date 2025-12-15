@@ -122,7 +122,7 @@ function App() {
               onClick={(e) => e.stopPropagation()}
             >
               <p>Вийти з акаунта?</p>
-              <div style={{ display: "flex", gap: "10px", marginTop: "10px" }}>
+              <div style={{ display: "flex", gap: "40px", marginTop: "60px" }}>
                 <button className="logout-btn" onClick={handleLogout}>
                   Так
                 </button>
