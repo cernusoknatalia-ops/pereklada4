@@ -23,17 +23,6 @@ main {
   flex: 1;
 }
 
-/* === Navbar === */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  background: rgba(0, 0, 0, 0.75);
-  border-bottom: 1px solid rgba(0, 217, 255, 0.3);
-  backdrop-filter: blur(8px);
-}
-
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -85,7 +74,7 @@ main {
 /* Кнопки вкладок у світлій темі */
 .app.light .nav-btn {
   background: rgba(241, 244, 252, 0.5);
-  color: #0078d7;
+  color: #002e53;
   border: 2px solid rgba(0, 120, 215, 0.25);
   box-shadow: 0 8px 25px rgba(0, 120, 215, 0.15);
   transition: all 0.3s ease;
@@ -736,7 +725,6 @@ main {
     overflow-x: hidden;
   }
 
-  /* === Navbar === */
   .navbar {
     flex-direction: column;
     width: 100%;
@@ -769,8 +757,10 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 6px;
-    padding: 10px 6px;
+    gap: 4px;
+    /* невелика відстань між кнопками */
+    padding: 0 5px;
+    /* відступ від країв екрану */
     width: 100%;
     box-sizing: border-box;
   }
@@ -779,20 +769,20 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* трохи вище по вертикалі */
     align-items: center;
     height: 44px;
     padding: 2px 6px;
-    /* невеликий верхній та нижній відступ */
     font-size: 14px;
     line-height: 1.2;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    flex: 1 1 auto;
+    flex: 0 1 auto;
+    /* кнопки не розтягуються на всю ширину */
     min-width: 90px;
-    max-width: calc(50% - 6px);
+    max-width: 120px;
+    /* обмежуємо ширину, щоб кнопки не були занадто великі */
     box-sizing: border-box;
   }
 
@@ -822,19 +812,23 @@ main {
     border-radius: 25px;
   }
 
-  /* === СЛОВНИК === */
+  /* Словник */
   .dictionary-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    width: 90%;
+    gap: 4px;
+    width: 100%;
     margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0;
+    font-size: 0.75rem;
+    word-break: break-word;
   }
 
   /* === ТЕСТИ === */
   .test-menu {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 8px;
   }
 
   /* === FLASHCARDS === */
@@ -848,8 +842,12 @@ main {
   .buttons-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 4px;
+    gap: 2px;
+    /* зменшено відстань між кнопками */
     width: 100%;
+    padding: 0 5px;
+    /* відступ від стінок */
+    box-sizing: border-box;
   }
 
   .buttons-wrapper .btn {
@@ -858,10 +856,8 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* трохи вище по вертикалі */
     align-items: center;
     padding: 10px 0;
-    /* невеликий верхній та нижній відступ */
   }
 }
 
@@ -869,19 +865,33 @@ main {
 @media (max-width: 480px) {
 
   .desktop-links {
-    gap: 4px;
+    gap: 2px;
+    padding: 0 4px;
+    /* невеликий відступ від стінок */
   }
 
   .nav-btn {
-    height: 40px;
-    font-size: 13px;
-    padding: 2px 4px;
-    max-width: 40%;
+    height: 38px;
+    font-size: 12px;
+    padding: 1px 3px;
+    min-width: 0;
+    max-width: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* трохи вище по вертикалі */
     align-items: center;
+  }
+
+  .buttons-wrapper {
+    gap: 2px;
+    /* зменшено відстань між кнопками */
+    padding: 0 4px;
+    /* відступ від стінок */
+  }
+
+  .buttons-wrapper .btn {
+    padding: 6px 0;
+    font-size: 14px;
   }
 
   .flashcard {
@@ -896,12 +906,6 @@ main {
   .home-container button {
     font-size: 16px;
     padding: 12px;
-  }
-
-  .buttons-wrapper .btn {
-    padding: 8px 0;
-    justify-content: center;
-    /* трохи вище по вертикалі */
   }
 }
 

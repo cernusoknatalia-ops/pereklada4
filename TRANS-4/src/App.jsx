@@ -112,8 +112,6 @@ function App() {
             </div>
           </div>
         )}
-
-        {/* Підтвердження виходу */}
         {confirmLogout && (
           <div
             className="modal-overlay"

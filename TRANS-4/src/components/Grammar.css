@@ -18,10 +18,8 @@
 }
 
 .app.light .grammar-page {
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.08),
-      rgba(255, 255, 255, 0.08)
-    ),
+  background: linear-gradient(rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.08)),
     url("/images/photo.jpg") no-repeat center center fixed;
   background-size: cover;
   color: #ffffff;
@@ -31,12 +29,12 @@
   width: 100%;
   max-width: 1000px;
   padding: 40px 20px;
-  border-radius: 16px;
+  border-radius: 20px;
+  /* заокруглення банера */
   text-align: center;
   margin: 20px auto;
   background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url("https://picsum.photos/seed/englishGrammar/1200/400") center/cover
-      no-repeat;
+    url("https://picsum.photos/seed/englishGrammar/1200/400") center/cover no-repeat;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -62,12 +60,9 @@
 }
 
 .app.light .grammar-banner {
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.2)
-    ),
-    url("https://picsum.photos/seed/englishGrammar/1200/400") center/cover
-      no-repeat;
+  background: linear-gradient(rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)),
+    url("https://picsum.photos/seed/englishGrammar/1200/400") center/cover no-repeat;
   color: #111;
   box-shadow: 0 6px 18px rgba(0, 120, 215, 0.15);
 }
@@ -104,6 +99,8 @@
   height: 160px;
   object-fit: cover;
   transition: transform 0.3s;
+  border-radius: 15px;
+  /* заокруглені кути картки */
 }
 
 .grammar-card:hover img {
@@ -230,6 +227,8 @@
 
   .grammar-banner {
     padding: 20px 10px;
+    border-radius: 15px;
+    /* адаптивне заокруглення банера */
   }
 
   .grammar-banner h1 {
@@ -243,7 +242,7 @@
 
 @media (max-width: 480px) {
   .grammar-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 8px;
   }
 
@@ -281,28 +280,4 @@
 
 .app.light .grammar-banner {
   color: #ffffff;
-}
-@media (max-width: 480px) {
-  .grammar-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-  }
-
-  .grammar-card {
-    padding: 6px;
-    min-width: 0;
-  }
-
-  .grammar-card img {
-    height: 90px;
-  }
-
-  .grammar-card h3 {
-    font-size: 0.85rem;
-  }
-
-  .grammar-card button {
-    font-size: 11px;
-    padding: 4px 8px;
-  }
 }

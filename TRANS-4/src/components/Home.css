@@ -559,7 +559,7 @@
   }
 }
 
-/* === Кнопка закриття модалок === */
+/* === Кнопка закриття модалки === */
 .close-btn {
   position: absolute;
   top: 12px;
@@ -569,12 +569,13 @@
   font-size: 1.6rem;
   font-weight: bold;
   line-height: 1;
-  background: transparent;
-  /* без фону */
+  background: #ff4d4f;
+  /* червоний фон */
   border: none;
-  /* без рамки */
-  color: #00d9ff;
-  /* для темної теми */
+  border-radius: 50%;
+  /* кругла */
+  color: #fff;
+  /* колір хрестика */
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -583,12 +584,15 @@
 }
 
 .close-btn:hover {
-  color: #00b8d4;
-  transform: rotate(90deg);
+  background: #e63946;
+  /* темніший червоний при наведенні */
+  transform: scale(1.1);
+  /* невелике збільшення */
 }
 
 .app.light .close-btn {
   color: #0078d7;
+  /* колір хрестика в світлій темі */
 }
 
 .app.light .close-btn:hover {
@@ -634,7 +638,8 @@
 .modal-container .auth-box button {
   padding: 15px;
   background: #00d9ff;
-  color: #141414;
+  /* кнопка "увійти" */
+  color: #ffffff;
   border: none;
   border-radius: 12px;
   font-size: 18px;
