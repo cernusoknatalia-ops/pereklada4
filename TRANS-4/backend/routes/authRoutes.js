@@ -7,7 +7,7 @@ const router = express.Router();
 
 // Обмеження на спроби логіну
 const loginLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 хв
+  windowMs: 3 * 60 * 1000, // 3 хв
   max: 5,
   message: "Забагато спроб. Спробуйте пізніше.",
   standardHeaders: true,

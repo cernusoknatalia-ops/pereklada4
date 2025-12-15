@@ -40,6 +40,7 @@ main {
   color: #00d9ff;
   text-shadow: 0 0 10px rgba(0, 217, 255, 0.6);
 }
+
 /* === Оновлений Navbar для ПК === */
 .navbar {
   display: flex;
@@ -63,6 +64,7 @@ main {
   gap: 20px;
   align-items: center;
 }
+
 /* === Navbar для світлої теми у стилі карток/словника === */
 .app.light .navbar {
   background: rgba(255, 255, 255, 0.08);
@@ -228,6 +230,7 @@ main {
   color: #000000;
   box-shadow: 0 10px 25px rgba(0, 120, 215, 0.15);
 }
+
 .app.light .translator-card,
 .app.light .flashcard-container,
 .app.light .card {
@@ -281,6 +284,7 @@ main {
 .tab:hover {
   background: rgba(255, 255, 255, 0.18);
 }
+
 .app.dark .tab:hover {
   background: rgba(50, 50, 60, 0.9);
 }
@@ -348,23 +352,30 @@ main {
 /* === Dictionary === */
 .dictionary-list {
   display: flex;
-  flex-wrap: wrap; /* два блоки на рядок */
-  gap: 20px 20px; /* вертикальні та горизонтальні відступи */
+  flex-wrap: wrap;
+  /* два блоки на рядок */
+  gap: 20px 20px;
+  /* вертикальні та горизонтальні відступи */
   justify-content: flex-start;
 }
 
 .dictionary-item {
-  flex: 1 1 calc(50% - 10px); /* два блоки на рядок */
+  flex: 1 1 calc(50% - 10px);
+  /* два блоки на рядок */
   box-sizing: border-box;
   padding: 12px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   background: rgba(0, 0, 0, 0.25);
 
-  display: flex; /* горизонтально всередині */
-  flex-direction: row; /* слово → транскрипція → переклад */
-  align-items: center; /* вертикальне вирівнювання тексту */
-  gap: 12px; /* відстань між словом, транскрипцією та перекладом */
+  display: flex;
+  /* горизонтально всередині */
+  flex-direction: row;
+  /* слово → транскрипція → переклад */
+  align-items: center;
+  /* вертикальне вирівнювання тексту */
+  gap: 12px;
+  /* відстань між словом, транскрипцією та перекладом */
 }
 
 .dictionary-item .word {
@@ -386,10 +397,12 @@ main {
   font-size: 1.6rem;
   transition: all 0.3s ease;
 }
+
 .app.light .icon {
   color: #0078d7;
   filter: drop-shadow(0 0 5px rgba(0, 120, 215, 0.3));
 }
+
 .app.dark .icon {
   color: #00d9ff;
   filter: drop-shadow(0 0 5px rgba(0, 191, 255, 0.4));
@@ -625,6 +638,7 @@ main {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -655,6 +669,7 @@ main {
     font-size: 1rem;
   }
 }
+
 /* === ПК-версія: великі вкладки по центру === */
 @media (min-width: 769px) {
   .navbar {
@@ -687,17 +702,21 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px; /* більші відстані між кнопками */
+    gap: 40px;
+    /* більші відстані між кнопками */
     width: 100%;
     max-width: 1100px;
   }
 
   .desktop-links .nav-btn {
-    flex: 1 1 220px; /* розтягнуті кнопки */
+    flex: 1 1 220px;
+    /* розтягнуті кнопки */
     max-width: 280px;
     text-align: center;
-    padding: 18px 32px; /* великі кнопки */
-    font-size: 1.3rem; /* більший текст */
+    padding: 18px 32px;
+    /* великі кнопки */
+    font-size: 1.3rem;
+    /* більший текст */
     border-radius: 14px;
     transition: all 0.25s ease;
   }
@@ -710,6 +729,7 @@ main {
 
 /* === ФІНАЛЬНА МОБІЛЬНА АДАПТАЦІЯ === */
 @media (max-width: 768px) {
+
   html,
   body {
     overflow-x: hidden;
@@ -750,7 +770,8 @@ main {
   .desktop-links {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Центруємо ряди */
+    justify-content: center;
+    /* Центруємо ряди */
     gap: 8px;
     padding: 10px 12px;
     width: 100%;
@@ -898,5 +919,86 @@ main {
   .home-container button {
     font-size: 16px;
     padding: 12px;
+  }
+}
+
+/* === Контейнер кнопок акаунта і теми === */
+.nav-actions {
+  position: absolute;
+  top: 15px;
+  /* верхній край контейнера */
+  right: 40px;
+  display: flex;
+  gap: 12px;
+  z-index: 100;
+}
+
+/* Кнопки */
+.nav-actions .theme-btn,
+.nav-actions .account-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Опускаємо тільки кнопку акаунта на ПК */
+@media (min-width: 769px) {
+  .nav-actions .account-btn {
+    position: relative;
+    top: 25px;
+  }
+}
+
+/* Світла тема */
+.app.light .theme-btn,
+.app.light .account-btn {
+  background-color: rgba(241, 244, 252, 0.85);
+  color: #0078d7;
+  border: 2px solid rgba(0, 120, 215, 0.25);
+  box-shadow: 0 8px 25px rgba(0, 120, 215, 0.15);
+}
+
+.app.light .theme-btn:hover,
+.app.light .account-btn:hover {
+  background-color: #e6f0ff;
+  color: #005fa3;
+  transform: scale(1.08);
+  box-shadow: 0 0 12px rgba(0, 120, 215, 0.4);
+}
+
+/* Темна тема */
+.app.dark .theme-btn,
+.app.dark .account-btn {
+  background-color: rgba(31, 31, 31, 0.9);
+  color: #00d9ff;
+  border: 2px solid #00d9ff;
+  box-shadow: 0 0 8px rgba(0, 217, 255, 0.2);
+}
+
+.app.dark .theme-btn:hover,
+.app.dark .account-btn:hover {
+  background-color: #00d9ff;
+  color: #1e1e1e;
+  transform: scale(1.08);
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+}
+
+/* Мобільна адаптація */
+@media (max-width: 768px) {
+  .nav-actions {
+    position: static;
+    justify-content: flex-end;
+    margin: 0 0px;
+  }
+
+  .nav-actions .account-btn {
+    top: 0;
   }
 }

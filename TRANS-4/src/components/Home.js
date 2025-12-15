@@ -1,30 +1,10 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Auth from "./Auth";
+import React from "react";
 import "./Home.css";
 
-function Home() {
-  const [showAuthModal, setShowAuthModal] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
-
+function Home({ onStartLearning }) {
   const handleStartLearning = () => {
-    if (isLoggedIn) {
-      // Якщо авторизований - переходимо до тестів
-      window.location.href = "/Test";
-    } else {
-      // Якщо НЕ авторизований - показуємо модалку
-      setShowAuthModal(true);
-    }
-  };
-
-  const handleAuthSuccess = () => {
-    setShowAuthModal(false);
-    setIsLoggedIn(true);
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    setIsLoggedIn(false);
+    // Делегуємо відкриття модалки через App
+    onStartLearning();
   };
 
   return (
@@ -35,17 +15,10 @@ function Home() {
           <h1>QuapsE</h1>
           <p>Вивчати англійську так само просто, як дивитись серіали! 📺</p>
 
-          {/* Змінена кнопка - тепер викликає функцію замість Link */}
+          {/* Кнопка Почати навчання */}
           <button className="start-btn" onClick={handleStartLearning}>
             Почати навчання
           </button>
-
-          {/* Кнопка виходу (показується тільки для авторизованих) */}
-          {isLoggedIn && (
-            <button className="logout-btn" onClick={handleLogout}>
-              Вийти з акаунту
-            </button>
-          )}
         </div>
       </section>
 
@@ -54,30 +27,30 @@ function Home() {
         <div className="container">
           <h2>📚 Рівні англійської</h2>
           <div className="cards">
-            <Link to="/tests" className="card">
+            <div className="card">
               <div className="card-content">
                 <h3>My level</h3>
                 <p>Визнач свій поточний рівень</p>
               </div>
-            </Link>
-            <Link to="/tests" className="card">
+            </div>
+            <div className="card">
               <div className="card-content">
                 <h3>A1-A2</h3>
                 <p>Початковий рівень</p>
               </div>
-            </Link>
-            <Link to="/tests" className="card">
+            </div>
+            <div className="card">
               <div className="card-content">
                 <h3>B1-B2</h3>
                 <p>Середній рівень</p>
               </div>
-            </Link>
-            <Link to="/tests" className="card">
+            </div>
+            <div className="card">
               <div className="card-content">
                 <h3>C1-C2</h3>
                 <p>Просунутий рівень</p>
               </div>
-            </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -111,25 +84,9 @@ function Home() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="home-footer">
         <p></p>
       </footer>
-
-      {/* Модальне вікно авторизації */}
-      {showAuthModal && (
-        <div className="modal-overlay" onClick={() => setShowAuthModal(false)}>
-          <div className="modal-container" onClick={(e) => e.stopPropagation()}>
-            <button
-              className="close-btn"
-              onClick={() => setShowAuthModal(false)}
-            >
-              ×
-            </button>
-            <Auth onClose={handleAuthSuccess} />
-          </div>
-        </div>
-      )}
     </div>
   );
 }

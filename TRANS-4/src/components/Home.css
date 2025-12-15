@@ -23,8 +23,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80")
-    center/cover;
+  background: url("https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80") center/cover;
   opacity: 0.15;
   z-index: 0;
 }
@@ -241,6 +240,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -288,7 +288,8 @@
   .Home .cards,
   .Home .features-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* дві колонки */
+    grid-template-columns: repeat(2, 1fr);
+    /* дві колонки */
     gap: 15px;
     width: 100%;
     box-sizing: border-box;
@@ -325,13 +326,11 @@
 }
 
 @media (max-width: 480px) {
+
   .Home .cards,
   .Home .features-grid {
     display: grid;
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); /* все ще дві колонки навіть на дуже вузьких екранах */
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     width: 100%;
   }
@@ -364,6 +363,7 @@
     font-size: 0.95rem;
   }
 }
+
 /* === Світла тема для Home === */
 .app.light .Home {
   background-color: rgba(255, 255, 255, 0.08);
@@ -507,6 +507,7 @@
   border-radius: 15px;
   backdrop-filter: blur(12px);
 }
+
 /* === Модальне вікно авторизації === */
 .modal-overlay {
   position: fixed;
@@ -527,6 +528,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -550,29 +552,34 @@
     transform: translateY(50px) scale(0.9);
     opacity: 0;
   }
+
   to {
     transform: translateY(0) scale(1);
     opacity: 1;
   }
 }
 
+/* === Кнопка закриття модалок === */
 .close-btn {
   position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 32px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #00d9ff;
-  line-height: 1;
-  padding: 0;
-  transition: all 0.3s;
+  top: 12px;
+  right: 12px;
   width: 35px;
   height: 35px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 1;
+  background: transparent;
+  /* без фону */
+  border: none;
+  /* без рамки */
+  color: #00d9ff;
+  /* для темної теми */
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .close-btn:hover {
@@ -580,6 +587,15 @@
   transform: rotate(90deg);
 }
 
+.app.light .close-btn {
+  color: #0078d7;
+}
+
+.app.light .close-btn:hover {
+  color: #005fa3;
+}
+
+/* === Контент модалки авторизації === */
 .modal-container .auth-box {
   display: flex;
   flex-direction: column;
@@ -649,6 +665,7 @@
   text-decoration: underline;
 }
 
+/* === Кнопка виходу === */
 .logout-btn {
   margin-top: 25px;
   padding: 12px 30px;
@@ -669,19 +686,15 @@
   box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
 }
 
-/* Світла тема для модалки */
+/* === Світла тема модалки === */
 .app.light .modal-overlay {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(241, 244, 252, 0.166);
 }
 
 .app.light .modal-container {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(190, 244, 252, 0.166);
   border: 2px solid #0078d7;
   box-shadow: 0 20px 60px rgba(0, 120, 215, 0.3);
-}
-
-.app.light .close-btn {
-  color: #0078d7;
 }
 
 .app.light .modal-container .auth-box h2 {
@@ -690,7 +703,7 @@
 
 .app.light .modal-container .auth-box input {
   border: 2px solid rgba(0, 120, 215, 0.3);
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(241, 244, 252, 0.166);
   color: #1a1a1a;
 }
 
@@ -707,8 +720,85 @@
   color: rgba(0, 0, 0, 0.7);
 }
 
-/* Мобільна адаптація */
+/* === Контейнер кнопок акаунта і теми === */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+/* === Кнопки === */
+.theme-btn,
+.account-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  box-shadow: 0 0 8px rgba(0, 217, 255, 0.2);
+}
+
+/* === Світла тема кнопок === */
+.app.light .theme-btn,
+.app.light .account-btn {
+  background-color: rgba(241, 244, 252, 0.85);
+  color: #0078d7;
+  border: 2px solid rgba(0, 120, 215, 0.25);
+  box-shadow: 0 8px 25px rgba(0, 120, 215, 0.15);
+}
+
+.app.light .theme-btn:hover,
+.app.light .account-btn:hover {
+  background-color: #e6f0ff;
+  color: #005fa3;
+  transform: scale(1.08);
+  box-shadow: 0 0 12px rgba(0, 120, 215, 0.4);
+}
+
+/* === Темна тема кнопок === */
+.app.dark .theme-btn,
+.app.dark .account-btn {
+  background-color: rgba(31, 31, 31, 0.9);
+  color: #00d9ff;
+  border: 2px solid #00d9ff;
+  box-shadow: 0 0 8px rgba(0, 217, 255, 0.2);
+}
+
+.app.dark .theme-btn:hover,
+.app.dark .account-btn:hover {
+  background-color: #00d9ff;
+  color: #1e1e1e;
+  transform: scale(1.08);
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+}
+
+/* === Опускаємо кнопку акаунта на ПК === */
+@media (min-width: 769px) {
+  .nav-actions .account-btn {
+    position: relative;
+    top: 25px;
+  }
+}
+
+/* === Мобільна адаптація === */
 @media (max-width: 768px) {
+  .nav-actions {
+    gap: 10px;
+    justify-content: flex-end;
+  }
+
+  .nav-actions .account-btn {
+    top: 0;
+  }
+
   .modal-container {
     padding: 30px 25px;
     max-width: 90%;
