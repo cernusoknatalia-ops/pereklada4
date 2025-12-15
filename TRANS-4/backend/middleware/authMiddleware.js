@@ -1,9 +1,8 @@
 const jwt = require("jsonwebtoken");
-const SECRET = "supersecret"; // має збігатися з контролером
+const SECRET = "supersecret";
 
 const authMiddleware = (req, res, next) => {
   try {
-    // токен може бути або в cookie, або в headers
     const token =
       req.cookies.auth ||
       (req.headers.authorization && req.headers.authorization.split(" ")[1]);

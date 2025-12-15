@@ -1,9 +1,8 @@
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 
-const SECRET = "supersecret"; // бажано винести в .env
+const SECRET = "supersecret";
 
-// ======= РЕЄСТРАЦІЯ =======
 const register = async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -14,13 +13,11 @@ const register = async (req, res) => {
 
     await User.create(username, password);
 
-    // створюємо токен
     const token = jwt.sign({ username }, SECRET, { expiresIn: "1d" });
 
-    // зберігаємо у cookie
     res.cookie("auth", token, {
-      httpOnly: true, // захищає від XSS
-      secure: false, // true якщо HTTPS
+      httpOnly: true,
+      secure: false,
       sameSite: "lax",
       maxAge: 24 * 60 * 60 * 1000,
     });
@@ -36,7 +33,6 @@ const register = async (req, res) => {
   }
 };
 
-// ======= ВХІД =======
 const login = async (req, res) => {
   try {
     const { username, password } = req.body;

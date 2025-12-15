@@ -8,20 +8,15 @@ function Home({ onStartLearning }) {
 
   return (
     <div className="Home">
-      {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
           <h1>QuapsE</h1>
           <p>Вивчати англійську так само просто, як дивитись серіали! 📺</p>
-
-          {/* Кнопка Почати навчання */}
           <button className="start-btn" onClick={handleStartLearning}>
             Почати навчання
           </button>
         </div>
       </section>
-
-      {/* Levels Section */}
       <section className="levels-section">
         <div className="container">
           <h2>📚 Рівні англійської</h2>
@@ -53,8 +48,6 @@ function Home({ onStartLearning }) {
           </div>
         </div>
       </section>
-
-      {/* Features Section */}
       <section className="features-section">
         <div className="container">
           <h2>✨ Чому QuapsE?</h2>

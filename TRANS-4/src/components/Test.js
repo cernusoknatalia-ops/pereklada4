@@ -360,7 +360,6 @@ function Test({ darkMode }) {
 
   const [questionOrder, setQuestionOrder] = useState([]);
 
-  // Створення кастомного тесту
   const [customQuestions, setCustomQuestions] = useState([]);
   const [newQuestion, setNewQuestion] = useState({
     q: "",
@@ -380,14 +379,12 @@ function Test({ darkMode }) {
       setScore(0);
       setCompleted(false);
 
-      // Для флеш-карт створюємо масив індексів
       if (currentTest.type === "flashcards") {
         setQuestionOrder(currentTest.questions.map((_, idx) => idx));
       }
     }
   }, [currentTest]);
 
-  // 🟢 Флешкарти: обробка відповідей
   const handleFlashcardAnswer = (know) => {
     if (know) setScore((prev) => prev + 1);
 
@@ -396,11 +393,9 @@ function Test({ darkMode }) {
       const currentQuestionIdx = newOrder[currentIndex];
 
       if (!know) {
-        // Перемістити питання в кінець
         newOrder.splice(currentIndex, 1);
         newOrder.push(currentQuestionIdx);
       } else {
-        // Видаляємо поточне питання
         newOrder.splice(currentIndex, 1);
       }
 
@@ -413,14 +408,11 @@ function Test({ darkMode }) {
     });
 
     setCurrentIndex((prev) => {
-      // Якщо питання видалено з кінця, залишаємо index в межах масиву
       return questionOrder.length > 1 ? prev : 0;
     });
 
     setShowTranslation(false);
   };
-
-  // 🟢 Multiple-choice
   const handleChoiceAnswer = (option) => {
     setSelectedOption(option);
     if (option === currentTest.questions[currentIndex].answer)
@@ -445,7 +437,6 @@ function Test({ darkMode }) {
     }
   };
 
-  // 🟢 Кастомні тести
   const addCustomQuestion = () => {
     if (testType === "multiple-choice") {
       if (
@@ -479,7 +470,6 @@ function Test({ darkMode }) {
     setCreatingTest(false);
   };
 
-  // 🟢 Меню тестів
   if (!currentTest && !creatingTest) {
     return (
       <section className={`flashcard-container ${darkMode ? "dark" : "light"}`}>
@@ -505,7 +495,6 @@ function Test({ darkMode }) {
     );
   }
 
-  // 🟢 Створення кастомного тесту
   if (creatingTest) {
     return (
       <section className={`flashcard-container ${darkMode ? "dark" : "light"}`}>
@@ -604,7 +593,6 @@ function Test({ darkMode }) {
     );
   }
 
-  // Поточне питання
   const question =
     currentTest.type === "flashcards"
       ? currentTest.questions[questionOrder[currentIndex]]

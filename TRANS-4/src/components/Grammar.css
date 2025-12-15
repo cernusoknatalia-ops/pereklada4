@@ -99,7 +99,6 @@
   object-fit: cover;
   transition: transform 0.3s;
   border-radius: 15px;
-  /* заокруглені кути картки */
 }
 
 .grammar-card:hover img {
@@ -227,7 +226,6 @@
   .grammar-banner {
     padding: 20px 10px;
     border-radius: 15px;
-    /* адаптивне заокруглення банера */
   }
 
   .grammar-banner h1 {

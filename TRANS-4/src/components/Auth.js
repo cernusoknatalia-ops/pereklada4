@@ -46,7 +46,6 @@ export default function Auth({ onClose, onSuccess }) {
 
   return (
     <div className="auth-box">
-      {/* Хрестик закриття */}
       <button
         onClick={onClose}
         style={{

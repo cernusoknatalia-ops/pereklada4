@@ -9,12 +9,10 @@ function Dictionary() {
         {words.length > 0 ? (
           words.map((item, i) => (
             <div key={i} className="dictionary-item">
-              {/* Перший рядок: слово + переклад */}
               <div className="word-translation">
                 <span className="word">{item.word}</span> —{" "}
                 <span className="translation">{item.translation}</span>
               </div>
-              {/* Другий рядок: транскрипція */}
               <div className="transcription">{item.transcription}</div>
             </div>
           ))

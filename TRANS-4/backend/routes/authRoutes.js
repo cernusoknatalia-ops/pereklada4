@@ -5,20 +5,17 @@ const authMiddleware = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
-// Обмеження на спроби логіну
 const loginLimiter = rateLimit({
-  windowMs: 3 * 60 * 1000, // 3 хв
+  windowMs: 3 * 60 * 1000,
   max: 5,
   message: "Забагато спроб. Спробуйте пізніше.",
   standardHeaders: true,
   legacyHeaders: false,
 });
 
-// ====== Основні маршрути ======
 router.post("/register", register);
 router.post("/login", loginLimiter, login);
 
-// ====== Захищений маршрут ======
 router.get("/profile", authMiddleware, (req, res) => {
   res.json({
     message: `Це захищений профіль користувача: ${req.user.username}`,
@@ -26,17 +23,14 @@ router.get("/profile", authMiddleware, (req, res) => {
   });
 });
 
-// ====== Вихід (очищення токена з cookie) ======
 router.post("/logout", (req, res) => {
   res.clearCookie("auth", {
     httpOnly: true,
-    secure: false, // true якщо HTTPS
+    secure: false,
     sameSite: "lax",
   });
   res.json({ message: "Вихід успішний" });
 });
-
-// ====== Перевірка авторизації ======
 router.get("/check-auth", authMiddleware, (req, res) => {
   res.json({ authenticated: true, user: req.user });
 });

@@ -92,7 +92,7 @@ function App() {
           © 2025 | <strong>QuapsE</strong>
         </footer>
 
-        {/* Модалка авторизації */}
+        {/* Авторизації */}
         {showAuthModal && (
           <div
             className="modal-overlay"
