@@ -263,24 +263,6 @@ const testsData = [
     ],
   },
   {
-    id: "vocabulary-food",
-    type: "flashcards",
-    title: "Слова: Їжа",
-    icon: "🥪",
-    questions: [
-      { word: "Bread", translation: "Хліб" },
-      { word: "Milk", translation: "Молоко" },
-      { word: "Cheese", translation: "Сир" },
-      { word: "Egg", translation: "Яйце" },
-      { word: "Butter", translation: "Масло" },
-      { word: "Tomato", translation: "Помідор" },
-      { word: "Onion", translation: "Цибуля" },
-      { word: "Apple", translation: "Яблуко" },
-      { word: "Banana", translation: "Банан" },
-      { word: "Carrot", translation: "Морква" },
-    ],
-  },
-  {
     id: "grammar-present-simple",
     type: "multiple-choice",
     title: "Present Simple",
@@ -346,6 +328,768 @@ const testsData = [
         options: ["does", "do", "did", "doing"],
         answer: "does",
       },
+    ],
+  },
+  {
+    id: "present-continuous",
+    type: "multiple-choice",
+    title: "Present Continuous",
+    icon: "⏳",
+    questions: [
+      {
+        q: "I ___ reading a book now.",
+        options: ["am", "is", "are"],
+        answer: "am",
+      },
+      {
+        q: "She ___ watching TV at the moment.",
+        options: ["is", "are", "am"],
+        answer: "is",
+      },
+      {
+        q: "They ___ playing football now.",
+        options: ["is", "are", "am"],
+        answer: "are",
+      },
+      {
+        q: "He ___ not listening to music.",
+        options: ["is", "are", "am"],
+        answer: "is",
+      },
+      {
+        q: "We ___ studying English now.",
+        options: ["am", "is", "are"],
+        answer: "are",
+      },
+      { q: "I ___ not sleeping.", options: ["am", "is", "are"], answer: "am" },
+      {
+        q: "She ___ cooking dinner at the moment.",
+        options: ["is", "are", "am"],
+        answer: "is",
+      },
+      {
+        q: "They ___ not working today.",
+        options: ["is", "are", "am"],
+        answer: "are",
+      },
+      {
+        q: "He ___ running in the park now.",
+        options: ["is", "are", "am"],
+        answer: "is",
+      },
+      {
+        q: "We ___ not watching a movie.",
+        options: ["am", "is", "are"],
+        answer: "are",
+      },
+      {
+        q: "I ___ writing an email.",
+        options: ["am", "is", "are"],
+        answer: "am",
+      },
+      {
+        q: "She ___ drinking tea at the moment.",
+        options: ["is", "are", "am"],
+        answer: "is",
+      },
+    ],
+  },
+  {
+    id: "past-simple",
+    type: "multiple-choice",
+    title: "Past Simple",
+    icon: "⏳",
+    questions: [
+      {
+        q: "I ___ to the store yesterday.",
+        options: ["go", "went", "gone"],
+        answer: "went",
+      },
+      {
+        q: "She ___ a book last week.",
+        options: ["read", "reads", "reading"],
+        answer: "read",
+      },
+      {
+        q: "They ___ at home yesterday.",
+        options: ["is", "are", "were"],
+        answer: "were",
+      },
+      {
+        q: "He ___ a car two days ago.",
+        options: ["buy", "buys", "bought"],
+        answer: "bought",
+      },
+      {
+        q: "We ___ dinner at 7pm.",
+        options: ["eat", "ate", "eating"],
+        answer: "ate",
+      },
+      {
+        q: "I ___ my homework yesterday.",
+        options: ["do", "did", "done"],
+        answer: "did",
+      },
+      {
+        q: "She ___ to the cinema last night.",
+        options: ["go", "went", "gone"],
+        answer: "went",
+      },
+      {
+        q: "They ___ happy yesterday.",
+        options: ["is", "are", "were"],
+        answer: "were",
+      },
+      {
+        q: "He ___ TV last evening.",
+        options: ["watch", "watched", "watching"],
+        answer: "watched",
+      },
+      {
+        q: "We ___ a party on Saturday.",
+        options: ["have", "had", "having"],
+        answer: "had",
+      },
+      {
+        q: "I ___ a letter to my friend.",
+        options: ["write", "wrote", "writing"],
+        answer: "wrote",
+      },
+      {
+        q: "She ___ not like the movie.",
+        options: ["did", "does", "do"],
+        answer: "did",
+      },
+    ],
+  },
+  {
+    id: "past-continuous",
+    type: "multiple-choice",
+    title: "Past Continuous",
+    icon: "🕰️",
+    questions: [
+      {
+        q: "I ___ reading when he called.",
+        options: ["was", "were", "am"],
+        answer: "was",
+      },
+      {
+        q: "She ___ cooking dinner at 7pm yesterday.",
+        options: ["was", "were", "is"],
+        answer: "was",
+      },
+      {
+        q: "They ___ playing football when it started to rain.",
+        options: ["was", "were", "are"],
+        answer: "were",
+      },
+      {
+        q: "He ___ not listening to music at that time.",
+        options: ["was", "were", "am"],
+        answer: "was",
+      },
+      {
+        q: "We ___ studying when the teacher came.",
+        options: ["was", "were", "am"],
+        answer: "were",
+      },
+      {
+        q: "I ___ sleeping at midnight.",
+        options: ["was", "were", "am"],
+        answer: "was",
+      },
+      {
+        q: "She ___ not watching TV yesterday.",
+        options: ["was", "were", "am"],
+        answer: "was",
+      },
+      {
+        q: "They ___ going to the park at 6pm.",
+        options: ["was", "were", "am"],
+        answer: "were",
+      },
+      {
+        q: "He ___ running when he fell.",
+        options: ["was", "were", "am"],
+        answer: "was",
+      },
+      {
+        q: "We ___ not drinking coffee in the morning.",
+        options: ["was", "were", "am"],
+        answer: "were",
+      },
+      {
+        q: "I ___ writing an email yesterday.",
+        options: ["was", "were", "am"],
+        answer: "was",
+      },
+      {
+        q: "She ___ drinking tea when I arrived.",
+        options: ["was", "were", "am"],
+        answer: "was",
+      },
+    ],
+  },
+  {
+    id: "future-simple",
+    type: "multiple-choice",
+    title: "Future Simple",
+    icon: "🚀",
+    questions: [
+      {
+        q: "I ___ go to the party tomorrow.",
+        options: ["will", "am", "going"],
+        answer: "will",
+      },
+      {
+        q: "She ___ finish her homework later.",
+        options: ["will", "is", "has"],
+        answer: "will",
+      },
+      {
+        q: "They ___ travel to London next year.",
+        options: ["will", "went", "goes"],
+        answer: "will",
+      },
+      {
+        q: "He ___ help you with the project.",
+        options: ["will", "does", "did"],
+        answer: "will",
+      },
+      {
+        q: "We ___ meet them at the airport.",
+        options: ["will", "are", "is"],
+        answer: "will",
+      },
+      {
+        q: "I ___ call you tonight.",
+        options: ["will", "am", "did"],
+        answer: "will",
+      },
+      {
+        q: "She ___ buy a new car.",
+        options: ["will", "buys", "bought"],
+        answer: "will",
+      },
+      {
+        q: "They ___ come to the party.",
+        options: ["will", "came", "coming"],
+        answer: "will",
+      },
+      {
+        q: "He ___ finish the report by Monday.",
+        options: ["will", "is", "was"],
+        answer: "will",
+      },
+      {
+        q: "We ___ start the lesson at 10am.",
+        options: ["will", "are", "did"],
+        answer: "will",
+      },
+      {
+        q: "I ___ visit my grandparents this weekend.",
+        options: ["will", "am", "visit"],
+        answer: "will",
+      },
+      {
+        q: "She ___ probably join us later.",
+        options: ["will", "does", "did"],
+        answer: "will",
+      },
+    ],
+  },
+  {
+    id: "future-continuous",
+    type: "multiple-choice",
+    title: "Future Continuous",
+    icon: "⏳",
+    questions: [
+      {
+        q: "I ___ working at 10am tomorrow.",
+        options: ["will be", "am", "is"],
+        answer: "will be",
+      },
+      {
+        q: "She ___ reading a book at this time.",
+        options: ["will be", "is", "was"],
+        answer: "will be",
+      },
+      {
+        q: "They ___ playing football at 3pm.",
+        options: ["will be", "are", "were"],
+        answer: "will be",
+      },
+      {
+        q: "He ___ traveling next week.",
+        options: ["will be", "is", "did"],
+        answer: "will be",
+      },
+      {
+        q: "We ___ having dinner at 8pm.",
+        options: ["will be", "are", "was"],
+        answer: "will be",
+      },
+      {
+        q: "I ___ studying English tomorrow evening.",
+        options: ["will be", "am", "did"],
+        answer: "will be",
+      },
+      {
+        q: "She ___ waiting for you at the station.",
+        options: ["will be", "is", "was"],
+        answer: "will be",
+      },
+      {
+        q: "They ___ working on the project at 2pm.",
+        options: ["will be", "are", "did"],
+        answer: "will be",
+      },
+      {
+        q: "He ___ cooking dinner at 7pm.",
+        options: ["will be", "is", "was"],
+        answer: "will be",
+      },
+      {
+        q: "We ___ traveling by plane next Monday.",
+        options: ["will be", "are", "did"],
+        answer: "will be",
+      },
+      {
+        q: "I ___ taking a shower at this time.",
+        options: ["will be", "am", "was"],
+        answer: "will be",
+      },
+      {
+        q: "She ___ listening to music in the evening.",
+        options: ["will be", "is", "was"],
+        answer: "will be",
+      },
+    ],
+  },
+  {
+    id: "present-perfect",
+    type: "multiple-choice",
+    title: "Present Perfect",
+    icon: "✅",
+    questions: [
+      {
+        q: "I ___ finished my homework.",
+        options: ["have", "has", "had"],
+        answer: "have",
+      },
+      {
+        q: "She ___ never been to France.",
+        options: ["has", "have", "had"],
+        answer: "has",
+      },
+      {
+        q: "They ___ gone to the cinema.",
+        options: ["have", "has", "had"],
+        answer: "have",
+      },
+      {
+        q: "He ___ already eaten.",
+        options: ["has", "have", "had"],
+        answer: "has",
+      },
+      {
+        q: "We ___ lived here for 5 years.",
+        options: ["have", "has", "had"],
+        answer: "have",
+      },
+      {
+        q: "I ___ seen that movie.",
+        options: ["have", "has", "had"],
+        answer: "have",
+      },
+      {
+        q: "She ___ just finished her work.",
+        options: ["has", "have", "had"],
+        answer: "has",
+      },
+      {
+        q: "They ___ read this book.",
+        options: ["have", "has", "had"],
+        answer: "have",
+      },
+      {
+        q: "He ___ visited London many times.",
+        options: ["has", "have", "had"],
+        answer: "has",
+      },
+      {
+        q: "We ___ completed the project.",
+        options: ["have", "has", "had"],
+        answer: "have",
+      },
+      {
+        q: "I ___ met him before.",
+        options: ["have", "has", "had"],
+        answer: "have",
+      },
+      {
+        q: "She ___ already left.",
+        options: ["has", "have", "had"],
+        answer: "has",
+      },
+    ],
+  },
+  {
+    id: "present-perfect-continuous",
+    type: "multiple-choice",
+    title: "Present Perfect Continuous",
+    icon: "⏱️",
+    questions: [
+      {
+        q: "I ___ studying English for 2 hours.",
+        options: ["have been", "has been", "had been"],
+        answer: "have been",
+      },
+      {
+        q: "She ___ working here since 2015.",
+        options: ["has been", "have been", "had been"],
+        answer: "has been",
+      },
+      {
+        q: "They ___ playing football all afternoon.",
+        options: ["have been", "has been", "had been"],
+        answer: "have been",
+      },
+      {
+        q: "He ___ waiting for you for 30 minutes.",
+        options: ["has been", "have been", "had been"],
+        answer: "has been",
+      },
+      {
+        q: "We ___ living in this city since 2010.",
+        options: ["have been", "has been", "had been"],
+        answer: "have been",
+      },
+      {
+        q: "I ___ reading this book since morning.",
+        options: ["have been", "has been", "had been"],
+        answer: "have been",
+      },
+      {
+        q: "She ___ cooking since 5pm.",
+        options: ["has been", "have been", "had been"],
+        answer: "has been",
+      },
+      {
+        q: "They ___ studying English for months.",
+        options: ["have been", "has been", "had been"],
+        answer: "have been",
+      },
+      {
+        q: "He ___ working on this project since last week.",
+        options: ["has been", "have been", "had been"],
+        answer: "has been",
+      },
+      {
+        q: "We ___ waiting for the bus for 10 minutes.",
+        options: ["have been", "has been", "had been"],
+        answer: "have been",
+      },
+      {
+        q: "I ___ exercising all morning.",
+        options: ["have been", "has been", "had been"],
+        answer: "have been",
+      },
+      {
+        q: "She ___ practicing piano for hours.",
+        options: ["has been", "have been", "had been"],
+        answer: "has been",
+      },
+    ],
+  },
+  {
+    id: "past-perfect",
+    type: "multiple-choice",
+    title: "Past Perfect",
+    icon: "⏳",
+    questions: [
+      {
+        q: "I ___ finished my homework before he came.",
+        options: ["had", "have", "has"],
+        answer: "had",
+      },
+      {
+        q: "She ___ already left when I arrived.",
+        options: ["had", "have", "has"],
+        answer: "had",
+      },
+      {
+        q: "They ___ eaten before we arrived.",
+        options: ["had", "have", "has"],
+        answer: "had",
+      },
+      {
+        q: "He ___ written the report by yesterday.",
+        options: ["had", "have", "has"],
+        answer: "had",
+      },
+      {
+        q: "We ___ lived there before moving.",
+        options: ["had", "have", "has"],
+        answer: "had",
+      },
+      {
+        q: "I ___ met her before the party.",
+        options: ["had", "have", "has"],
+        answer: "had",
+      },
+      {
+        q: "She ___ finished her work before 6pm.",
+        options: ["had", "have", "has"],
+        answer: "had",
+      },
+      {
+        q: "They ___ gone to London before the summer.",
+        options: ["had", "have", "has"],
+        answer: "had",
+      },
+      {
+        q: "He ___ completed the task before the meeting.",
+        options: ["had", "have", "has"],
+        answer: "had",
+      },
+      {
+        q: "We ___ eaten dinner when you called.",
+        options: ["had", "have", "has"],
+        answer: "had",
+      },
+      {
+        q: "I ___ seen the movie before yesterday.",
+        options: ["had", "have", "has"],
+        answer: "had",
+      },
+      {
+        q: "She ___ left the house before the rain started.",
+        options: ["had", "have", "has"],
+        answer: "had",
+      },
+    ],
+  },
+  {
+    id: "past-perfect-continuous",
+    type: "multiple-choice",
+    title: "Past Perfect Continuous",
+    icon: "⏱️",
+    questions: [
+      {
+        q: "I ___ studying for 2 hours before he arrived.",
+        options: ["had been", "has been", "have been"],
+        answer: "had been",
+      },
+      {
+        q: "She ___ working there for 5 years before moving.",
+        options: ["had been", "has been", "have been"],
+        answer: "had been",
+      },
+      {
+        q: "They ___ playing football for an hour before it rained.",
+        options: ["had been", "has been", "have been"],
+        answer: "had been",
+      },
+      {
+        q: "He ___ waiting for 30 minutes when the bus came.",
+        options: ["had been", "has been", "have been"],
+        answer: "had been",
+      },
+      {
+        q: "We ___ living there for years before selling the house.",
+        options: ["had been", "has been", "have been"],
+        answer: "had been",
+      },
+      {
+        q: "I ___ reading the book for 3 hours before bedtime.",
+        options: ["had been", "has been", "have been"],
+        answer: "had been",
+      },
+      {
+        q: "She ___ cooking for 2 hours before the guests arrived.",
+        options: ["had been", "has been", "have been"],
+        answer: "had been",
+      },
+      {
+        q: "They ___ studying for the test before the teacher came.",
+        options: ["had been", "has been", "have been"],
+        answer: "had been",
+      },
+      {
+        q: "He ___ working on the project for days before finishing it.",
+        options: ["had been", "has been", "have been"],
+        answer: "had been",
+      },
+      {
+        q: "We ___ waiting for the bus for 20 minutes when it arrived.",
+        options: ["had been", "has been", "have been"],
+        answer: "had been",
+      },
+      {
+        q: "I ___ exercising before the gym closed.",
+        options: ["had been", "has been", "have been"],
+        answer: "had been",
+      },
+      {
+        q: "She ___ practicing piano for hours before the recital.",
+        options: ["had been", "has been", "have been"],
+        answer: "had been",
+      },
+    ],
+  },
+  {
+    id: "future-perfect",
+    type: "multiple-choice",
+    title: "Future Perfect",
+    icon: "🎯",
+    questions: [
+      {
+        q: "By next week, I ___ finished my project.",
+        options: ["will have", "will", "am"],
+        answer: "will have",
+      },
+      {
+        q: "She ___ completed her work by 5pm.",
+        options: ["will have", "will", "did"],
+        answer: "will have",
+      },
+      {
+        q: "They ___ left the city by tomorrow.",
+        options: ["will have", "will", "are"],
+        answer: "will have",
+      },
+      {
+        q: "He ___ written the report by Friday.",
+        options: ["will have", "will", "did"],
+        answer: "will have",
+      },
+      {
+        q: "We ___ cleaned the house by evening.",
+        options: ["will have", "will", "are"],
+        answer: "will have",
+      },
+      {
+        q: "I ___ read this book by next month.",
+        options: ["will have", "will", "am"],
+        answer: "will have",
+      },
+      {
+        q: "She ___ finished cooking by 8pm.",
+        options: ["will have", "will", "is"],
+        answer: "will have",
+      },
+      {
+        q: "They ___ built the new bridge by 2026.",
+        options: ["will have", "will", "are"],
+        answer: "will have",
+      },
+      {
+        q: "He ___ cleaned his room by tomorrow.",
+        options: ["will have", "will", "did"],
+        answer: "will have",
+      },
+      {
+        q: "We ___ completed all exercises by next class.",
+        options: ["will have", "will", "did"],
+        answer: "will have",
+      },
+      {
+        q: "I ___ sent the emails by 6pm.",
+        options: ["will have", "will", "am"],
+        answer: "will have",
+      },
+      {
+        q: "She ___ finished her homework by tomorrow morning.",
+        options: ["will have", "will", "is"],
+        answer: "will have",
+      },
+    ],
+  },
+  {
+    id: "future-perfect-continuous",
+    type: "multiple-choice",
+    title: "Future Perfect Continuous",
+    icon: "⏱️",
+    questions: [
+      {
+        q: "By next week, I ___ working here for 2 years.",
+        options: ["will have been", "will be", "am"],
+        answer: "will have been",
+      },
+      {
+        q: "She ___ studying for 3 hours by 6pm.",
+        options: ["will have been", "will be", "has been"],
+        answer: "will have been",
+      },
+      {
+        q: "They ___ playing football for 2 hours by the time we arrive.",
+        options: ["will have been", "will be", "have been"],
+        answer: "will have been",
+      },
+      {
+        q: "He ___ waiting for you for 30 minutes by 9am.",
+        options: ["will have been", "will be", "has been"],
+        answer: "will_have_been",
+      },
+      {
+        q: "We ___ living in this city for 5 years by next month.",
+        options: ["will have been", "will be", "have been"],
+        answer: "will have been",
+      },
+      {
+        q: "I ___ reading this book for 2 hours by lunchtime.",
+        options: ["will have been", "will be", "am"],
+        answer: "will have been",
+      },
+      {
+        q: "She ___ cooking for 3 hours by the time we arrive.",
+        options: ["will have been", "will be", "has been"],
+        answer: "will have been",
+      },
+      {
+        q: "They ___ working on the project for a week by Friday.",
+        options: ["will have been", "will be", "have been"],
+        answer: "will have been",
+      },
+      {
+        q: "He ___ practicing piano for 2 hours by the recital.",
+        options: ["will have been", "will be", "has been"],
+        answer: "will have been",
+      },
+      {
+        q: "We ___ waiting for the bus for 20 minutes by 8am.",
+        options: ["will have been", "will be", "have been"],
+        answer: "will have been",
+      },
+      {
+        q: "I ___ exercising for 1 hour by the time you come.",
+        options: ["will have been", "will be", "am"],
+        answer: "will have been",
+      },
+      {
+        q: "She ___ studying for 4 hours by the evening.",
+        options: ["will have been", "will be", "has been"],
+        answer: "will have been",
+      },
+    ],
+  },
+  {
+    id: "vocabulary-food",
+    type: "flashcards",
+    title: "Слова: Їжа",
+    icon: "🥪",
+    questions: [
+      { word: "Bread", translation: "Хліб" },
+      { word: "Milk", translation: "Молоко" },
+      { word: "Cheese", translation: "Сир" },
+      { word: "Egg", translation: "Яйце" },
+      { word: "Butter", translation: "Масло" },
+      { word: "Tomato", translation: "Помідор" },
+      { word: "Onion", translation: "Цибуля" },
+      { word: "Apple", translation: "Яблуко" },
+      { word: "Banana", translation: "Банан" },
+      { word: "Carrot", translation: "Морква" },
     ],
   },
 ];
@@ -654,7 +1398,7 @@ function Test({ darkMode }) {
           <div className="navigation">
             {selectedOption && (
               <button className="restart-btn" onClick={nextChoiceQuestion}>
-                ➡️ Наступне
+                ➡️ Далій
               </button>
             )}
           </div>

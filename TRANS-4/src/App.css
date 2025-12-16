@@ -397,69 +397,158 @@ main {
   filter: drop-shadow(0 0 5px rgba(0, 191, 255, 0.4));
 }
 
-/* === Контейнер тесту === */
+/* === Контейнер тесту на весь екран з рамкою як у Grammar === */
 .flashcard-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   min-height: 100vh;
-  padding: 20px;
-  font-family: "Arial", sans-serif;
+  width: 100%;
+  padding: 40px 20px;
+  font-family: "Segoe UI", sans-serif;
+  box-sizing: border-box;
   transition: background 0.3s, color 0.3s;
+  border-radius: 25px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
 }
 
+/* Тема світла */
 .flashcard-container.light {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #ecedef 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #f0f4f8 0%, #e0e7ef 100%);
+  color: #111;
+  border: 2px solid rgba(0, 120, 215, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 120, 215, 0.2);
 }
 
+/* Тема темна */
 .flashcard-container.dark {
   background: linear-gradient(135deg, #141414 0%, #1a1a1a 100%);
-  color: #f5f5f5;
+  color: #fff;
+  border: 2px solid rgba(0, 217, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
 }
 
-/* === Меню тестів === */
+/* Заголовки */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.progress-text {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Меню тестів */
 .test-menu {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
   width: 100%;
-  max-width: 900px;
+  max-width: 1200px;
+  margin-bottom: 30px;
 }
 
+@media (max-width: 1024px) {
+  .test-menu {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .test-menu {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .test-menu {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Картки тестів зі зміною фону під тему */
+.flashcard-container.light .test-card {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 2px solid rgba(0, 120, 215, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 120, 215, 0.15);
+}
+
+.flashcard-container.dark .test-card {
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 217, 255, 0.15);
+}
+
+/* Картка тесту */
 .test-card {
-  background: rgba(40, 40, 40, 0.9);
-  border-radius: 20px;
-  padding: 30px 20px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px solid transparent;
+  padding: 35px 25px;
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .test-card:hover {
-  border-color: #00d9ff;
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 217, 255, 0.3);
+  border-color: #00d9ff;
 }
 
 .test-icon {
-  font-size: 3.5rem;
+  font-size: 3rem;
   margin-bottom: 15px;
 }
 
 .test-title {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: bold;
 }
 
-/* === Flashcards === */
+/* Кнопка створення тесту */
+.create-test-bottom {
+  margin-top: 30px;
+}
+
+.create-test-bottom button {
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.flashcard-container.light .create-test-bottom button {
+  background-color: #00d9ff;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 150, 255, 0.3);
+}
+
+.flashcard-container.dark .create-test-bottom button {
+  background-color: #00b8d4;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 200, 255, 0.3);
+}
+
+.create-test-bottom button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 200, 255, 0.4);
+}
+
+/* Flashcards */
 .card-wrapper {
   perspective: 1200px;
   display: flex;
@@ -515,7 +604,7 @@ main {
   transform: rotateY(180deg);
 }
 
-/* === Кнопки === */
+/* Кнопки відповіді */
 .buttons-wrapper {
   display: flex;
   gap: 12px;
@@ -548,7 +637,7 @@ main {
   color: #141414;
 }
 
-/* === Навігаційні кнопки === */
+/* Навігаційні кнопки */
 .restart-btn {
   background-color: #2196f3;
   color: #fff;
@@ -567,95 +656,128 @@ main {
   box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* === Прогрес і бали === */
-.progress-text {
-  font-size: 16px;
-  margin-top: 10px;
-  text-align: center;
-}
-
+/* === Процес створення тесту: стилізація форми === */
 .custom-test {
-  margin-top: 20px;
-  width: 100%;
-  max-width: 500px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-}
-
-.custom-test input {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #555;
-  font-size: 14px;
+  align-items: center;
   width: 100%;
+  max-width: 600px;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-.custom-test button {
-  width: fit-content;
-  padding: 10px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  background-color: #4caf50;
-  color: white;
-  font-weight: 600;
-}
-
+/* Вибір типу тесту */
 .choose-type {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .choose-type button {
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #777;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 20px;
+  border: none;
   cursor: pointer;
-  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.flashcard-container.light .choose-type button {
   background-color: #00d9ff;
-  color: white;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 150, 255, 0.3);
+}
+
+.flashcard-container.dark .choose-type button {
+  background-color: #00b8d4;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 200, 255, 0.3);
 }
 
 .choose-type button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 200, 255, 0.4);
+}
+
+/* Поля вводу для питань і опцій */
+.custom-test input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border-radius: 15px;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.flashcard-container.light .custom-test input {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #111;
+  border: 2px solid rgba(0, 120, 215, 0.25);
+}
+
+.flashcard-container.dark .custom-test input {
+  background-color: rgba(30, 30, 45, 0.85);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.custom-test input:focus {
+  border-color: #00d9ff;
+  box-shadow: 0 5px 15px rgba(0, 217, 255, 0.25);
+}
+
+/* Кнопки всередині створення тесту */
+.custom-test button {
+  width: 100%;
+  padding: 15px 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.flashcard-container.light .custom-test button {
+  background-color: #00d9ff;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 150, 255, 0.3);
+}
+
+.flashcard-container.dark .custom-test button {
   background-color: #00b8d4;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 200, 255, 0.3);
 }
 
-/* === Анімації === */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.custom-test button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 200, 255, 0.4);
 }
 
-/* === Адаптив === */
-@media (max-width: 768px) {
-  .test-menu {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  }
+/* Відступи між кнопками */
+.custom-test .restart-btn {
+  margin-top: 10px;
+}
 
-  .flashcard {
-    height: 220px;
-    font-size: 22px;
-  }
+/* Заголовки для створення тесту */
+.custom-test h3 {
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.5rem;
+}
 
-  .buttons-wrapper .btn {
-    font-size: 14px;
-    padding: 10px 0;
-  }
-
-  .test-icon {
-    font-size: 2.5rem;
-  }
-
-  .test-title {
-    font-size: 1rem;
+/* Адаптивність */
+@media (max-width: 480px) {
+  .custom-test {
+    max-width: 100%;
+    padding: 0 10px;
   }
 }
 
@@ -913,7 +1035,6 @@ main {
 .nav-actions {
   position: absolute;
   top: 15px;
-  /* верхній край контейнера */
   right: 40px;
   display: flex;
   gap: 12px;
@@ -923,8 +1044,8 @@ main {
 /* Кнопки */
 .nav-actions .theme-btn,
 .nav-actions .account-btn {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: 2px solid transparent;
   display: flex;

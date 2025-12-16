@@ -85,7 +85,7 @@ export default function Auth({ onClose, onSuccess }) {
           type={showPassword ? "text" : "password"}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          style={{ width: "100%", paddingRight: "35px" }}
+          style={{ width: "100%", paddingRight: "120px" }}
         />
       </div>
 
